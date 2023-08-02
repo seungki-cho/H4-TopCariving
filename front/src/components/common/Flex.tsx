@@ -12,6 +12,7 @@ export const Flex = styled.div<{
   width?: number;
   height?: number;
   backgroundColor?: KeyOfPalette;
+  borderRadius?: string;
 }>`
   display: flex;
   flex-direction: ${({ direction }) => (direction ? `${direction}` : 'row')};
@@ -22,6 +23,7 @@ export const Flex = styled.div<{
   height: ${({ height }) => (height ? `${height}px` : '100%')};
   margin: ${({ margin }) => (margin ? margin : '0')};
   padding: ${({ padding }) => (padding ? padding : '0')};
+  border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : '0px')};
   box-sizing: border-box;
   background-color: ${({ backgroundColor }) =>
     backgroundColor ? theme.palette[backgroundColor] : `transparent`};
