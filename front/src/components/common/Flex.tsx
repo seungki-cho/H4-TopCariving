@@ -8,7 +8,7 @@ export const Flex = styled.div<{
   align?: string;
   margin?: string;
   padding?: string;
-  gap?: string;
+  gap?: number;
   width?: number;
   height?: number;
   backgroundColor?: KeyOfPalette;
