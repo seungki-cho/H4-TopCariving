@@ -13,7 +13,7 @@ public class TrimResponseDTO {
 	private Long optionId;
 
 	@Schema(description = "옵션의 카테고리 이름", example = "르블랑")
-	private String categoryName;
+	private String category;
 
 	@Schema(description = "옵션의 가격", example = "1476000")
 	private int price;
