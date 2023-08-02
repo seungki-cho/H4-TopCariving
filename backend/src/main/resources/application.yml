@@ -1,0 +1,8 @@
+springdoc:
+  packages-to-scan: com.backend.topcariving.domain
+  swagger-ui:
+    path: /swagger
+    disable-swagger-default-url: true
+    display-request-duration: true
+    operations-sorter: alpha
+
