@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Option {
 
 	@Id
-	private Long optionId;
+	private Long carOptionId;
 
 	private String category;
 
