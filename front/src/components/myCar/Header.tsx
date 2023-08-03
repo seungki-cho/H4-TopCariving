@@ -20,7 +20,7 @@ const Header = () => {
         <Text typo="Body4_Medium">내 차 만들기</Text>
       </Flex>
 
-      <Flex width="auto" gap={21}>
+      <Flex justify="flex-end" gap={21}>
         <Flex width="auto" gap={3}>
           <Text typo="Body4_Medium">자동 저장중</Text>
           <img src={save} alt="" />
