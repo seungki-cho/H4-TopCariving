@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */; };
 		D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */; };
 		D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA472A78A3AD002B6A5B /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		D4ACBA402A78A3AD002B6A5B /* TopCariving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCariving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D4ACBA7D2A78CE35002B6A5B /* DummyView.swift */,
+				763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				D4CFBAAD2A7A25B100CCB27E /* HyundaiFont.swift in Sources */,
 				D4ACBA872A78CE8F002B6A5B /* UIColor+.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
+				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* DummyViewModel.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 			);
@@ -548,7 +552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CGUAL476T6;
+				DEVELOPMENT_TEAM = 5R9YHBW9BJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopCariving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -575,7 +579,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CGUAL476T6;
+				DEVELOPMENT_TEAM = 5R9YHBW9BJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopCariving/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
