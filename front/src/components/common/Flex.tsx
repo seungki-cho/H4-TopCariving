@@ -8,8 +8,8 @@ export const Flex = styled.div<{
   align?: string;
   margin?: string;
   padding?: string;
-  gap?: string;
-  width?: number;
+  gap?: number;
+  width?: number | string;
   height?: number;
   backgroundColor?: KeyOfPalette;
   borderRadius?: string;
@@ -19,7 +19,8 @@ export const Flex = styled.div<{
   justify-content: ${({ justify }) => (justify ? `${justify}` : 'center')};
   align-items: ${({ align }) => (align ? `${align}` : 'center')};
   gap: ${({ gap }) => (gap ? `${gap}px` : '0px')};
-  width: ${({ width }) => (width ? `${width}px` : '100%')};
+  width: ${({ width }) =>
+    width ? (typeof width === 'string' ? 'auto' : `${width}px`) : '100%'};
   height: ${({ height }) => (height ? `${height}px` : '100%')};
   margin: ${({ margin }) => (margin ? margin : '0')};
   padding: ${({ padding }) => (padding ? padding : '0')};

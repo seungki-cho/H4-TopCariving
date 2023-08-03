@@ -22,4 +22,5 @@ export const Text = styled.div<{
   display: flex;
   align-items: center;
   margin: ${({ margin }) => (margin ? margin : '0')};
+  white-space: nowrap;
 `;
