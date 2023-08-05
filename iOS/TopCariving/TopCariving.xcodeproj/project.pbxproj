@@ -10,6 +10,7 @@
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* ContainerStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* ContainerStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
+		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */; };
 		D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */; };
 		D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA472A78A3AD002B6A5B /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* ContainerStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		D4ACBA402A78A3AD002B6A5B /* TopCariving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCariving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				D4ACBA862A78CE8F002B6A5B /* UIColor+.swift */,
 				D4CFBAAC2A7A25B100CCB27E /* HyundaiFont.swift */,
 				D4CFBAAE2A7A3E6500CCB27E /* UIFont+.swift */,
+				C31350092A7E826C00D5D401 /* UIImage+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4ACBA842A78CE62002B6A5B /* DummyViewController.swift in Sources */,
+				C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */,
 				D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
 				D4ACBA7E2A78CE35002B6A5B /* DummyView.swift in Sources */,
