@@ -53,6 +53,8 @@ class FoldableView: UIView, Foldable {
     
     // MARK: - Properties
     var heightConstant: NSLayoutConstraint?
+    var tapSubject = PassthroughSubject<Any, Never>()
+    
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,6 +80,11 @@ class FoldableView: UIView, Foldable {
             addSubview($0)
         }
     }
+    
+    @objc private func tapped(sender: Any) {
+        tapSubject.send(self)
+    }
+    
     func setLayout() {
         separator.translatesAutoresizingMaskIntoConstraints = false
         heightConstant = heightAnchor.constraint(equalToConstant: 71)
