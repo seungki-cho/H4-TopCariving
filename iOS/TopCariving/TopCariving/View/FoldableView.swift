@@ -124,3 +124,12 @@ class FoldableView: UIView, Foldable {
         layer.borderColor = UIColor(red: 0, green: 0.173, blue: 0.373, alpha: 0.6).cgColor
         backgroundColor = UIColor(red: 0, green: 0.173, blue: 0.373, alpha: 0.1)
     }
+    
+    func setTitle(to title: String) {
+        titleLabel.text = title
+    }
+    
+    func setPrice(to price: String) {
+        priceLabel.text = price
+    }
+}
