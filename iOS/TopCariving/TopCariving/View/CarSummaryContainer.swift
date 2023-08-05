@@ -26,3 +26,16 @@ class CarSummaryContainer: FoldableView {
             iconStackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1, constant: -40)
         ])
     }
+    
+    override func fold() {
+        super.fold()
+        iconStackView.isHidden = true
+        heightConstant?.constant = 71
+    }
+    
+    override func unfold() {
+        super.unfold()
+        iconStackView.isHidden = false
+        heightConstant?.constant = 215
+    }
+    
