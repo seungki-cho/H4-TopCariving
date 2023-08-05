@@ -1,8 +1,28 @@
 //
-//  CarSummaryContainer.swift
+//  CarSummaryContainerCell.swift
 //  TopCariving
 //
 //  Created by 조승기 on 2023/08/03.
 //
 
-import Foundation
+import UIKit
+import Combine
+class CarSummaryContainer: FoldableView {
+    // MARK: - UI properties
+    private let iconStackView = UIStackView()
+    
+    // MARK: - Helpers
+    override func setUI() {
+        super.setUI()
+        addSubview(iconStackView)
+    }
+    
+    override func setLayout() {
+        super.setLayout()
+        iconStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            iconStackView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 23),
+            iconStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            iconStackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1, constant: -40)
+        ])
+    }
