@@ -15,7 +15,7 @@ protocol Foldable {
     func unfold()
 }
 
-class FoldableView: UIView, Foldable {
+class FoldableView: TappableView, Foldable {
     // MARK: - UI properties
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -53,7 +53,6 @@ class FoldableView: UIView, Foldable {
     
     // MARK: - Properties
     var heightConstant: NSLayoutConstraint?
-    var tapSubject = PassthroughSubject<Any, Never>()
     
     // MARK: - Lifecycles
     override init(frame: CGRect) {
@@ -72,17 +71,11 @@ class FoldableView: UIView, Foldable {
     
     // MARK: - Helpers
     func setUI() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped(sender:)))
-        addGestureRecognizer(tapGesture)
         layer.cornerRadius = 8
         
         [titleLabel, priceLabel, wonLabel, separator].forEach {
             addSubview($0)
         }
-    }
-    
-    @objc private func tapped(sender: Any) {
-        tapSubject.send(self)
     }
     
     func setLayout() {
