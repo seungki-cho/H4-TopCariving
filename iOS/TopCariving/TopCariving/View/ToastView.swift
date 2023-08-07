@@ -43,6 +43,13 @@ class ToastView: UIView {
     
     // MARK: - Property
     private let padding = 10.0
+    var sourceRect: CGRect?
+    private var triangleStartX: Double {
+        guard let sourceRect else { return frame.width / 2.0 }
+        if frame.maxX - 5 < sourceRect.midX { return frame.maxX - 10.0 }
+        if frame.minX + 5 > sourceRect.midX { return frame.minX }
+        return abs(frame.minX - sourceRect.midX + 5)
+    }
     let tapCloseButtonSubject = PassthroughSubject<Any, Never>()
     
     // MARK: - LifeCycle
@@ -59,6 +66,31 @@ class ToastView: UIView {
         setLayout()
         setEvent()
     }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        drawTriangle()
+    }
+    
+    // MARK: - Helper
+    private func drawTriangle() {
+        let path = UIBezierPath()
+        let startPoint = CGPoint(x: triangleStartX, y: padding)
+        path.move(to: startPoint)
+        
+        let leftTopPoint = startPoint.applying(.init(translationX: 4, y: -7))
+        path.addLine(to: leftTopPoint)
+        
+        let rightTopPoint = leftTopPoint.applying(.init(translationX: 2, y: 0))
+        let controlPoint = leftTopPoint.applying(.init(translationX: 1, y: -2))
+        path.addQuadCurve(to: rightTopPoint, controlPoint: controlPoint)
+
+        let endPoint = CGPoint(x: startPoint.x + 10, y: padding)
+        path.addLine(to: endPoint)
+        
+        path.close()
+        UIColor.hyundaiBlackGray.withAlphaComponent(0.5).set()
+        path.fill()
     }
     
     func setUI() {
