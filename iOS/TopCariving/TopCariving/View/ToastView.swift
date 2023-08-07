@@ -43,16 +43,22 @@ class ToastView: UIView {
     
     // MARK: - Property
     private let padding = 10.0
+    let tapCloseButtonSubject = PassthroughSubject<Any, Never>()
+    
+    // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setEvent()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
         setLayout()
+        setEvent()
+    }
     }
     
     func setUI() {
@@ -81,5 +87,13 @@ class ToastView: UIView {
             messageLabel.trailingAnchor.constraint(equalTo: closeButton.leadingAnchor, constant: -13),
             messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13)
         ])
+    }
+    
+    func setEvent() {
+        closeButton.addTarget(self, action: #selector(tapCloseButton(sender:)), for: .touchUpInside)
+    }
+    
+    @objc private func tapCloseButton(sender: UIButton) {
+        tapCloseButtonSubject.send(self)
     }
 }
