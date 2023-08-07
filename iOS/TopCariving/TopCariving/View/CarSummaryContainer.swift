@@ -1,0 +1,83 @@
+//
+//  CarSummaryContainerCell.swift
+//  TopCariving
+//
+//  Created by 조승기 on 2023/08/03.
+//
+
+import UIKit
+import Combine
+
+class CarSummaryContainer: FoldableView {
+    // MARK: - UI properties
+    private let iconStackView = UIStackView()
+    
+    // MARK: - Helpers
+    override func setUI() {
+        super.setUI()
+        addSubview(iconStackView)
+    }
+    
+    override func setLayout() {
+        super.setLayout()
+        iconStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            iconStackView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 23),
+            iconStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            iconStackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1, constant: -40)
+        ])
+    }
+    
+    override func fold() {
+        super.fold()
+        iconStackView.isHidden = true
+        heightConstant?.constant = 71
+    }
+    
+    override func unfold() {
+        super.unfold()
+        iconStackView.isHidden = false
+        heightConstant?.constant = 215
+    }
+    
+    func setInfo(to trimName: String, price: String, icons: [(image: URL, text: String)]) {
+        setTitle(to: trimName)
+        setPrice(to: price)
+        icons.forEach { (image, text) in
+            let stackView = UIStackView(arrangedSubviews: [makeIconImageView(by: image), makeIconLabel(by: text)])
+            stackView.axis = .vertical
+            iconStackView.addArrangedSubview(stackView)
+        }
+    }
+    
+    private func makeIconImageView(by url: URL) -> UIImageView {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        #warning("이미지 서비스로 변경")
+        DispatchQueue.global().async {
+            guard let url = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                imageView.image = UIImage(data: url)?.resized(to: .init(width: 40, height: 40))
+            }
+        }
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
+    
+    private func makeIconLabel(by text: String) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .designSystem(.init(name: .regular, size: ._14))
+        label.textColor = .hyundaiPrimaryBlue
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineHeightMultiple = 1.48
+        label.attributedText = NSMutableAttributedString(
+            string: text,
+            attributes: [NSAttributedString.Key.kern: -0.28, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        )
+        return label
+    }
+}
