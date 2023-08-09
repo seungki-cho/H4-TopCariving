@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 class CTAButton: UIButton {
     // MARK: - Lifecycles
