@@ -50,17 +50,23 @@ class MyCarFooterView: UIView {
     }()
     
     // MARK: - Properties
+    var bag = Set<AnyCancellable>()
+    var tapSummaryButton = PassthroughSubject<Void, Never>()
+    var tapNextButton = PassthroughSubject<Void, Never>()
+
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setEvent()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
         setLayout()
+        setEvent()
     }
     
     // MARK: - Helpers
@@ -100,5 +106,20 @@ class MyCarFooterView: UIView {
         ])
     }
     
+    func setEvent() {
+        summaryButton.tapPublisher()
+            .sink(receiveValue: { [weak self] in
+                guard let self else { return }
+                self.tapSummaryButton.send(())
+            })
+            .store(in: &bag)
+        
+        nextButton.tapPublisher()
+            .print()
+            .sink(receiveValue: { [weak self] in
+                guard let self else { return }
+                self.tapNextButton.send(())
+            })
+            .store(in: &bag)
     }
 }
