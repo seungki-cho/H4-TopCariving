@@ -10,14 +10,11 @@ import Combine
 
 class MyCarFooterView: UIView {
     // MARK: - UI properties
-    private weak var summary: TCLabel! = {
-        return TCLabel()
-    }()
-    
-    private let summaryButton: TCLabel = {
-        let label = TCLabel()
+    private let summaryButton: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setFont(to: .init(name: .medium, size: ._12))
-        label.setText(to: "견적요약보기")
+        label.text = "견적요약보기"
         return label
     }()
     
@@ -28,18 +25,20 @@ class MyCarFooterView: UIView {
         return view
     }()
     
-    private let priceLabel: TCLabel = {
-        let label = TCLabel()
+    private let priceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setFont(to: .init(name: .bold, size: ._18))
-        label.setText(to: "47,720,000")
+        label.text = "47,720,000"
         label.textAlignment = .right
         return label
     }()
     
-    private let wonLabel: TCLabel = {
-        let label = TCLabel()
+    private let wonLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.setFont(to: .init(name: .medium, size: ._12))
-        label.setText(to: "원")
+        label.text = "원"
         return label
     }()
     

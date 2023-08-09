@@ -35,9 +35,9 @@ class BaseMyCarViewController: UIViewController {
     }
     
     func setTitle(to title: String) {
-        let titleLabel = TCLabel()
+        let titleLabel = UILabel()
         titleLabel.setFont(to: .init(name: .medium, size: ._14))
-        titleLabel.setText(to: "펠리세이드")
+        titleLabel.text = "펠리세이드"
         navigationItem.titleView = titleLabel
     }
 }
