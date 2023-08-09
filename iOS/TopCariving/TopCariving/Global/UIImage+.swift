@@ -13,4 +13,13 @@ extension UIImage {
             draw(in: CGRect(origin: .zero, size: size))
         }
     }
+    
+    func resized(to width: CGFloat) -> UIImage {
+        let ratio = width / size.width
+        let size = CGSize(width: width, height: size.height * ratio)
+        
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
 }
