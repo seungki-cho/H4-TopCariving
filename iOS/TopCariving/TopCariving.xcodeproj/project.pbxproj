@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9402A81D21500015363 /* MyCarFooterView.swift */; };
 		7631E9432A81D3CF00015363 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9422A81D3CF00015363 /* CTAButton.swift */; };
 		7631E9452A82195300015363 /* TCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9442A82195300015363 /* TCLabel.swift */; };
 		7631E9472A82200C00015363 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9462A82200C00015363 /* UILabel+.swift */; };
+		7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */; };
+		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
+		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
+		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
+		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
+		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
+		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
 		D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456A2A7B94D700E8E207 /* EndPoint.swift */; };
 		D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456E2A7B968200E8E207 /* HTTPClient.swift */; };
 		D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B45702A7B968A00E8E207 /* HTTPMethod.swift */; };
@@ -48,12 +54,6 @@
 		D4A68D462A80F15500E2C1FD /* ModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D452A80F15500E2C1FD /* ModelPhoto.swift */; };
 		D4A68D482A80F17C00E2C1FD /* EstimationChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D472A80F17C00E2C1FD /* EstimationChange.swift */; };
 		D4A68D4A2A80F1AA00E2C1FD /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D492A80F1AA00E2C1FD /* Option.swift */; };
-		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
-		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
-		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
-		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
-		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
-		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
 		D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */; };
 		D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */; };
 		D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA472A78A3AD002B6A5B /* ViewController.swift */; };
@@ -93,11 +93,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-
 		7631E9402A81D21500015363 /* MyCarFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarFooterView.swift; sourceTree = "<group>"; };
 		7631E9422A81D3CF00015363 /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		7631E9442A82195300015363 /* TCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCLabel.swift; sourceTree = "<group>"; };
 		7631E9462A82200C00015363 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyCarViewController.swift; sourceTree = "<group>"; };
+		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
+		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
+		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
+		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
 		D44B456A2A7B94D700E8E207 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D44B456E2A7B968200E8E207 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D44B45702A7B968A00E8E207 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -134,12 +140,6 @@
 		D4A68D452A80F15500E2C1FD /* ModelPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPhoto.swift; sourceTree = "<group>"; };
 		D4A68D472A80F17C00E2C1FD /* EstimationChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimationChange.swift; sourceTree = "<group>"; };
 		D4A68D492A80F1AA00E2C1FD /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
-		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
-		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
-		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
 		D4ACBA402A78A3AD002B6A5B /* TopCariving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCariving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -380,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				D4ACBA472A78A3AD002B6A5B /* ViewController.swift */,
+				7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */,
 				D4ACBA832A78CE62002B6A5B /* DummyViewController.swift */,
 			);
 			path = ViewController;
@@ -604,6 +605,7 @@
 				D4A68D322A80EF8500E2C1FD /* ModifyOption.swift in Sources */,
 				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
+				7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */,
 				D44B45952A7CB9CA00E8E207 /* APIEndPoints.swift in Sources */,
 				D4A68D402A80F0EE00E2C1FD /* Color.swift in Sources */,
 				D4CFBAAD2A7A25B100CCB27E /* HyundaiFont.swift in Sources */,
@@ -635,7 +637,7 @@
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
-				D4ACBA802A78CE4D002B6A5B /* DummyViewModel.swift in Sources */,
+				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 				D4A68D082A80952700E2C1FD /* ModelResponseDTO+Mapping.swift in Sources */,
 				D4A68D162A80973C00E2C1FD /* BasicOptionResponseDTO+Mapping.swift in Sources */,
