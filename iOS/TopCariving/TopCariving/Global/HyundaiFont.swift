@@ -70,11 +70,11 @@ enum HyundaiFont {
     }
     
     struct Custom {
-        var name: String
-        var size: CGFloat
+        var name: Name
+        var size: Size
         init(name: Name, size: Size) {
-            self.name = name.rawValue
-            self.size = size.rawValue
+            self.name = name
+            self.size = size
         }
     }
 }
