@@ -4,3 +4,101 @@
 //
 //  Created by 조승기 on 2023/08/08.
 //
+
+import UIKit
+import Combine
+
+class MyCarFooterView: UIView {
+    // MARK: - UI properties
+    private weak var summary: TCLabel! = {
+        return TCLabel()
+    }()
+    
+    private let summaryButton: TCLabel = {
+        let label = TCLabel()
+        label.setFont(to: .init(name: .medium, size: ._12))
+        label.setText(to: "견적요약보기")
+        return label
+    }()
+    
+    private let summaryBottomLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .hyundaiBlackGray
+        return view
+    }()
+    
+    private let priceLabel: TCLabel = {
+        let label = TCLabel()
+        label.setFont(to: .init(name: .bold, size: ._18))
+        label.setText(to: "47,720,000")
+        label.textAlignment = .right
+        return label
+    }()
+    
+    private let wonLabel: TCLabel = {
+        let label = TCLabel()
+        label.setFont(to: .init(name: .medium, size: ._12))
+        label.setText(to: "원")
+        return label
+    }()
+    
+    private let nextButton: CTAButton = {
+        let button = CTAButton()
+        button.setTitle(to: "다음 단계로")
+        return button
+    }()
+    
+    // MARK: - Properties
+    // MARK: - Lifecycles
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUI()
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUI()
+        setLayout()
+    }
+    
+    // MARK: - Helpers
+    func setUI() {
+        backgroundColor = .hyundaiSand
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        [summaryButton, summaryBottomLine, priceLabel, wonLabel, nextButton].forEach {
+            addSubview($0)
+        }
+    }
+    
+    func setLayout() {
+        NSLayoutConstraint.activate([
+            summaryButton.topAnchor.constraint(equalTo: topAnchor, constant: 14),
+            summaryButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            summaryButton.widthAnchor.constraint(equalToConstant: 65),
+            summaryButton.heightAnchor.constraint(equalToConstant: 20),
+            
+            summaryBottomLine.topAnchor.constraint(equalTo: summaryButton.bottomAnchor),
+            summaryBottomLine.widthAnchor.constraint(equalTo: summaryButton.widthAnchor),
+            summaryBottomLine.centerXAnchor.constraint(equalTo: summaryButton.centerXAnchor),
+            summaryBottomLine.heightAnchor.constraint(equalToConstant: 1.5),
+            
+            priceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            priceLabel.trailingAnchor.constraint(equalTo: wonLabel.leadingAnchor, constant: -2),
+            priceLabel.heightAnchor.constraint(equalToConstant: 24),
+            
+            wonLabel.bottomAnchor.constraint(equalTo: priceLabel.bottomAnchor),
+            wonLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            wonLabel.heightAnchor.constraint(equalTo: priceLabel.heightAnchor),
+            
+            nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
+            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            nextButton.heightAnchor.constraint(equalTo: nextButton.widthAnchor, multiplier: 0.163)
+        ])
+    }
+    
+    }
+}
