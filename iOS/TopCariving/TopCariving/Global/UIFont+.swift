@@ -9,6 +9,6 @@ import UIKit
 
 extension UIFont {
     static func designSystem(_ hyundaiFont: HyundaiFont.Custom) -> UIFont {
-        .init(name: hyundaiFont.name, size: hyundaiFont.size) ?? .systemFont(ofSize: 100)
+        .init(name: hyundaiFont.name.rawValue, size: hyundaiFont.size.rawValue) ?? .systemFont(ofSize: 100)
     }
 }
