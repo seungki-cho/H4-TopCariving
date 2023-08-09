@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 
+		7631E9472A82200C00015363 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9462A82200C00015363 /* UILabel+.swift */; };
 		D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456A2A7B94D700E8E207 /* EndPoint.swift */; };
 		D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456E2A7B968200E8E207 /* HTTPClient.swift */; };
 		D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B45702A7B968A00E8E207 /* HTTPMethod.swift */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 
+		7631E9462A82200C00015363 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		D44B456A2A7B94D700E8E207 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D44B456E2A7B968200E8E207 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D44B45702A7B968A00E8E207 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				D4CFBAAC2A7A25B100CCB27E /* HyundaiFont.swift */,
 				D4CFBAAE2A7A3E6500CCB27E /* UIFont+.swift */,
 				C31350092A7E826C00D5D401 /* UIImage+.swift */,
+				7631E9462A82200C00015363 /* UILabel+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				D4A68D302A80EF2A00E2C1FD /* Archiving.swift in Sources */,
 				D4A68D342A80EFC900E2C1FD /* Trim.swift in Sources */,
 				D4A68D482A80F17C00E2C1FD /* EstimationChange.swift in Sources */,
+				7631E9472A82200C00015363 /* UILabel+.swift in Sources */,
 				D4A68D102A80968500E2C1FD /* ColorResponseDTO+Mapping.swift in Sources */,
 				D4A68D0A2A80957100E2C1FD /* SelectionDetailResponseDTO+Mapping.swift in Sources */,
 				D4ACBA872A78CE8F002B6A5B /* UIColor+.swift in Sources */,
