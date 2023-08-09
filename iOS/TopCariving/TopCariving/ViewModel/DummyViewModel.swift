@@ -25,3 +25,4 @@ final class DummyViewModel: ViewModelType {
         return Output()
     }
 }
+
