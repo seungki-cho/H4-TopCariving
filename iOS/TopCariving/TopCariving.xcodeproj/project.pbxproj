@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 
+		7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9402A81D21500015363 /* MyCarFooterView.swift */; };
 		7631E9432A81D3CF00015363 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9422A81D3CF00015363 /* CTAButton.swift */; };
 		7631E9472A82200C00015363 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9462A82200C00015363 /* UILabel+.swift */; };
 		D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456A2A7B94D700E8E207 /* EndPoint.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 
+		7631E9402A81D21500015363 /* MyCarFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarFooterView.swift; sourceTree = "<group>"; };
 		7631E9422A81D3CF00015363 /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		7631E9462A82200C00015363 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		D44B456A2A7B94D700E8E207 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				C313500B2A7E98DE00D5D401 /* FoldableView.swift */,
 				763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */,
 				763F60412A7B9B08000D11D9 /* FoldableStackView.swift */,
+				7631E9402A81D21500015363 /* MyCarFooterView.swift */,
 				7631E9422A81D3CF00015363 /* CTAButton.swift */,
 			);
 			path = View;
@@ -596,6 +599,7 @@
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
 				D4A68D0C2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift in Sources */,
 				D4A68D322A80EF8500E2C1FD /* ModifyOption.swift in Sources */,
+				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
 				D44B45952A7CB9CA00E8E207 /* APIEndPoints.swift in Sources */,
 				D4A68D402A80F0EE00E2C1FD /* Color.swift in Sources */,
