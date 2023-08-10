@@ -5,8 +5,8 @@
 //  Created by 조승기 on 2023/08/08.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 class MyCarFooterView: UIView {
     // MARK: - UI properties

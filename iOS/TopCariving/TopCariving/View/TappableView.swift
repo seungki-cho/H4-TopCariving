@@ -5,8 +5,8 @@
 //  Created by cho seungki on 2023/08/06.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 class TappableView: UIView {
     var tapSubject = PassthroughSubject<Any, Never>()

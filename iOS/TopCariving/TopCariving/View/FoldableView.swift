@@ -5,8 +5,8 @@
 //  Created by cho seungki on 2023/08/05.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 protocol Foldable {
     var heightConstant: NSLayoutConstraint? { get set }
