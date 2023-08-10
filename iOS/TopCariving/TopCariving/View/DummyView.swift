@@ -40,8 +40,7 @@ class TapSubscription<S: Subscriber>: Subscription where S.Input == Void, S.Fail
         subscriber = nil
     }
     
-    @objc
-    private func tapped(sender: Any) {
+    @objc private func tapped(sender: Any) {
         _ = subscriber?.receive(())
     }
 }
