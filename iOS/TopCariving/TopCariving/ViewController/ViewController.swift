@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseMyCarViewController {
     private let rotatableView: RotatableOptionImageView = RotatableOptionImageView(frame: .zero)
     override func viewDidLoad() {
         super.viewDidLoad()
