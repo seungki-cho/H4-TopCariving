@@ -53,6 +53,8 @@
 		D4A68D462A80F15500E2C1FD /* ModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D452A80F15500E2C1FD /* ModelPhoto.swift */; };
 		D4A68D482A80F17C00E2C1FD /* EstimationChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D472A80F17C00E2C1FD /* EstimationChange.swift */; };
 		D4A68D4A2A80F1AA00E2C1FD /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D492A80F1AA00E2C1FD /* Option.swift */; };
+		D4A68D4C2A81D2C300E2C1FD /* RotatableOptionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D4B2A81D2C300E2C1FD /* RotatableOptionImageView.swift */; };
+		D4A68D522A8384AC00E2C1FD /* DegreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A68D512A8384AC00E2C1FD /* DegreeView.swift */; };
 		D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */; };
 		D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */; };
 		D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACBA472A78A3AD002B6A5B /* ViewController.swift */; };
@@ -138,6 +140,8 @@
 		D4A68D452A80F15500E2C1FD /* ModelPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPhoto.swift; sourceTree = "<group>"; };
 		D4A68D472A80F17C00E2C1FD /* EstimationChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimationChange.swift; sourceTree = "<group>"; };
 		D4A68D492A80F1AA00E2C1FD /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		D4A68D4B2A81D2C300E2C1FD /* RotatableOptionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatableOptionImageView.swift; sourceTree = "<group>"; };
+		D4A68D512A8384AC00E2C1FD /* DegreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeView.swift; sourceTree = "<group>"; };
 		D4ACBA402A78A3AD002B6A5B /* TopCariving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCariving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4ACBA432A78A3AD002B6A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4ACBA452A78A3AD002B6A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -395,6 +399,8 @@
 				763F60412A7B9B08000D11D9 /* FoldableStackView.swift */,
 				7631E9402A81D21500015363 /* MyCarFooterView.swift */,
 				7631E9422A81D3CF00015363 /* CTAButton.swift */,
+				D4A68D4B2A81D2C300E2C1FD /* RotatableOptionImageView.swift */,
+				D4A68D512A8384AC00E2C1FD /* DegreeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A68D522A8384AC00E2C1FD /* DegreeView.swift in Sources */,
 				D4A68D3A2A80F04100E2C1FD /* Selection.swift in Sources */,
 				D4A68D062A8094EA00E2C1FD /* ModelPhotoResponseDTO.swift in Sources */,
 				D44B45732A7B969200E8E207 /* RequestError.swift in Sources */,
@@ -610,6 +617,7 @@
 				D4A68D022A8093F800E2C1FD /* EstimationChangeRequestDTO.swift in Sources */,
 				D4A68D302A80EF2A00E2C1FD /* Archiving.swift in Sources */,
 				D4A68D342A80EFC900E2C1FD /* Trim.swift in Sources */,
+				D4A68D4C2A81D2C300E2C1FD /* RotatableOptionImageView.swift in Sources */,
 				D4A68D482A80F17C00E2C1FD /* EstimationChange.swift in Sources */,
 				7631E9472A82200C00015363 /* UILabel+.swift in Sources */,
 				D4A68D102A80968500E2C1FD /* ColorResponseDTO+Mapping.swift in Sources */,
