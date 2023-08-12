@@ -11,6 +11,7 @@
 		7631E9432A81D3CF00015363 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9422A81D3CF00015363 /* CTAButton.swift */; };
 		7631E9472A82200C00015363 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9462A82200C00015363 /* UILabel+.swift */; };
 		7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */; };
+		7631E9532A87720200015363 /* OptionCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9522A87720200015363 /* OptionCardCell.swift */; };
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
@@ -104,6 +105,7 @@
 		7631E9422A81D3CF00015363 /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		7631E9462A82200C00015363 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMyCarViewController.swift; sourceTree = "<group>"; };
+		7631E9522A87720200015363 /* OptionCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCardCell.swift; sourceTree = "<group>"; };
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				7631E9422A81D3CF00015363 /* CTAButton.swift */,
 				D4A68D4B2A81D2C300E2C1FD /* RotatableOptionImageView.swift */,
 				D4A68D512A8384AC00E2C1FD /* DegreeView.swift */,
+				7631E9522A87720200015363 /* OptionCardCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				D4A68D2E2A80EF0C00E2C1FD /* ArchivingOption.swift in Sources */,
 				D4A68D4A2A80F1AA00E2C1FD /* Option.swift in Sources */,
 				D4A68D3C2A80F06E00E2C1FD /* Tag.swift in Sources */,
+				7631E9532A87720200015363 /* OptionCardCell.swift in Sources */,
 				D4A68D382A80F01400E2C1FD /* SelectionDetail.swift in Sources */,
 				D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */,
 				D4A68D422A80F10E00E2C1FD /* ColorBoth.swift in Sources */,
