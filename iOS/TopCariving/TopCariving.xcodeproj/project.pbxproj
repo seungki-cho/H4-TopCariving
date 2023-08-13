@@ -16,6 +16,7 @@
 		7631E9572A8780EB00015363 /* MyCarTagReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */; };
 		7631E9592A87839D00015363 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9582A87839D00015363 /* TagCell.swift */; };
 		7631E95B2A89181B00015363 /* OptionDescriptionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */; };
+		7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */; };
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
@@ -114,6 +115,7 @@
 		7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarTagReviewView.swift; sourceTree = "<group>"; };
 		7631E9582A87839D00015363 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionCollectionView.swift; sourceTree = "<group>"; };
+		7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionCell.swift; sourceTree = "<group>"; };
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */,
 				7631E9582A87839D00015363 /* TagCell.swift */,
 				7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */,
+				7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
+				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
 				7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */,
 				D44B45952A7CB9CA00E8E207 /* APIEndPoints.swift in Sources */,
 				D4A68D402A80F0EE00E2C1FD /* Color.swift in Sources */,
