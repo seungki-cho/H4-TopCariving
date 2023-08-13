@@ -15,6 +15,7 @@
 		7631E9552A8777E900015363 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9542A8777E900015363 /* OptionSelectView.swift */; };
 		7631E9572A8780EB00015363 /* MyCarTagReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */; };
 		7631E9592A87839D00015363 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9582A87839D00015363 /* TagCell.swift */; };
+		7631E95B2A89181B00015363 /* OptionDescriptionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */; };
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
@@ -112,6 +113,7 @@
 		7631E9542A8777E900015363 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarTagReviewView.swift; sourceTree = "<group>"; };
 		7631E9582A87839D00015363 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionCollectionView.swift; sourceTree = "<group>"; };
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				7631E9542A8777E900015363 /* OptionSelectView.swift */,
 				7631E9562A8780EB00015363 /* MyCarTagReviewView.swift */,
 				7631E9582A87839D00015363 /* TagCell.swift */,
+				7631E95A2A89181B00015363 /* OptionDescriptionCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 				D4A68D082A80952700E2C1FD /* ModelResponseDTO+Mapping.swift in Sources */,
+				7631E95B2A89181B00015363 /* OptionDescriptionCollectionView.swift in Sources */,
 				D462E7682A84CAA100C5A8EC /* UIControl+.swift in Sources */,
 				D4A68D162A80973C00E2C1FD /* BasicOptionResponseDTO+Mapping.swift in Sources */,
 				D4A68CFC2A80925400E2C1FD /* ArchivingOptionResponseDTO+Mapping.swift in Sources */,
