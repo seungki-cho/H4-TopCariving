@@ -49,14 +49,15 @@ class OptionDescriptionCell: UICollectionViewCell {
         return view
     }()
     
-    private let descriptionLabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.setFont(to: .init(name: .regular, size: ._14))
-        label.textColor = .hyundaiPrimaryBlue
-        label.numberOfLines = 0
-        label.layer.cornerRadius = 13
-        return label
+    private let descriptionTextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = .designSystem( .init(name: .regular, size: ._14))
+        textView.textColor = .hyundaiPrimaryBlue
+        textView.layer.cornerRadius = 13
+        textView.textContainerInset = .zero
+        textView.backgroundColor = .clear
+        return textView
     }()
     
     // MARK: - Properties
@@ -81,7 +82,7 @@ class OptionDescriptionCell: UICollectionViewCell {
         layer.borderColor = UIColor.hyundaiPrimaryBlue.cgColor
         layer.cornerRadius = 8
         backgroundColor = .hyundaiPrimaryBlue.withAlphaComponent(0.1)
-        [indexLabel, titleLabel, progressIndexLabel, separator, descriptionLabel].forEach {
+        [indexLabel, titleLabel, progressIndexLabel, separator, descriptionTextView].forEach {
             addSubview($0)
         }
     }
@@ -108,10 +109,10 @@ class OptionDescriptionCell: UICollectionViewCell {
             separator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26),
             separator.heightAnchor.constraint(equalToConstant: 1),
             
-            descriptionLabel.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 10),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            descriptionTextView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 10),
+            descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
     
@@ -119,6 +120,6 @@ class OptionDescriptionCell: UICollectionViewCell {
         indexLabel.text = String(format: "%02d", model.index+1)
         titleLabel.text = model.title
         progressIndexLabel.text = "\(model.index+1)/\(model.maxIndex)"
-        descriptionLabel.text = model.optionDescription
+        descriptionTextView.text = model.optionDescription
     }
 }

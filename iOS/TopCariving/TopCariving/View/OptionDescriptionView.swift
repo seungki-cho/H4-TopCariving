@@ -25,7 +25,7 @@ class OptionDescriptionView: UIView, Foldable {
         return view
     }()
     
-    private let descriptionLabel = {
+    private let descriptionTextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textColor = .hyundaiPrimaryBlue
@@ -60,7 +60,7 @@ class OptionDescriptionView: UIView, Foldable {
         layer.borderColor = UIColor.hyundaiPrimaryBlue.cgColor
         layer.cornerRadius = 8
         backgroundColor = .hyundaiPrimaryBlue.withAlphaComponent(0.1)
-        [titleLabel, separator, descriptionLabel].forEach {
+        [titleLabel, separator, descriptionTextView].forEach {
             addSubview($0)
         }
     }
@@ -80,29 +80,29 @@ class OptionDescriptionView: UIView, Foldable {
             separator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
             separator.heightAnchor.constraint(equalToConstant: 1),
             
-            descriptionLabel.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 8),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            descriptionTextView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 8),
+            descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
+            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
     
     func setup(with model: OptionDescriptionViewModel) {
         titleLabel.text = model.title
-        descriptionLabel.text = model.optionDescription
+        descriptionTextView.text = model.optionDescription
         (model.optionDescription == "-" ? fold() : unfold())
     }
     
     func fold() {
         heightConstant?.constant = 70
-        [separator, descriptionLabel].forEach {
+        [separator, descriptionTextView].forEach {
             $0.isHidden = true
         }
     }
     
     func unfold() {
-        heightConstant?.constant = descriptionLabel.contentSize.height + 110
-        [separator, descriptionLabel].forEach {
+        heightConstant?.constant = descriptionTextView.contentSize.height + 110
+        [separator, descriptionTextView].forEach {
             $0.isHidden = false
         }
     }
