@@ -8,14 +8,14 @@
 import Combine
 import UIKit
 
+struct OptionCardViewModel {
+    var image: String
+    var name: String
+    var price: Int
+    var isAdded: Bool
+}
+
 class OptionCardCell: UICollectionViewCell {
-    struct OptionCardViewModel {
-        var image: String
-        var name: String
-        var price: Int
-        var isAdded: Bool
-    }
-    
     // MARK: - UI properties
     private let optionImageView = UIImageView(image: UIImage(named: "TopArchivingButton"))
     private let nameLabel: UILabel = {
