@@ -121,13 +121,14 @@ class MyCarTagReviewView: UIView {
         })
     }
 
-    func refresh(by tags: [String]) {
+    func refresh(by tags: [String], with name: String) {
         var snapShot = NSDiffableDataSourceSnapshot<Section, String>()
         snapShot.appendSections([Section.tag])
         snapShot.appendItems(tags)
         dataSource.apply(snapShot)
         
         changeHeight(by: tags)
+        optionNameLabel.text = name
     }
     
     private func changeHeight(by tags: [String]) {
