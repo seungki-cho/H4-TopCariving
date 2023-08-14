@@ -9,8 +9,8 @@ import Combine
 import UIKit
 
 protocol OptionSelectViewDataSource: NSObject {
-    func numberOfOption() -> Int
-    func optionSelectView(willShowCellAt indexPath: IndexPath) -> OptionCardCell.OptionCardViewModel
+    func numberOfOption(_ optionSelectView: OptionSelectView) -> Int
+    func optionSelectViewModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardViewModel
 }
 
 class OptionSelectView: UIView {
@@ -20,7 +20,6 @@ class OptionSelectView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
         label.setFont(to: .init(name: .medium, size: ._16))
-        label.text = "선택옵션 6개"
         return label
     }()
     
@@ -104,7 +103,7 @@ class OptionSelectView: UIView {
     
     func refresh() {
         collectionView.reloadData()
-        optionCountLabel.text = "선택옵션 \(datasource?.numberOfOption() ?? 0)개"
+        optionCountLabel.text = "선택옵션 \(datasource?.numberOfOption(self) ?? 0)개"
     }
 }
 
@@ -127,7 +126,7 @@ extension OptionSelectView: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        datasource?.numberOfOption() ?? 0
+        datasource?.numberOfOption(self) ?? 0
     }
     
     func collectionView(
@@ -136,10 +135,11 @@ extension OptionSelectView: UICollectionViewDataSource {
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: OptionCardCell.identifier,
-            for: indexPath) as? OptionCardCell,
+            for: indexPath
+        ) as? OptionCardCell,
               let datasource = datasource else { return UICollectionViewCell() }
         
-        cell.setup(with: datasource.optionSelectView(willShowCellAt: indexPath))
+        cell.setup(with: datasource.optionSelectViewModel(self, at: indexPath))
         
         selectedIndexBag[indexPath] = cell.tapAddButtonPublisher
             .sink(receiveValue: { [weak self] in
