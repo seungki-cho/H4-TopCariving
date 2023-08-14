@@ -17,8 +17,6 @@ class MyCarTagReviewView: UIView {
         case tag
     }
     
-    typealias TagCollectionViewDiffableDataSource = UICollectionViewDiffableDataSource<Section, String>
-    
     // MARK: - UI properties
     private let optionNameLabel: UILabel = {
         let label = UILabel()
@@ -58,7 +56,7 @@ class MyCarTagReviewView: UIView {
     }()
     
     // MARK: - Properties
-    private var dataSource: TagCollectionViewDiffableDataSource!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, String>!
     var collectionViewHeightAnchor: NSLayoutConstraint?
     
     // MARK: - Lifecycles
@@ -74,11 +72,6 @@ class MyCarTagReviewView: UIView {
         setUI()
         setLayout()
         setCollectionViewDataSource()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.invalidateIntrinsicContentSize()
     }
     
     // MARK: - Helpers
@@ -116,7 +109,7 @@ class MyCarTagReviewView: UIView {
     }
     
     private func setCollectionViewDataSource() {
-        dataSource = TagCollectionViewDiffableDataSource(
+        dataSource = .init(
             collectionView: collectionView,
             cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(
