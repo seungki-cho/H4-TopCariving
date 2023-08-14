@@ -74,6 +74,7 @@ class OptionSelectView: UIView {
     
     // MARK: - Helpers
     private func setUI() {
+        translatesAutoresizingMaskIntoConstraints = false
         [optionCountLabel, includedOptionButton, collectionView].forEach {
             addSubview($0)
         }
