@@ -65,6 +65,11 @@ class OptionCardCell: UICollectionViewCell {
         deselect()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bag = .init()
+    }
+    
     // MARK: - Helpers
     private func setUI() {
         layer.masksToBounds = true

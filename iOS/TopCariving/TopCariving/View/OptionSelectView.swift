@@ -52,7 +52,6 @@ class OptionSelectView: UIView {
     
     // MARK: - Properties
     weak var datasource: OptionSelectViewDataSource?
-    private var selectedIndexBag = [IndexPath: AnyCancellable]()
     var tapAddButtonSubject = PassthroughSubject<IndexPath, Never>()
     var tapCellSubject = PassthroughSubject<IndexPath, Never>()
     
@@ -103,13 +102,6 @@ class OptionSelectView: UIView {
 }
 
 extension OptionSelectView: UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didEndDisplaying cell: UICollectionViewCell,
-        forItemAt indexPath: IndexPath
-    ) {
-        selectedIndexBag[indexPath] = nil
-    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         tapCellSubject.send(indexPath)
     }
@@ -133,13 +125,13 @@ extension OptionSelectView: UICollectionViewDataSource {
               let datasource = datasource else { return UICollectionViewCell() }
         
         cell.setup(with: datasource.optionSelectViewModel(self, at: indexPath))
-        
-        selectedIndexBag[indexPath] = cell.tapAddButtonPublisher
+        cell.tapAddButtonPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
                 cell.isAdded.toggle()
                 self.tapAddButtonSubject.send(indexPath)
             })
+            .store(in: &cell.bag)
         
         return cell
     }
