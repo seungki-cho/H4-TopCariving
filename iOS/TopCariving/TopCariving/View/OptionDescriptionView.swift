@@ -36,7 +36,7 @@ class OptionDescriptionView: UIView, Foldable {
     }()
     
     // MARK: - Properties
-    var heightConstant: NSLayoutConstraint?
+    var heightConstraint: NSLayoutConstraint?
     
     // MARK: - Lifecycles
     override init(frame: CGRect) {
@@ -62,8 +62,8 @@ class OptionDescriptionView: UIView, Foldable {
         }
     }
     private func setLayout() {
-        heightConstant = heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
-        heightConstant?.isActive = true
+        heightConstraint = heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
+        heightConstraint?.isActive = true
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
@@ -88,13 +88,13 @@ class OptionDescriptionView: UIView, Foldable {
         (model.optionDescription == "-" ? fold() : unfold())
     }
     func fold() {
-        heightConstant?.constant = 70
+        heightConstraint?.constant = 70
         [separator, descriptionTextView].forEach {
             $0.isHidden = true
         }
     }
     func unfold() {
-        heightConstant?.constant = descriptionTextView.contentSize.height + 110
+        heightConstraint?.constant = descriptionTextView.contentSize.height + 110
         [separator, descriptionTextView].forEach {
             $0.isHidden = false
         }
