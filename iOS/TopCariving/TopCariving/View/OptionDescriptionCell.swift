@@ -20,7 +20,6 @@ class OptionDescriptionCell: UICollectionViewCell {
         label.layer.cornerRadius = 11
         return label
     }()
-    
     private let titleLabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +28,6 @@ class OptionDescriptionCell: UICollectionViewCell {
         label.textAlignment = .left
         return label
     }()
-    
     private let progressIndexLabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -41,14 +39,12 @@ class OptionDescriptionCell: UICollectionViewCell {
         label.clipsToBounds = true
         return label
     }()
-    
     private let separator = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .hyundaiPrimaryBlue
         return view
     }()
-    
     private let descriptionTextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +65,6 @@ class OptionDescriptionCell: UICollectionViewCell {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -86,7 +81,6 @@ class OptionDescriptionCell: UICollectionViewCell {
             addSubview($0)
         }
     }
-    
     private func setLayout() {
         NSLayoutConstraint.activate([
             indexLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
@@ -115,7 +109,6 @@ class OptionDescriptionCell: UICollectionViewCell {
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
-    
     func setup(with model: OptionDescriptionViewModel) {
         indexLabel.text = String(format: "%02d", model.index+1)
         titleLabel.text = model.title

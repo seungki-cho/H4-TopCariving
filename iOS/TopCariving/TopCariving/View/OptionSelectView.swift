@@ -22,7 +22,6 @@ class OptionSelectView: UIView {
         label.setFont(to: .init(name: .medium, size: ._16))
         return label
     }()
-    
     private let includedOptionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +32,6 @@ class OptionSelectView: UIView {
         button.backgroundColor = .hyundaiSand
         return button
     }()
-    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         collectionView.isScrollEnabled = true
@@ -43,7 +41,6 @@ class OptionSelectView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-    
     private let collectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -65,7 +62,6 @@ class OptionSelectView: UIView {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -82,7 +78,6 @@ class OptionSelectView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
     private func setLayout() {
         NSLayoutConstraint.activate([
             optionCountLabel.topAnchor.constraint(equalTo: topAnchor, constant: 13),
@@ -101,7 +96,6 @@ class OptionSelectView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
     func refresh() {
         collectionView.reloadData()
         optionCountLabel.text = "선택옵션 \(datasource?.numberOfOption(self) ?? 0)개"
@@ -116,7 +110,6 @@ extension OptionSelectView: UICollectionViewDelegate {
     ) {
         selectedIndexBag[indexPath] = nil
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         tapCellSubject.send(indexPath)
     }
@@ -129,7 +122,6 @@ extension OptionSelectView: UICollectionViewDataSource {
     ) -> Int {
         datasource?.numberOfOption(self) ?? 0
     }
-    
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath

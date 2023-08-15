@@ -30,7 +30,6 @@ class OptionDescriptionCollectionView: UIView {
         collectionView.alwaysBounceVertical = false
         return collectionView
     }()
-    
     private let collectionViewLayout: UICollectionViewCompositionalLayout = {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
                                                             heightDimension: .fractionalHeight(1)))
@@ -54,7 +53,6 @@ class OptionDescriptionCollectionView: UIView {
         setLayout()
         setCollectionViewDataSource()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -67,7 +65,6 @@ class OptionDescriptionCollectionView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(collectionView)
     }
-    
     private func setLayout() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -76,7 +73,6 @@ class OptionDescriptionCollectionView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
     private func setCollectionViewDataSource() {
         dataSource = .init(
             collectionView: collectionView,
@@ -89,7 +85,6 @@ class OptionDescriptionCollectionView: UIView {
                 return cell
         })
     }
-    
     func refresh(by models: [OptionDescriptionViewModel]) {
         var snapShot = NSDiffableDataSourceSnapshot<Section, OptionDescriptionViewModel>()
         snapShot.appendSections([Section.optionDescription])

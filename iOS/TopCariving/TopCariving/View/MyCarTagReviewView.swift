@@ -12,7 +12,6 @@ class MyCarTagReviewView: UIView {
         static let interItemSpacing: CGFloat = 6
         static let interGroupSpacing: CGFloat = 12
     }
-    
     enum Section {
         case tag
     }
@@ -24,7 +23,6 @@ class MyCarTagReviewView: UIView {
         label.setFont(to: .init(name: .medium, size: ._20))
         return label
     }()
-    
     private let reviewLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +30,6 @@ class MyCarTagReviewView: UIView {
         label.text = "에 대해 시승자들은 이런 후기를 남겼어요"
         return label
     }()
-    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout )
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +37,6 @@ class MyCarTagReviewView: UIView {
         collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagCell.identifier)
         return collectionView
     }()
-    
     private let collectionViewLayout: UICollectionViewLayout = {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .estimated(60),
                                                             heightDimension: .absolute(30)))
@@ -66,7 +62,6 @@ class MyCarTagReviewView: UIView {
         setLayout()
         setCollectionViewDataSource()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -83,7 +78,6 @@ class MyCarTagReviewView: UIView {
             addSubview($0)
         }
     }
-    
     private func setLayout() {
         collectionViewHeightAnchor = collectionView.heightAnchor.constraint(equalToConstant: 30)
         collectionViewHeightAnchor?.isActive = true
@@ -107,7 +101,6 @@ class MyCarTagReviewView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
     private func setCollectionViewDataSource() {
         dataSource = .init(
             collectionView: collectionView,
@@ -120,7 +113,6 @@ class MyCarTagReviewView: UIView {
             return cell
         })
     }
-
     func refresh(by tags: [String], with name: String) {
         var snapShot = NSDiffableDataSourceSnapshot<Section, String>()
         snapShot.appendSections([Section.tag])
@@ -130,7 +122,6 @@ class MyCarTagReviewView: UIView {
         changeHeight(by: tags)
         optionNameLabel.text = name
     }
-    
     private func changeHeight(by tags: [String]) {
         let width = (window?.windowScene?.screen.bounds.width ?? 375) - 32
         var xPosition: CGFloat = 0.0

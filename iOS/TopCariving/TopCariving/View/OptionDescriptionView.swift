@@ -17,14 +17,12 @@ class OptionDescriptionView: UIView, Foldable {
         label.textAlignment = .left
         return label
     }()
-    
     private let separator = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .hyundaiPrimaryBlue
         return view
     }()
-    
     private let descriptionTextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +44,6 @@ class OptionDescriptionView: UIView, Foldable {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -64,7 +61,6 @@ class OptionDescriptionView: UIView, Foldable {
             addSubview($0)
         }
     }
-    
     private func setLayout() {
         heightConstant = heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
         heightConstant?.isActive = true
@@ -86,20 +82,17 @@ class OptionDescriptionView: UIView, Foldable {
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
-    
     func setup(with model: OptionDescriptionViewModel) {
         titleLabel.text = model.title
         descriptionTextView.text = model.optionDescription
         (model.optionDescription == "-" ? fold() : unfold())
     }
-    
     func fold() {
         heightConstant?.constant = 70
         [separator, descriptionTextView].forEach {
             $0.isHidden = true
         }
     }
-    
     func unfold() {
         heightConstant?.constant = descriptionTextView.contentSize.height + 110
         [separator, descriptionTextView].forEach {

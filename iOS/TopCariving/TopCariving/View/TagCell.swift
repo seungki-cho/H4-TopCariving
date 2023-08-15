@@ -26,7 +26,6 @@ class TagCell: UICollectionViewCell {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -39,7 +38,6 @@ class TagCell: UICollectionViewCell {
         layer.cornerRadius = 8
         addSubview(tagLabel)
     }
-    
     private func setLayout() {
         NSLayoutConstraint.activate([
             tagLabel.topAnchor.constraint(equalTo: topAnchor),
@@ -48,7 +46,6 @@ class TagCell: UICollectionViewCell {
             tagLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
     func setTag(to text: String) {
         tagLabel.text = text
     }

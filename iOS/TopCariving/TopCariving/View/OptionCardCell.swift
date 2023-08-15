@@ -25,7 +25,6 @@ class OptionCardCell: UICollectionViewCell {
         label.text = "컴포트 2"
         return label
     }()
-    
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +32,6 @@ class OptionCardCell: UICollectionViewCell {
         label.text = "+ 1,090,000 원"
         return label
     }()
-    
     private let addButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +43,6 @@ class OptionCardCell: UICollectionViewCell {
         button.semanticContentAttribute = .forceRightToLeft
         return button
     }()
-    
     // MARK: - Properties
     static let identifier = "OptionCardCell"
     var bag = Set<AnyCancellable>()
@@ -63,7 +60,6 @@ class OptionCardCell: UICollectionViewCell {
         setLayout()
         deselect()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
@@ -79,7 +75,6 @@ class OptionCardCell: UICollectionViewCell {
             addSubview($0)
         }
     }
-    
     private func setLayout() {
         optionImageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -105,13 +100,11 @@ class OptionCardCell: UICollectionViewCell {
             addButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
-    
     func setup(with model: OptionCardViewModel) {
         isAdded = model.isAdded
         nameLabel.text = model.name
         priceLabel.text = "+ " + .decimalStyle(from: model.price) + " 원"
     }
-    
     func select() {
         backgroundColor = .hyundaiPrimaryBlue.withAlphaComponent(0.1)
         nameLabel.textColor = .hyundaiPrimaryBlue
@@ -123,9 +116,7 @@ class OptionCardCell: UICollectionViewCell {
             for: .normal
         )
         addButton.setTitleColor(.hyundaiNeutral, for: .normal)
-        
     }
-    
     func deselect() {
         backgroundColor = .hyundaiLightSand
         nameLabel.textColor = .hyundaiBlackGray
