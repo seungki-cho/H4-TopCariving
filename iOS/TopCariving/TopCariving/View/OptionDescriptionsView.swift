@@ -14,7 +14,7 @@ struct OptionDescriptionViewModel: Hashable {
     let optionDescription: String
 }
 
-class OptionDescriptionCollectionView: UIView {
+class OptionDescriptionsView: UIView {
     enum Section {
         case optionDescription
     }

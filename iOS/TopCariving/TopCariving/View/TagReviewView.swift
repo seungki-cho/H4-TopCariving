@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyCarTagReviewView: UIView {
+class TagReviewView: UIView {
     enum Constant {
         static let interItemSpacing: CGFloat = 6
         static let interGroupSpacing: CGFloat = 12

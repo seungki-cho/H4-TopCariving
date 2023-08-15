@@ -17,8 +17,8 @@ class ViewController: BaseMyCarViewController {
         view.backgroundColor = .hyundaiLightSand
         return view
     }()
-    let reviewView = MyCarTagReviewView()
-    let optionDescriptionCollection = OptionDescriptionCollectionView()
+    let reviewView = TagReviewView()
+    let optionDescriptionCollection = OptionDescriptionsView()
     let optionDescription = OptionDescriptionView()
     
     // MARK: - Properties
