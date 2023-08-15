@@ -30,4 +30,6 @@ extension UIColor {
     static let hyundaiPrimaryAlert = UIColor(red: 250/255, green: 98/255, blue: 83/255, alpha: 1.0)
     static let hyundaiSecondaryAlert = UIColor(red: 255/255, green: 209/255, blue: 205/255, alpha: 1.0)
     static let hyundaiBrownAlert = UIColor(red: 86/255, green: 28/255, blue: 22/255, alpha: 1.0)
+    
+    static let hyundaiActiveBlue = UIColor(red: 0/255, green: 170/255, blue: 210/255, alpha: 1.0)
 }
