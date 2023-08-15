@@ -17,7 +17,7 @@ struct OptionCardViewModel {
 
 class OptionCardCell: UICollectionViewCell {
     // MARK: - UI properties
-    private let optionImageView = UIImageView(image: UIImage(named: "TopArchivingButton"))
+    private let optionImageView = UIImageView()
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -107,6 +107,7 @@ class OptionCardCell: UICollectionViewCell {
         isAdded = model.isAdded
         nameLabel.text = model.name
         priceLabel.text = "+ " + .decimalStyle(from: model.price) + " 원"
+        optionImageView.image = UIImage(named: model.image)
     }
     func select() {
         backgroundColor = .hyundaiPrimaryBlue.withAlphaComponent(0.1)

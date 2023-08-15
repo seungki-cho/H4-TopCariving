@@ -101,7 +101,7 @@ class ViewController: BaseMyCarViewController {
     }
     
     // data는 OptionSelectViewDataSource를 위한 데이터 소스 입니다.
-    var data = (0..<6).map { OptionCardViewModel.init(image: "asdf", name: "컴포트 \($0)", price: 400000, isAdded: false) }
+    var data = (0..<6).map { OptionCardViewModel.init(image: "TopArchivingButton", name: "컴포트 \($0)", price: 400000, isAdded: false) }
 }
 
 extension ViewController: OptionSelectViewDataSource {
