@@ -22,14 +22,12 @@ class OptionCardCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setFont(to: .init(name: .medium, size: ._14))
-        label.text = "컴포트 2"
         return label
     }()
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setFont(to: .init(name: .medium, size: ._14))
-        label.text = "+ 1,090,000 원"
         return label
     }()
     private let addButton: UIButton = {
