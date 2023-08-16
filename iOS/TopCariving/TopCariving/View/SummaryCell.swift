@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SummaryCell: UITableViewCell {
+class SummaryCell: UICollectionViewCell {
     // MARK: - UI Property
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -28,8 +28,8 @@ class SummaryCell: UITableViewCell {
     static let identifier = "SummaryCell"
     
     // MARK: - LifeCycle
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
