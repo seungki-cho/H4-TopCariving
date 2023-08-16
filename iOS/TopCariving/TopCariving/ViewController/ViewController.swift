@@ -30,7 +30,7 @@ class ViewController: BaseMyCarViewController {
         setUI()
         setLayout()
         
-        injectMock()
+        testInject()
         optionSelectView.refresh()
     }
     
@@ -69,23 +69,23 @@ class ViewController: BaseMyCarViewController {
         ])
     }
 
-    private func injectMock() {
-        reviewViewMock()
-        optionDescriptionMock()
-        optionDescriptionCollectionMock()
-        optionSelectViewMock()
+    private func testInject() {
+        testReviewView()
+        testOptionDescription()
+        testOptionDescriptionCollection()
+        testOptionSelectView()
     }
     // swiftlint: disable line_length
-    private func reviewViewMock() {
+    private func testReviewView() {
         reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"], with: "컴포트 II")
     }
     
-    private func optionDescriptionMock() {
+    private func testOptionDescription() {
         optionDescription.setUp(with: OptionDescriptionViewModel(index: 0, maxIndex: 6, title: "헤드업 디스플레이",
                                                                  optionDescription: "주요 주행 정보를 전면 윈드실드에 표시하며, 밝기가 최적화되어 주간에도 시인성이 뛰어납니다."))
     }
     
-    private func optionDescriptionCollectionMock() {
+    private func testOptionDescriptionCollection() {
         optionDescriptionCollection.refresh(by: (0..<6).map {
             OptionDescriptionViewModel(index: $0, maxIndex: 6,
                                        title: "헤드업 디스플레이",
@@ -93,9 +93,8 @@ class ViewController: BaseMyCarViewController {
         })
     }
     
-    private func optionSelectViewMock() {
-        optionSelectView.tapAddButtonSubject.sink(receiveValue: {
-            self.data[$0.row].isAdded.toggle()
+    private func testOptionSelectView() {
+        optionSelectView.tapAddButtonSubject.sink(receiveValue: { _ in
             self.reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳", ["A", "B", "C", "D"].randomElement()!].shuffled(), with: "컴포트 II")
         }).store(in: &bag)
     }
