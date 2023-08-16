@@ -26,32 +26,22 @@ class SummaryViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(SummaryCell.self, forCellWithReuseIdentifier: SummaryCell.identifier)
+        collectionView.register(SummaryColorCell.self, forCellWithReuseIdentifier: SummaryColorCell.identifier)
         collectionView.register(SummaryHeaderView.self,
-                                forSupplementaryViewOfKind: "header",
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: SummaryHeaderView.identifier)
+        collectionView.dataSource = self
         return collectionView
     }()
-    private let collectionViewLayout: UICollectionViewLayout = {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                            heightDimension: .absolute(22)))
-        let headerAnchor = NSCollectionLayoutAnchor(edges: [.top])
-        
-        let header = NSCollectionLayoutSupplementaryItem(
-            layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .absolute(42)),
-            elementKind: "header",
-            containerAnchor: headerAnchor
-        )
-        
-        let group = NSCollectionLayoutGroup.vertical(
-            layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .fractionalHeight(1)),
-            subitems: [item]
-        )
-        group.interItemSpacing = .fixed(8)
-        group.supplementaryItems = [header]
-        
-        return UICollectionViewCompositionalLayout(section: .init(group: group))
+    private lazy var collectionViewLayout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width
+        layout.minimumInteritemSpacing = 8
+        layout.itemSize = .init(width: width, height: 22)
+        layout.headerReferenceSize = .init(width: width, height: 42)
+        layout.sectionInset = .init(top: 20, left: 0, bottom: 20, right: 0)
+        layout.minimumLineSpacing = 12
+        return layout
     }()
     // MARK: - Property
     
@@ -85,10 +75,6 @@ class SummaryViewController: UIViewController {
     }
 }
 
-extension SummaryViewController: UICollectionViewDelegate {
-    
-}
-
 extension SummaryViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         Section.allCases.count
@@ -111,7 +97,7 @@ extension SummaryViewController: UICollectionViewDataSource {
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: "header",
+            ofKind: kind,
             withReuseIdentifier: SummaryHeaderView.identifier,
             for: indexPath
         ) as? SummaryHeaderView else { return UICollectionReusableView() }
