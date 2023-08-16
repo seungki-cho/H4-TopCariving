@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SummaryHeaderView: UITableViewHeaderFooterView {
+class SummaryHeaderView: UICollectionReusableView {
     // MARK: - UI Property
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -36,8 +36,8 @@ class SummaryHeaderView: UITableViewHeaderFooterView {
     static let identifier = "SummaryHeaderView"
     
     // MARK: - LifeCycle
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUI()
         setLayout()
     }
@@ -48,9 +48,7 @@ class SummaryHeaderView: UITableViewHeaderFooterView {
     }
     // MARK: - Helper
     private func setUI() {
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .hyundaiLightSand
-        self.backgroundView = backgroundView
+        backgroundColor = .hyundaiLightSand
         [titleLabel, priceLabel, wonLabel].forEach {
             addSubview($0)
         }
