@@ -18,7 +18,7 @@ class ViewController: BaseMyCarViewController {
         return view
     }()
     let reviewView = TagReviewView()
-    let optionDescriptionCollection = OptionDescriptionsView()
+    let optionDescriptionCollection = OptionSnapCarouselView()
     let optionDescription = OptionDescriptionView()
     
     // MARK: - Properties

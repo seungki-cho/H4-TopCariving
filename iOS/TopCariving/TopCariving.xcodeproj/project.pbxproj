@@ -16,7 +16,7 @@
 		7631E9552A8777E900015363 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9542A8777E900015363 /* OptionSelectView.swift */; };
 		7631E9572A8780EB00015363 /* TagReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9562A8780EB00015363 /* TagReviewView.swift */; };
 		7631E9592A87839D00015363 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9582A87839D00015363 /* TagCell.swift */; };
-		7631E95B2A89181B00015363 /* OptionDescriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95A2A89181B00015363 /* OptionDescriptionsView.swift */; };
+		7631E95B2A89181B00015363 /* OptionSnapCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */; };
 		7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */; };
 		7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7631E9602A89A0C400015363 /* OptionDescriptionView.swift */; };
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
@@ -117,7 +117,7 @@
 		7631E9542A8777E900015363 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		7631E9562A8780EB00015363 /* TagReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagReviewView.swift; sourceTree = "<group>"; };
 		7631E9582A87839D00015363 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
-		7631E95A2A89181B00015363 /* OptionDescriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionsView.swift; sourceTree = "<group>"; };
+		7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSnapCarouselView.swift; sourceTree = "<group>"; };
 		7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionCell.swift; sourceTree = "<group>"; };
 		7631E9602A89A0C400015363 /* OptionDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDescriptionView.swift; sourceTree = "<group>"; };
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 				7631E9542A8777E900015363 /* OptionSelectView.swift */,
 				7631E9562A8780EB00015363 /* TagReviewView.swift */,
 				7631E9582A87839D00015363 /* TagCell.swift */,
-				7631E95A2A89181B00015363 /* OptionDescriptionsView.swift */,
+				7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */,
 				7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */,
 				7631E9602A89A0C400015363 /* OptionDescriptionView.swift */,
 			);
@@ -698,7 +698,7 @@
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 				D4A68D082A80952700E2C1FD /* ModelResponseDTO+Mapping.swift in Sources */,
-				7631E95B2A89181B00015363 /* OptionDescriptionsView.swift in Sources */,
+				7631E95B2A89181B00015363 /* OptionSnapCarouselView.swift in Sources */,
 				D462E7682A84CAA100C5A8EC /* UIControl+.swift in Sources */,
 				D4A68D162A80973C00E2C1FD /* BasicOptionResponseDTO+Mapping.swift in Sources */,
 				D4A68CFC2A80925400E2C1FD /* ArchivingOptionResponseDTO+Mapping.swift in Sources */,
