@@ -81,7 +81,7 @@ class ViewController: BaseMyCarViewController {
     }
     
     private func optionDescriptionMock() {
-        optionDescription.setup(with: OptionDescriptionViewModel(index: 0, maxIndex: 6, title: "헤드업 디스플레이",
+        optionDescription.setUp(with: OptionDescriptionViewModel(index: 0, maxIndex: 6, title: "헤드업 디스플레이",
                                                                  optionDescription: "주요 주행 정보를 전면 윈드실드에 표시하며, 밝기가 최적화되어 주간에도 시인성이 뛰어납니다."))
     }
     

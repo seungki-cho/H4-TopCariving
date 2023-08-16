@@ -81,7 +81,7 @@ class OptionDescriptionsView: UIView {
                     withReuseIdentifier: OptionDescriptionCell.identifier,
                     for: indexPath
                 ) as? OptionDescriptionCell else { return UICollectionViewCell() }
-                cell.setup(with: item)
+                cell.setUp(with: item)
                 return cell
         })
     }

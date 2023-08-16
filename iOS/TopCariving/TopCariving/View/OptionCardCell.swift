@@ -44,7 +44,7 @@ class OptionCardCell: UICollectionViewCell {
     // MARK: - Properties
     static let identifier = "OptionCardCell"
     var bag = Set<AnyCancellable>()
-    lazy var tapAddButtonPublisher = addButton.tapPublisher()
+    lazy var tapAddButtonPublisher = addButton.touchUpPublisher
     var isAdded: Bool = false {
         willSet {
             newValue ? select() : deselect()
@@ -103,7 +103,7 @@ class OptionCardCell: UICollectionViewCell {
             addButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
-    func setup(with model: OptionCardViewModel) {
+    func setUp(with model: OptionCardViewModel) {
         isAdded = model.isAdded
         nameLabel.text = model.name
         priceLabel.text = "+ " + .decimalStyle(from: model.price) + " 원"

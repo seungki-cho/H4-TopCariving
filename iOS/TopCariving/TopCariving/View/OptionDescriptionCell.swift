@@ -109,7 +109,7 @@ class OptionDescriptionCell: UICollectionViewCell {
             descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
-    func setup(with model: OptionDescriptionViewModel) {
+    func setUp(with model: OptionDescriptionViewModel) {
         indexLabel.text = String(format: "%02d", model.index+1)
         titleLabel.text = model.title
         progressIndexLabel.text = "\(model.index+1)/\(model.maxIndex)"

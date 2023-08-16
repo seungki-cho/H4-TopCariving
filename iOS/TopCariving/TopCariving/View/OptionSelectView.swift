@@ -124,7 +124,7 @@ extension OptionSelectView: UICollectionViewDataSource {
         ) as? OptionCardCell,
               let datasource = datasource else { return UICollectionViewCell() }
         
-        cell.setup(with: datasource.optionSelectViewModel(self, at: indexPath))
+        cell.setUp(with: datasource.optionSelectViewModel(self, at: indexPath))
         cell.tapAddButtonPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
