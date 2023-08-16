@@ -52,7 +52,7 @@ class SummaryCell: UITableViewCell {
             titleLabel.heightAnchor.constraint(equalToConstant: 22),
             
             priceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             priceLabel.heightAnchor.constraint(equalToConstant: 22)
         ])
     }
