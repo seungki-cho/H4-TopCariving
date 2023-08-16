@@ -50,24 +50,27 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        
+        if let sheetPresentationController = sheetPresentationController {
+            sheetPresentationController.prefersGrabberVisible = true
+            sheetPresentationController.detents = [.custom { _ in UIScreen.main.bounds.height * 0.8 }, .large()]
+        }
     }
     
     // MARK: - Helper
     private func setUI() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         [titleLabel, collectionView].forEach {
             view.addSubview($0)
         }
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     private func setLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 25),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             titleLabel.heightAnchor.constraint(equalToConstant: 24),
             
-            collectionView.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
