@@ -32,7 +32,7 @@ class FoldableStackView: UIStackView {
     }
     
     // MARK: - Helpers
-    func setUI() {
+    private func setUI() {
         translatesAutoresizingMaskIntoConstraints = false
         axis = .vertical
         alignment = .fill
