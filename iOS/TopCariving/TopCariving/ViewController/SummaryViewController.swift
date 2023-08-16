@@ -8,6 +8,12 @@
 import UIKit
 
 class SummaryViewController: UIViewController {
+    enum Section: Int, CaseIterable {
+        case trim
+        case color
+        case option
+    }
+    
     // MARK: - UI Property
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -85,10 +91,19 @@ extension SummaryViewController: UICollectionViewDelegate {
 
 extension SummaryViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        Section.allCases.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        switch Section(rawValue: section) {
+        case .trim:
+            return 2
+        case .color:
+            return 2
+        case .option:
+            return 5
+        default:
+            return 0
+        }
     }
     func collectionView(
         _ collectionView: UICollectionView,
@@ -101,7 +116,16 @@ extension SummaryViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? SummaryHeaderView else { return UICollectionReusableView() }
         
-        header.setup(with: "총 견적 금액")
+        switch Section(rawValue: indexPath.section) {
+        case .trim:
+            header.setup(with: "총 견적 금액", price: "47,720,000")
+        case .color:
+            header.setup(with: "색상")
+        case .option:
+            header.setup(with: "선택옵션 \(1)개")
+        default:
+            break
+        }
         
         return header
     }
@@ -109,10 +133,24 @@ extension SummaryViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: SummaryCell.identifier,
-            for: indexPath
-        ) as? SummaryCell else { return UICollectionViewCell() }
-        return cell
+        switch Section(rawValue: indexPath.section) {
+        case .trim, .option:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: SummaryCell.identifier,
+                for: indexPath
+            ) as? SummaryCell else { break }
+            cell.setup(with: "펠리세이드 Le Blanc", price: "+42,420,240")
+            return cell
+        case .color:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: SummaryColorCell.identifier,
+                for: indexPath
+            ) as? SummaryColorCell else { break }
+            cell.setUp(with: "외장", image: "hi", name: "검정")
+            return cell
+        default:
+            break
+        }
+        return UICollectionViewCell()
     }
 }
