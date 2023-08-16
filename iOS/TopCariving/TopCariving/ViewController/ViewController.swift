@@ -9,7 +9,7 @@ import Combine
 import UIKit
 
 class ViewController: BaseMyCarViewController {
-    var bag: Set<AnyCancellable> = .init()
+    var bag = Set<AnyCancellable>()
     private let colorSelectionView = ColorSelectionView()
     
     override func viewDidLoad() {
