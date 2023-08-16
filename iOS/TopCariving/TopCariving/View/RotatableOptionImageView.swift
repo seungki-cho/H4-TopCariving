@@ -25,13 +25,11 @@ class RotatableOptionImageView: UIView {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
         setLayout()
     }
-    
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         setElipseLayer()
@@ -54,7 +52,6 @@ class RotatableOptionImageView: UIView {
         addSubview(imageView)
         addSubview(degreeView)
     }
-    
     func setLayout() {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
@@ -68,7 +65,6 @@ class RotatableOptionImageView: UIView {
             degreeView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
     func setElipseLayer() {
         let ovalRect = CGRect(
             x: (layer.bounds.width - (layer.bounds.width * 0.904))/2,
@@ -83,7 +79,6 @@ class RotatableOptionImageView: UIView {
         elipseLayer.fillColor = UIColor.hyundaiLightSand.cgColor
         elipseLayer.lineWidth = 1.0
     }
-    
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self)
         let progress = translation.x / self.bounds.width
@@ -97,11 +92,11 @@ class RotatableOptionImageView: UIView {
             imageNumber = previousImageNumber - Int(round(currentRotationAngle / (2 * .pi / 60)))
             
             imageNumber %= 61
-            
+
             if imageNumber <= 0 {
                 imageNumber += 60
             }
-            
+
             let imageNumStr = converter()
             
             imageView.image = nil
@@ -112,7 +107,6 @@ class RotatableOptionImageView: UIView {
             break
         }
     }
-    
     func converter() -> String {
         return String(format: "%03d", imageNumber)
     }
