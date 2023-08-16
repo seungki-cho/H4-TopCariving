@@ -10,84 +10,108 @@ import UIKit
 
 class ViewController: BaseMyCarViewController {
     // MARK: - UI properties
-    private let scrollView: UIScrollView = UIScrollView()
-    private let progressView = UIImageView(image: UIImage(named: "ProgressEngine"))
-    private let rotatableView: RotatableOptionImageView = RotatableOptionImageView(frame: .zero)
-    private let containerStackView = FoldableStackView()
-    private let footerView = MyCarFooterView()
+  
+    let optionSelectView = OptionSelectView()
+    private let separatorView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .hyundaiLightSand
+        return view
+    }()
+    let reviewView = TagReviewView()
+    let optionDescriptionCollection = OptionSnapCarouselView()
+    let optionDescription = OptionDescriptionView()
     
     // MARK: - Properties
-    var bag = Set<AnyCancellable>()
+    var bag: Set<AnyCancellable> = .init()
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
-        injectMock()
+      
+        
+        testInject()
+        optionSelectView.refresh()
+      
     }
     
     // MARK: - Helpers
     private func setUI() {
-        setTitle(to: "펠리세이드")
         view.backgroundColor = .white
-        [scrollView, progressView, rotatableView, footerView].forEach {
+        optionSelectView.datasource = self
+        [optionSelectView, separatorView, reviewView, optionDescriptionCollection, optionDescription].forEach {
             view.addSubview($0)
         }
-        [rotatableView, containerStackView].forEach {
-            scrollView.addSubview($0)
-        }
     }
-    
     private func setLayout() {
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        progressView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
-            progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor, multiplier: 0.154),
+            optionSelectView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            optionSelectView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            optionSelectView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            optionSelectView.heightAnchor.constraint(equalTo: optionSelectView.widthAnchor, multiplier: 0.65),
             
-            scrollView.topAnchor.constraint(equalTo: progressView.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: footerView.topAnchor),
+            separatorView.topAnchor.constraint(equalTo: optionSelectView.bottomAnchor, constant: 0),
+            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 6),
             
-            rotatableView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: -40),
-            rotatableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            rotatableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            rotatableView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.63),
+            reviewView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 20),
+            reviewView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            reviewView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            containerStackView.topAnchor.constraint(equalTo: rotatableView.bottomAnchor),
-            containerStackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            containerStackView.widthAnchor.constraint(equalToConstant: view.frame.width - 32),
-            containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            optionDescriptionCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -151),
+            optionDescriptionCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            optionDescriptionCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            optionDescriptionCollection.heightAnchor.constraint(equalToConstant: 131),
             
-            footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            footerView.heightAnchor.constraint(equalTo: footerView.widthAnchor, multiplier: 0.365)
+            optionDescription.topAnchor.constraint(equalTo: optionDescriptionCollection.bottomAnchor, constant: 5),
+            optionDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            optionDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
+
+    private func testInject() {
+        testReviewView()
+        testOptionDescription()
+        testOptionDescriptionCollection()
+        testOptionSelectView()
+    }
+    // swiftlint: disable line_length
+    private func testReviewView() {
+        reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"], with: "컴포트 II")
+    }
     
-    private func injectMock() {
-        // swiftlint: disable line_length
-        let testIcons = [(URL(string: "https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc1.png")!, "20인치\n알로이 휠"),
-                       (URL(string: "https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc2.png")!, "서라운드 뷰\n모니터"),
-                       (URL(string: "https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc3.png")!, "클러스터\n(12.3인 컬러 LCD)")]
-        let titles = ["1. Le Blanc", "2. Exclusive", "3. Prestige", "4. Calligraphy"]
-        let prices = ["47,720,000", "40,440,000", "47,720,000", "52,540,000"]
-        (0..<4).forEach {
-            let view = CarSummaryContainer()
-            view.setInfo(to: titles[$0], price: prices[$0], icons: testIcons)
-            containerStackView.addArrangedSubview(view)
-        }
-        footerView.tapNextButton.sink(receiveValue: { [weak self] in
-            guard let self else { return }
-            self.navigationController?.pushViewController(ViewController(), animated: true)
+    private func testOptionDescription() {
+        optionDescription.setUp(with: OptionDescriptionViewModel(index: 0, maxIndex: 6, title: "헤드업 디스플레이",
+                                                                 optionDescription: "주요 주행 정보를 전면 윈드실드에 표시하며, 밝기가 최적화되어 주간에도 시인성이 뛰어납니다."))
+    }
+    
+    private func testOptionDescriptionCollection() {
+        optionDescriptionCollection.refresh(by: (0..<6).map {
+            OptionDescriptionViewModel(index: $0, maxIndex: 6,
+                                       title: "헤드업 디스플레이",
+                                       optionDescription: "동승석의 시트 포지션을 조정하여 동승자의 체형에 맞는 편안한 자세를 유지할 수 있도록 돕는 기능입니다. 8방향(시트백 기울기, 시트 앞/뒤 이동,  앞/뒤 높이 조절)으로 조절이 기능하고 운전자 및 뒷좌석(2열) 승객이 동승석 시트 위치를 조절할 수 있는 워크인 디바이스를 적용하여 실내 공간 활용 편의성을 높였습니다.")
         })
-        .store(in: &bag)
+    }
+    
+    private func testOptionSelectView() {
+        optionSelectView.tapAddButtonSubject.sink(receiveValue: { _ in
+            self.reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳", ["A", "B", "C", "D"].randomElement()!].shuffled(), with: "컴포트 II")
+        }).store(in: &bag)
+    }
+    
+    // data는 OptionSelectViewDataSource를 위한 데이터 소스 입니다.
+    var data = (0..<6).map { OptionCardViewModel.init(image: "TopArchivingButton", name: "컴포트 \($0)", price: 400000, isAdded: false) }
+}
+
+extension ViewController: OptionSelectViewDataSource {
+    func numberOfOption(_ optionSelectView: OptionSelectView) -> Int {
+        5
+    }
+    func optionSelectViewModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardViewModel {
+        data[indexPath.row]
     }
     
 }
