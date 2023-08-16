@@ -48,6 +48,7 @@ class SummaryHeaderView: UITableViewHeaderFooterView {
     }
     // MARK: - Helper
     private func setUI() {
+        backgroundView?.backgroundColor = .red
         [titleLabel, priceLabel, wonLabel].forEach {
             addSubview($0)
         }
@@ -66,5 +67,14 @@ class SummaryHeaderView: UITableViewHeaderFooterView {
             wonLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             wonLabel.heightAnchor.constraint(equalToConstant: 12)
         ])
+    }
+    func setup(with title: String, price: String? = nil) {
+        titleLabel.text = title
+        guard let price = price else {
+            wonLabel.isHidden = true
+            priceLabel.isHidden = true
+            return
+        }
+        priceLabel.text = price
     }
 }
