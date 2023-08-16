@@ -8,9 +8,8 @@
 import Combine
 import UIKit
 
-@available(iOS 13.0, *)
 extension UIButton {
-    var tabPublisher: AnyPublisher<Void, Never> {
+    var touchUpPublisher: AnyPublisher<Void, Never> {
         attachPublisher(for: .touchUpInside)
     }
 }
