@@ -9,10 +9,10 @@ import Combine
 import UIKit
 
 struct OptionCardViewModel {
-    var image: String
-    var name: String
-    var price: Int
-    var isAdded: Bool
+    let image: String
+    let name: String
+    let price: Int
+    let isAdded: Bool
 }
 
 class OptionCardCell: UICollectionViewCell {
