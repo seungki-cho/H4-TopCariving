@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: BaseMyCarViewController {
     // MARK: - UI properties
+  
     let optionSelectView = OptionSelectView()
     private let separatorView = {
         let view = UIView()
@@ -29,9 +30,11 @@ class ViewController: BaseMyCarViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+      
         
         testInject()
         optionSelectView.refresh()
+      
     }
     
     // MARK: - Helpers
@@ -110,4 +113,5 @@ extension ViewController: OptionSelectViewDataSource {
     func optionSelectViewModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardViewModel {
         data[indexPath.row]
     }
+    
 }
