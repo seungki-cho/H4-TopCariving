@@ -9,78 +9,34 @@ import Combine
 import UIKit
 
 class ViewController: BaseMyCarViewController {
-    // MARK: - UI properties
-  
-    let optionSelectView = OptionSelectView()
-    private let separatorView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .hyundaiLightSand
-        return view
-    }()
-    let reviewView = TagReviewView()
-    let optionDescriptionCollection = OptionSnapCarouselView()
-    let optionDescription = OptionDescriptionView()
-    
+   
     // MARK: - Properties
-    var bag: Set<AnyCancellable> = .init()
+    var bag = Set<AnyCancellable>()
+    private let colorSelectionView = ColorSelectionView()
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        setLayout()
       
-        
-        testInject()
-        optionSelectView.refresh()
-      
-    }
-    
-    // MARK: - Helpers
-    private func setUI() {
         view.backgroundColor = .white
-        optionSelectView.datasource = self
-        [optionSelectView, separatorView, reviewView, optionDescriptionCollection, optionDescription].forEach {
-            view.addSubview($0)
-        }
-    }
-    private func setLayout() {
+        view.addSubview(colorSelectionView)
+        
         NSLayoutConstraint.activate([
-            optionSelectView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            optionSelectView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            optionSelectView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            optionSelectView.heightAnchor.constraint(equalTo: optionSelectView.widthAnchor, multiplier: 0.65),
-            
-            separatorView.topAnchor.constraint(equalTo: optionSelectView.bottomAnchor, constant: 0),
-            separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 6),
-            
-            reviewView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 20),
-            reviewView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            reviewView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            optionDescriptionCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -151),
-            optionDescriptionCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            optionDescriptionCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            optionDescriptionCollection.heightAnchor.constraint(equalToConstant: 131),
-            
-            optionDescription.topAnchor.constraint(equalTo: optionDescriptionCollection.bottomAnchor, constant: 5),
-            optionDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            optionDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            colorSelectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            colorSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            colorSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            colorSelectionView.heightAnchor.constraint(equalToConstant: 92)
         ])
-    }
-
-    private func testInject() {
-        testReviewView()
-        testOptionDescription()
-        testOptionDescriptionCollection()
-        testOptionSelectView()
-    }
-    // swiftlint: disable line_length
-    private func testReviewView() {
-        reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"], with: "컴포트 II")
+        
+        let images = (0..<19).map { "\($0)" }
+        let names = (0..<19).map { "문라이트 블루펄\($0)" }
+        colorSelectionView.setCategoryName(to: "외장")
+        colorSelectionView.refresh(by: images)
+        colorSelectionView.setColorName(to: "문라이트 블루펄")
+        
+        colorSelectionView.tapColorSubject.sink(receiveValue: {
+            self.colorSelectionView.setColorName(to: names[$0.row])
+        }).store(in: &bag)
     }
     
     private func testOptionDescription() {
