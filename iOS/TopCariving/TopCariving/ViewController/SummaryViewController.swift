@@ -60,7 +60,13 @@ extension SummaryViewController: UITableViewDelegate {
 
 extension SummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        tableView.dequeueReusableHeaderFooterView(withIdentifier: <#T##String#>)
+        guard let header = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: SummaryHeaderView.identifier
+        ) as? SummaryHeaderView else { return nil }
+        
+        header.setup(with: "반갑습니다", price: "123,123,123")
+        
+        return header
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
