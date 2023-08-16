@@ -48,7 +48,9 @@ class SummaryHeaderView: UITableViewHeaderFooterView {
     }
     // MARK: - Helper
     private func setUI() {
-        backgroundView?.backgroundColor = .red
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .hyundaiLightSand
+        self.backgroundView = backgroundView
         [titleLabel, priceLabel, wonLabel].forEach {
             addSubview($0)
         }
