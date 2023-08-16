@@ -19,6 +19,8 @@ class SummaryViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.sectionHeaderHeight = 42
+        tableView.separatorStyle = .none
         tableView.register(SummaryCell.self, forCellReuseIdentifier: SummaryCell.identifier)
         tableView.register(SummaryHeaderView.self, forHeaderFooterViewReuseIdentifier: SummaryHeaderView.identifier)
         tableView.delegate = self
@@ -36,17 +38,18 @@ class SummaryViewController: UIViewController {
     
     // MARK: - Helper
     private func setUI() {
+        view.backgroundColor = .blue
         [titleLabel, tableView].forEach {
             view.addSubview($0)
         }
     }
     private func setLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
             titleLabel.heightAnchor.constraint(equalToConstant: 24),
             
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -55,7 +58,7 @@ class SummaryViewController: UIViewController {
 }
 
 extension SummaryViewController: UITableViewDelegate {
-    header
+
 }
 
 extension SummaryViewController: UITableViewDataSource {
