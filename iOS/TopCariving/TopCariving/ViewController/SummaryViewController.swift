@@ -7,6 +7,15 @@
 
 import UIKit
 
+struct TestModel {
+    let numberOfSection = 3
+    let trim = [("펠리세이드 Le Blanc", "47,340,000 원"), ("디젤 2.2 / 4WD / 7인승", "+1,090,000 원")]
+    let colors = [("외장", "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png", "문라이트 블루펄"),
+                  ("내장", "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png", "문라이트 블루펄")]
+    let options = [("컴포트  ||", "+1,090,000 원"), ("컴포트  ||", "+1,090,000 원"), ("컴포트  ||", "+1,090,000 원")]
+    let totalPrice = 47340000 + 1090000 + 1090000 + 1090000
+}
+
 class SummaryViewController: UIViewController {
     enum Section: Int, CaseIterable {
         case trim
@@ -44,6 +53,7 @@ class SummaryViewController: UIViewController {
         return layout
     }()
     // MARK: - Property
+    let testModel = TestModel()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -85,11 +95,11 @@ extension SummaryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch Section(rawValue: section) {
         case .trim:
-            return 2
+            return testModel.trim.count
         case .color:
-            return 2
+            return testModel.colors.count
         case .option:
-            return 5
+            return testModel.options.count
         default:
             return 0
         }
@@ -107,11 +117,11 @@ extension SummaryViewController: UICollectionViewDataSource {
         
         switch Section(rawValue: indexPath.section) {
         case .trim:
-            header.setup(with: "총 견적 금액", price: "47,720,000")
+            header.setup(with: "총 견적 금액", price: .decimalStyle(from: testModel.totalPrice))
         case .color:
             header.setup(with: "색상")
         case .option:
-            header.setup(with: "선택옵션 \(1)개")
+            header.setup(with: "선택옵션 \(testModel.options.count)개")
         default:
             break
         }
@@ -123,19 +133,30 @@ extension SummaryViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         switch Section(rawValue: indexPath.section) {
-        case .trim, .option:
+        case .trim:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: SummaryCell.identifier,
                 for: indexPath
             ) as? SummaryCell else { break }
-            cell.setup(with: "펠리세이드 Le Blanc", price: "+42,420,240")
+            cell.setup(with: testModel.trim[indexPath.row].0,
+                       price: testModel.trim[indexPath.row].1)
             return cell
         case .color:
             guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: SummaryColorCell.identifier,
                 for: indexPath
             ) as? SummaryColorCell else { break }
-            cell.setUp(with: "외장", image: "hi", name: "검정")
+            cell.setUp(with: testModel.colors[indexPath.row].0,
+                       image: testModel.colors[indexPath.row].1,
+                       name: testModel.colors[indexPath.row].2)
+            return cell
+        case .option:
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: SummaryCell.identifier,
+                for: indexPath
+            ) as? SummaryCell else { break }
+            cell.setup(with: testModel.options[indexPath.row].0,
+                       price: testModel.options[indexPath.row].1)
             return cell
         default:
             break
