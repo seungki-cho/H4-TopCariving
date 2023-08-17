@@ -60,10 +60,10 @@ class SummaryHeaderView: UICollectionReusableView {
             titleLabel.heightAnchor.constraint(equalToConstant: 20),
             
             priceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            priceLabel.trailingAnchor.constraint(equalTo: wonLabel.leadingAnchor),
+            priceLabel.trailingAnchor.constraint(equalTo: wonLabel.leadingAnchor, constant: -2),
             priceLabel.heightAnchor.constraint(equalToConstant: 24),
             
-            wonLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 3),
+            wonLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 1),
             wonLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             wonLabel.heightAnchor.constraint(equalToConstant: 12)
         ])
@@ -75,6 +75,8 @@ class SummaryHeaderView: UICollectionReusableView {
             priceLabel.isHidden = true
             return
         }
+        wonLabel.isHidden = false
+        priceLabel.isHidden = false
         priceLabel.text = price
     }
 }
