@@ -63,7 +63,15 @@ class SummaryViewController: UIViewController {
         
         if let sheetPresentationController = sheetPresentationController {
             sheetPresentationController.prefersGrabberVisible = true
-            sheetPresentationController.detents = [.custom { _ in UIScreen.main.bounds.height * 0.8 }, .large()]
+            sheetPresentationController.detents = [
+                .custom { [weak self] context in
+                    guard let self else { return context.maximumDetentValue }
+                    let cellHeight = CGFloat(self.testModel.cellCount * 22)
+                    let sectionHeight = CGFloat(self.testModel.numberOfSection * 42)
+                    return CGFloat( cellHeight + sectionHeight + 250)
+                },
+                .custom { _ in UIScreen.main.bounds.height * 0.8 },
+                .large()]
         }
     }
     
