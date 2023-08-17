@@ -8,12 +8,16 @@
 import UIKit
 
 struct TestModel {
-    let numberOfSection = 3
     let trim = [("펠리세이드 Le Blanc", "47,340,000 원"), ("디젤 2.2 / 4WD / 7인승", "+1,090,000 원")]
     let colors = [("외장", "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png", "문라이트 블루펄"),
                   ("내장", "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png", "문라이트 블루펄")]
     let options = [("컴포트  ||", "+1,090,000 원"), ("컴포트  ||", "+1,090,000 원"), ("컴포트  ||", "+1,090,000 원")]
     let totalPrice = 47340000 + 1090000 + 1090000 + 1090000
+    
+    let numberOfSection = 3
+    var cellCount: Int {
+        trim.count + colors.count + options.count
+    }
 }
 
 class SummaryViewController: UIViewController {
