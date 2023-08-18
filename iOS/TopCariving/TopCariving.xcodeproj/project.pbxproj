@@ -22,6 +22,8 @@
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
+		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
+		76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */; };
 		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
 		76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B12A8E0135006C3106 /* UIViewController+.swift */; };
 		76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */; };
@@ -30,6 +32,9 @@
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
 		C31350102A8B4E4700D5D401 /* ColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500F2A8B4E4700D5D401 /* ColorSelectionView.swift */; };
 		C3C96D452A8B5529002C09D2 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D442A8B5529002C09D2 /* ColorCell.swift */; };
+		C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */; };
+		C3C96D492A8BBDCB002C09D2 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */; };
+		C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */; };
 		D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456A2A7B94D700E8E207 /* EndPoint.swift */; };
 		D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456E2A7B968200E8E207 /* HTTPClient.swift */; };
 		D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B45702A7B968A00E8E207 /* HTTPMethod.swift */; };
@@ -135,6 +140,8 @@
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
+		76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryColorCell.swift; sourceTree = "<group>"; };
 		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
 		76CA13B12A8E0135006C3106 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
@@ -143,6 +150,9 @@
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
 		C313500F2A8B4E4700D5D401 /* ColorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionView.swift; sourceTree = "<group>"; };
 		C3C96D442A8B5529002C09D2 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
+		C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
 		D44B456A2A7B94D700E8E207 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D44B456E2A7B968200E8E207 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D44B45702A7B968A00E8E207 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -436,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				D4ACBA472A78A3AD002B6A5B /* ViewController.swift */,
+				C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */,
 				7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */,
 				D4ACBA832A78CE62002B6A5B /* DummyViewController.swift */,
 				D462E76B2A850D3F00C5A8EC /* IncludedBaseItemModalViewController.swift */,
@@ -470,6 +481,10 @@
 				7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */,
 				7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */,
 				7631E9602A89A0C400015363 /* OptionDescriptionView.swift */,
+				C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */,
+				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
+				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
+				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -666,6 +681,7 @@
 			files = (
 				D4A68D522A8384AC00E2C1FD /* DegreeView.swift in Sources */,
 				D4A68D3A2A80F04100E2C1FD /* Selection.swift in Sources */,
+				C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */,
 				D4A68D062A8094EA00E2C1FD /* ModelPhotoResponseDTO.swift in Sources */,
 				D44B45732A7B969200E8E207 /* RequestError.swift in Sources */,
 				D462E8122A88A3D700C5A8EC /* SubCategoryModalViewController.swift in Sources */,
@@ -677,6 +693,7 @@
 				D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */,
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
+				76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */,
 				D4A68CFA2A808E0B00E2C1FD /* ArchivingColorResponseDTO+Mapping.swift in Sources */,
 				D4A68D3E2A80F0C400E2C1FD /* TagResponseDTO.swift in Sources */,
 				D462E7642A84BB5500C5A8EC /* CombineControlEvent.swift in Sources */,
@@ -686,6 +703,7 @@
 				D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */,
 				D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */,
 				C31350102A8B4E4700D5D401 /* ColorSelectionView.swift in Sources */,
+				76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */,
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
 				D4A68D0C2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift in Sources */,
 				D462E7662A84C9BF00C5A8EC /* UIButton+.swift in Sources */,
@@ -720,6 +738,7 @@
 				D4A68D462A80F15500E2C1FD /* ModelPhoto.swift in Sources */,
 				D4A68D042A80946D00E2C1FD /* TrimResponseDTO+Mapping.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
+				C3C96D492A8BBDCB002C09D2 /* SummaryHeaderView.swift in Sources */,
 				D4A68D132A8096CC00E2C1FD /* ColorBothResponseDTO+Mapping.swift in Sources */,
 				D462E85C2A8B79D000C5A8EC /* BaseOptionSubCategoryModel.swift in Sources */,
 				D4A68D2E2A80EF0C00E2C1FD /* ArchivingOption.swift in Sources */,
@@ -740,6 +759,7 @@
 				D462E85A2A8B79C300C5A8EC /* BaseOptonMainCategoryModel.swift in Sources */,
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
+				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
 				76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,

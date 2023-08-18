@@ -23,23 +23,10 @@ class ViewController: BaseMyCarViewController {
         view.addSubview(myView)
 
         view.backgroundColor = .white
-        
-        myView.tabPublisher.sink { [weak self] _ in
-            guard let self else { return }
-            self.testAlert()
+        myView.tapPublisher().sink { _ in
+            let summary = SummaryViewController()
+            summary.modalPresentationStyle = .pageSheet
+            self.present(summary, animated: true)
         }.store(in: &bag)
-    }
-    
-    private func testAlert() {
-        let text = "내 차 만들기를 그만하시겠어요?\n 만들던 차량은 아카이빙>내가 만든 차량 에\n 저장해둘게요"
-        let boldText = "아카이빙>내가 만든 차량"
-        showAlert(with: .makeBold(text,
-                                  boldText: boldText,
-                                  font: .init(name: .regular, size: ._14),
-                                  boldFont: .init(name: .medium, size: ._14)),
-                  acceptTitle: "내 차 만들기 종료",
-                  acceptHandler: {
-            print("HI")
-        })
     }
 }
