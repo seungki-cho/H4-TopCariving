@@ -24,6 +24,9 @@
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
 		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
 		76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */; };
+		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
+		76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B12A8E0135006C3106 /* UIViewController+.swift */; };
+		76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */; };
 		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
@@ -139,6 +142,9 @@
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
 		76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryColorCell.swift; sourceTree = "<group>"; };
+		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
+		76CA13B12A8E0135006C3106 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
@@ -444,6 +450,7 @@
 				7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */,
 				D4ACBA832A78CE62002B6A5B /* DummyViewController.swift */,
 				D462E76B2A850D3F00C5A8EC /* IncludedBaseItemModalViewController.swift */,
+				76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -498,6 +505,8 @@
 				D462E7772A852D3C00C5A8EC /* UIGestureRecognizer+.swift */,
 				D462E77F2A85F3D900C5A8EC /* UIView+.swift */,
 				7625A8002A8A26AA0060EEF5 /* String+.swift */,
+				76CA13B12A8E0135006C3106 /* UIViewController+.swift */,
+				76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -704,6 +713,7 @@
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
 				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
+				76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */,
 				7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */,
 				D44B45952A7CB9CA00E8E207 /* APIEndPoints.swift in Sources */,
 				D4A68D402A80F0EE00E2C1FD /* Color.swift in Sources */,
@@ -742,6 +752,7 @@
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */,
 				7631E9432A81D3CF00015363 /* CTAButton.swift in Sources */,
+				76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */,
 				D462E81C2A8A700E00C5A8EC /* BaseOptonSubCategoryCell.swift in Sources */,
 				763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
@@ -749,6 +760,7 @@
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
 				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
+				76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
@@ -934,6 +946,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -962,6 +975,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

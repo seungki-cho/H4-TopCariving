@@ -9,7 +9,6 @@ import Combine
 import UIKit
 
 class ViewController: BaseMyCarViewController {
-    
     // MARK: - Properties
     var bag = Set<AnyCancellable>()
     var myView: UIView = {
@@ -24,12 +23,10 @@ class ViewController: BaseMyCarViewController {
         view.addSubview(myView)
 
         view.backgroundColor = .white
-        
         myView.tapPublisher().sink { _ in
             let summary = SummaryViewController()
             summary.modalPresentationStyle = .pageSheet
             self.present(summary, animated: true)
         }.store(in: &bag)
-        
     }
 }
