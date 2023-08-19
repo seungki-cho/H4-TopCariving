@@ -12,14 +12,14 @@ class SelectOptionViewController: BaseMyCarViewController {
     
     // MARK: - UI properties
     private let scrollView: UIScrollView = UIScrollView()
-    let optionSelectView = OptionSelectView()
+    private let optionSelectView = OptionSelectView()
     private let separatorView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .hyundaiLightSand
         return view
     }()
-    let reviewView = TagReviewView()
+    private let reviewView = TagReviewView()
     private let carImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         imageView.clipsToBounds = true
         return imageView
     }()
-    let optionDescriptionCollection = OptionSnapCarouselView()
+    private let optionDescriptionCollection = OptionSnapCarouselView()
     
     // MARK: - Properties
     
