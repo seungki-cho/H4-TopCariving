@@ -108,7 +108,6 @@ class MyCarFooterView: UIView {
     
     func setEvent() {
         summaryLabel.tabPublisher
-            .print()
             .sink(receiveValue: { [weak self] _ in
                 guard let self else { return }
                 self.tapSummaryButton.send(())

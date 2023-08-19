@@ -81,7 +81,6 @@ class ColorSectionViewController: BaseMyCarViewController {
         colorSelectionView.setColorName(to: "어비스블랙펄")
         let prfix = ["", "silver_", "blue_", "brown_", "gray_", "white_"]
         colorSelectionView.tapColorSubject.sink(receiveValue: {
-            print($0)
             self.colorSelectionView.setColorName(to: names[$0.row])
             self.testReviewView(names[$0.row])
             self.rotatableView.prefix = prfix[$0.row]
