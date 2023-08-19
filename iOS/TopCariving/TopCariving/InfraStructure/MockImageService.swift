@@ -27,13 +27,11 @@ extension UIImage {
 extension UIImageView {
     func setAsyncImage(url: String, size: CGSize? = nil) {
         Task {
-            var image = await UIImage.imageService(url: url)
-            if let size = size {
-                image = image?.resized(to: size)
-            }
-            DispatchQueue.main.async {
-                self.image = image
-            }
+            let image = await UIImage.imageService(url: url)?.resized(to: size ?? frame.size)
+            setImage(to: image)
         }
+    }
+    @MainActor private func setImage(to image: UIImage?) {
+        self.image = image
     }
 }
