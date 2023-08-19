@@ -53,6 +53,7 @@ class OptionDescriptionCell: UICollectionViewCell {
         textView.layer.cornerRadius = 13
         textView.textContainerInset = .zero
         textView.backgroundColor = .clear
+        textView.isSelectable = false
         return textView
     }()
     
