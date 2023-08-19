@@ -21,7 +21,7 @@ class BaseMyCarViewController: UIViewController {
         setNavigationBar()
         setUI()
         setLayout()
-        setSummary()
+        setSummaryTap()
     }
     
     // MARK: - Helpers
@@ -67,14 +67,14 @@ class BaseMyCarViewController: UIViewController {
         titleLabel.text = "펠리세이드"
         navigationItem.titleView = titleLabel
     }
-    private func setSummary() {
-        footerView.tapSummaryButton.sink(receiveValue: { [weak self] in
-            guard let self else { return }
-            let summary = SummaryViewController()
-            summary.modalPresentationStyle = .pageSheet
-            self.present(summary, animated: true)
-//            self.navigationController?.pushViewController(SelectOptionViewController(), animated: true)
-        })
-        .store(in: &bag)
+    private func setSummaryTap() {
+        footerView.summaryLabel.tabPublisher
+            .sink(receiveValue: { [weak self] _ in
+                guard let self else { return }
+                let summary = SummaryViewController()
+                summary.modalPresentationStyle = .pageSheet
+                self.present(summary, animated: true)
+            })
+            .store(in: &bag)
     }
 }
