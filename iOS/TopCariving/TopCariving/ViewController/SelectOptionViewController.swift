@@ -20,6 +20,13 @@ class SelectOptionViewController: BaseMyCarViewController {
         return view
     }()
     let reviewView = TagReviewView()
+    private let carImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     let optionDescriptionCollection = OptionSnapCarouselView()
     
     // MARK: - Properties
@@ -38,7 +45,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         setProgress(to: .selectOptions)
         optionSelectView.datasource = self
         view.addSubview(scrollView)
-        [optionSelectView, separatorView, reviewView, optionDescriptionCollection].forEach {
+        [optionSelectView, separatorView, reviewView, optionDescriptionCollection, carImageView].forEach {
             scrollView.addSubview($0)
         }
     }
