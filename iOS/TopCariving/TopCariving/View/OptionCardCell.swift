@@ -107,7 +107,7 @@ class OptionCardCell: UICollectionViewCell {
         isAdded = model.isAdded
         nameLabel.text = model.name
         priceLabel.text = "+ " + .decimalStyle(from: model.price) + " 원"
-        optionImageView.image = UIImage(named: model.image)
+        optionImageView.setAsyncImage(url: model.image)
     }
     func select() {
         backgroundColor = .hyundaiPrimaryBlue.withAlphaComponent(0.1)

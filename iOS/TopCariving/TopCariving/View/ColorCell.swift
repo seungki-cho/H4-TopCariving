@@ -79,7 +79,6 @@ class ColorCell: UICollectionViewCell {
         checkImageView.isHidden = true
     }
     func setup(with image: String) {
-        colorImageView.backgroundColor = .red
-        // 이미지 서비스로 변경
+        colorImageView.setAsyncImage(url: image)
     }
 }
