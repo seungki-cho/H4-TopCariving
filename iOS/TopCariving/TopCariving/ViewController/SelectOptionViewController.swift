@@ -36,7 +36,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         super.viewDidLoad()
         testInject()
         optionSelectView.refresh()
-        setEvent()
+        testSetEvent()
     }
     
     // MARK: - Helpers
@@ -96,6 +96,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"], with: "컴포트 II")
     }
     private func testOptionDescriptionCollection() {
+        carImageView.setAsyncImage(url: detailImages[0])
         optionDescriptionCollection.refresh(by: (0..<6).map {
             OptionDescriptionViewModel(index: $0, maxIndex: 6,
                                        title: "헤드업 디스플레이",
@@ -159,7 +160,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         " 주요 주행 정보를 전면 윈드실드에 표시하며, 밝기가 최적화되어 주간에도 시인성이 뛰어납니다."
     ]
     lazy var data = (0..<6).map { OptionCardViewModel.init(image: self.images[$0], name: self.names[$0], price: self.prices[$0], isAdded: false) }
-    private func setEvent() {
+    private func testSetEvent() {
         optionSelectView.tapIncludedSubject.sink(receiveValue: { [weak self] in
             guard let self else { return }
             let modalVC = IncludedBaseItemModalViewController()
