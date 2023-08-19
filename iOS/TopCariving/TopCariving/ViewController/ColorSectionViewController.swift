@@ -65,6 +65,7 @@ class ColorSectionViewController: BaseMyCarViewController {
         let images = [
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/black.png",
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/silver.png",
+            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png",
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/brown.png",
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/gray.png",
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/white.png"
@@ -77,11 +78,13 @@ class ColorSectionViewController: BaseMyCarViewController {
                      "크리미 화이트 펄"]
         colorSelectionView.setCategoryName(to: "외장")
         colorSelectionView.refresh(by: images)
-        colorSelectionView.setColorName(to: "문라이트 블루펄")
-        
+        colorSelectionView.setColorName(to: "어비스블랙펄")
+        let prfix = ["", "silver_", "blue_", "brown_", "gray_", "white_"]
         colorSelectionView.tapColorSubject.sink(receiveValue: {
+            print($0)
             self.colorSelectionView.setColorName(to: names[$0.row])
             self.testReviewView(names[$0.row])
+            self.rotatableView.prefix = prfix[$0.row]
         }).store(in: &bag)
     }
     private func testPush() {
