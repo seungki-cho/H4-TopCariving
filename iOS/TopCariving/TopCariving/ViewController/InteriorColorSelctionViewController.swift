@@ -55,7 +55,8 @@ class InteriorColorSelctionViewController: BaseMyCarViewController {
             tagReviewView.topAnchor.constraint(equalTo: colorSelectionView.bottomAnchor, constant: 20),
             tagReviewView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tagReviewView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            tagReviewView.collectionView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
+            tagReviewView.collectionView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor,
+                                                                 constant: -8)
             ])
     }
     private func testReviewView(_ name: String) {
@@ -72,6 +73,7 @@ class InteriorColorSelctionViewController: BaseMyCarViewController {
             "https://topcariving.s3.ap-northeast-2.amazonaws.com/internal_color/gray_internal.png"
         ]
         let names = ["퀄팅 천연(블랙)", "쿨그레이"]
+        carImageView.setAsyncImage(url: interImages[0])
         colorSelectionView.setCategoryName(to: "내장")
         colorSelectionView.refresh(by: images)
         colorSelectionView.setColorName(to: names[0])

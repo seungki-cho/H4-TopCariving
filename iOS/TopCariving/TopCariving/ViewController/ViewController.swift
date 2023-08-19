@@ -54,7 +54,7 @@ class ViewController: BaseMyCarViewController {
             containerStackView.topAnchor.constraint(equalTo: rotatableView.bottomAnchor),
             containerStackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             containerStackView.widthAnchor.constraint(equalToConstant: view.frame.width - 32),
-            containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
+            containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -8)
         ])
     }
     

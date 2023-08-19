@@ -81,7 +81,8 @@ class SelectOptionViewController: BaseMyCarViewController {
             optionDescriptionCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             optionDescriptionCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             optionDescriptionCollection.heightAnchor.constraint(equalToConstant: 131),
-            optionDescriptionCollection.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor)
+            optionDescriptionCollection.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor,
+                                                               constant: -8)
         ])
     }
 
