@@ -64,19 +64,7 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        
-        if let sheetPresentationController = sheetPresentationController {
-            sheetPresentationController.prefersGrabberVisible = true
-            sheetPresentationController.detents = [
-                .custom { [weak self] context in
-                    guard let self else { return context.maximumDetentValue }
-                    let cellHeight = CGFloat(self.testModel.cellCount * 22)
-                    let sectionHeight = CGFloat(self.testModel.numberOfSection * 42)
-                    return CGFloat( cellHeight + sectionHeight + 250)
-                },
-                .custom { _ in UIScreen.main.bounds.height * 0.8 },
-                .large()]
-        }
+        setSheet()
     }
     
     // MARK: - Helper
@@ -97,6 +85,23 @@ class SummaryViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    @available(iOS 15, *)
+    private func setSheet() {
+        if let sheetPresentationController = sheetPresentationController {
+            sheetPresentationController.prefersGrabberVisible = true
+            sheetPresentationController.detents = [.large()]
+            if #available(iOS 16, *) {
+                sheetPresentationController.detents.append(
+                    .custom { [weak self] context in
+                        guard let self else { return context.maximumDetentValue }
+                        let cellHeight = CGFloat(self.testModel.cellCount * 22)
+                        let sectionHeight = CGFloat(self.testModel.numberOfSection * 42)
+                        return CGFloat( cellHeight + sectionHeight + 250)
+                    }
+                )
+            }
+        }
     }
 }
 
