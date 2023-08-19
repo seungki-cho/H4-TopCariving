@@ -5,6 +5,7 @@
 //  Created by 조승기 on 2023/08/13.
 //
 
+import Combine
 import UIKit
 
 struct OptionDescriptionViewModel: Hashable {
@@ -28,6 +29,7 @@ class OptionSnapCarouselView: UIView {
             forCellWithReuseIdentifier: OptionDescriptionCell.identifier
         )
         collectionView.alwaysBounceVertical = false
+        collectionView.delegate = self
         return collectionView
     }()
     private let collectionViewLayout: UICollectionViewCompositionalLayout = {
@@ -45,6 +47,7 @@ class OptionSnapCarouselView: UIView {
     
     // MARK: - Properties
     private var dataSource: UICollectionViewDiffableDataSource<Section, OptionDescriptionViewModel>!
+    var willDisplayCellSubject = PassthroughSubject<IndexPath, Never>()
     
     // MARK: - Lifecycles
     override init(frame: CGRect) {
@@ -90,5 +93,15 @@ class OptionSnapCarouselView: UIView {
         snapShot.appendSections([Section.optionDescription])
         snapShot.appendItems(models)
         dataSource.apply(snapShot)
+    }
+}
+
+extension OptionSnapCarouselView: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        willDisplayCellSubject.send(indexPath)
     }
 }
