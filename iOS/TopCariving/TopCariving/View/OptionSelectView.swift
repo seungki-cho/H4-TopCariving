@@ -51,20 +51,24 @@ class OptionSelectView: UIView {
     }()
     
     // MARK: - Properties
+    var bag = Set<AnyCancellable>()
     weak var datasource: OptionSelectViewDataSource?
     var tapAddButtonSubject = PassthroughSubject<IndexPath, Never>()
     var tapCellSubject = PassthroughSubject<IndexPath, Never>()
+    var tapIncludedSubject = PassthroughSubject<Void, Never>()
     
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setEvent()
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
         setLayout()
+        setEvent()
     }
     
     // MARK: - Helpers
@@ -94,6 +98,12 @@ class OptionSelectView: UIView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+    private func setEvent() {
+        includedOptionButton.tapPublisher().sink(receiveValue: { [weak self] in
+            self?.tapIncludedSubject.send(())
+        })
+        .store(in: &bag)
     }
     func refresh() {
         collectionView.reloadData()
