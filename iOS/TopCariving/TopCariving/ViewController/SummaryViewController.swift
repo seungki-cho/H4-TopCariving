@@ -64,7 +64,9 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
-        setSheet()
+        if #available(iOS 15, *) {
+            setSheet()
+        }
     }
     
     // MARK: - Helper
