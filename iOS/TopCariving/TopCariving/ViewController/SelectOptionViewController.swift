@@ -185,7 +185,7 @@ class SelectOptionViewController: BaseMyCarViewController {
                 
             })
             .store(in: &bag)
-        optionDescriptionCollection.willDisplayCellSubject
+        optionDescriptionCollection.didDisplayCellIndexPathSubject
             .sink(receiveValue: { [weak self] indexPath in
                 guard let self else { return }
                 self.carImageView.setAsyncImage(url: detailImages[indexPath.row], size: carImageView.bounds.size)
