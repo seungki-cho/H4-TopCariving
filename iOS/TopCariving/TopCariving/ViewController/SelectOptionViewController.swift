@@ -161,6 +161,29 @@ class SelectOptionViewController: BaseMyCarViewController {
             self.present(modalVC, animated: true)
         })
         .store(in: &bag)
+        Publishers.Merge(optionSelectView.tapAddButtonSubject, optionSelectView.tapCellSubject)
+            .sink(receiveValue: { [weak self] indexPath in
+                guard let self else { return }
+                let sequence = (0..<6).shuffled()
+                let headers: [String] = sequence.map { self.headers[$0] }
+                let dess: [String] = sequence.map { self.details[$0] }
+                
+                optionDescriptionCollection.refresh(by: (0..<6).map {
+                    OptionDescriptionViewModel(index: $0, maxIndex: 6,
+                                               title: headers[$0],
+                                               optionDescription: dess[$0])
+                })
+                self.carImageView.setAsyncImage(url: detailImages[indexPath.row],
+                                                size: carImageView.bounds.size)
+                
+            })
+            .store(in: &bag)
+        optionDescriptionCollection.willDisplayCellSubject
+            .sink(receiveValue: { [weak self] indexPath in
+                guard let self else { return }
+                self.carImageView.setAsyncImage(url: detailImages[indexPath.row], size: carImageView.bounds.size)
+            })
+            .store(in: &bag)
     }
 }
 
