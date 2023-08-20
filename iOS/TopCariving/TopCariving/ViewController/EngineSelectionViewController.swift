@@ -22,6 +22,7 @@ class EngineSelectionViewController: BaseMyCarViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        testEngine()
     }
     
     // MARK: - Helpers
@@ -61,5 +62,28 @@ class EngineSelectionViewController: BaseMyCarViewController {
             foldableStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             foldableStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -8)
         ])
+    }
+    private func testEngine() {
+        let trim2 = EngineSelectionContainer()
+        trim2.setUp(with: .init(title: "1. 디젤 2.2",
+                                price: "+1,480,000",
+                                description: "높은 토크로 파워풀한 드라이빙이 가능하며, 차급대비 연비 효율이 우수합니다.",
+                                outputDescription: "202/3,800PS/rpm",
+                                torqueDescription: "45.0/1,750~2,750kgf-m/rpm"))
+        let trim3 = EngineSelectionContainer()
+        trim3.setUp(with: .init(title: "1. 디젤 2.2",
+                                price: "+1,480,000",
+                                description: "높은 토크로 파워풀한 드라이빙이 가능하며, 차급대비 연비 효율이 우수합니다.",
+                                outputDescription: "202/3,800PS/rpm",
+                                torqueDescription: "45.0/1,750~2,750kgf-m/rpm"))
+        foldableStackView.addArrangedSubview(trim2)
+        foldableStackView.addArrangedSubview(trim3)
+        trimReviewedView.setUp(with: "트림 2.2")
+        engineImageView.setAsyncImage(url: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/diesel.jpg")
+        foldableStackView.tapSubject.sink(receiveValue: { [weak self] index in
+            guard let self else { return }
+            print(index)
+        })
+        .store(in: &bag)
     }
 }
