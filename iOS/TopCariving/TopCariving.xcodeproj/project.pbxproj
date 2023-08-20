@@ -22,11 +22,28 @@
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
+		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
+		7683E38B2A8EF20100BF8BEB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38A2A8EF20100BF8BEB /* ProgressView.swift */; };
+		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
+		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
+		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		7683E39E2A91E4B900BF8BEB /* EngineSelectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */; };
+		7683E3A22A91F16200BF8BEB /* TrimReviewedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */; };
+		7683E3A42A92162500BF8BEB /* TrimSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3A32A92162500BF8BEB /* TrimSelectionViewController.swift */; };
+		7683E3A82A92168900BF8BEB /* TrimSelectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3A72A92168900BF8BEB /* TrimSelectionContainer.swift */; };
+		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
+		76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */; };
+		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
+		76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B12A8E0135006C3106 /* UIViewController+.swift */; };
+		76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */; };
 		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
 		C31350102A8B4E4700D5D401 /* ColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500F2A8B4E4700D5D401 /* ColorSelectionView.swift */; };
 		C3C96D452A8B5529002C09D2 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D442A8B5529002C09D2 /* ColorCell.swift */; };
+		C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */; };
+		C3C96D492A8BBDCB002C09D2 /* SummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */; };
+		C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */; };
 		D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456A2A7B94D700E8E207 /* EndPoint.swift */; };
 		D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B456E2A7B968200E8E207 /* HTTPClient.swift */; };
 		D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B45702A7B968A00E8E207 /* HTTPMethod.swift */; };
@@ -132,11 +149,28 @@
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
+		7683E38A2A8EF20100BF8BEB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
+		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
+		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSelectionContainer.swift; sourceTree = "<group>"; };
+		7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimReviewedView.swift; sourceTree = "<group>"; };
+		7683E3A32A92162500BF8BEB /* TrimSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimSelectionViewController.swift; sourceTree = "<group>"; };
+		7683E3A72A92168900BF8BEB /* TrimSelectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimSelectionContainer.swift; sourceTree = "<group>"; };
+		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
+		76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryColorCell.swift; sourceTree = "<group>"; };
+		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
+		76CA13B12A8E0135006C3106 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
 		C313500F2A8B4E4700D5D401 /* ColorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionView.swift; sourceTree = "<group>"; };
 		C3C96D442A8B5529002C09D2 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryHeaderView.swift; sourceTree = "<group>"; };
+		C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
 		D44B456A2A7B94D700E8E207 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D44B456E2A7B968200E8E207 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D44B45702A7B968A00E8E207 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -298,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				D44B45932A7CB8BF00E8E207 /* Network */,
+				7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */,
 			);
 			path = InfraStructure;
 			sourceTree = "<group>";
@@ -430,9 +465,15 @@
 			isa = PBXGroup;
 			children = (
 				D4ACBA472A78A3AD002B6A5B /* ViewController.swift */,
+				C3C96D462A8B9CD1002C09D2 /* SummaryViewController.swift */,
 				7631E94A2A8382E100015363 /* BaseMyCarViewController.swift */,
 				D4ACBA832A78CE62002B6A5B /* DummyViewController.swift */,
 				D462E76B2A850D3F00C5A8EC /* IncludedBaseItemModalViewController.swift */,
+				7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */,
+				7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */,
+				7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */,
+				76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */,
+				7683E3A32A92162500BF8BEB /* TrimSelectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -463,6 +504,14 @@
 				7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */,
 				7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */,
 				7631E9602A89A0C400015363 /* OptionDescriptionView.swift */,
+				7683E38A2A8EF20100BF8BEB /* ProgressView.swift */,
+				C3C96D482A8BBDCB002C09D2 /* SummaryHeaderView.swift */,
+				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
+				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
+				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */,
+				7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */,
+				7683E3A72A92168900BF8BEB /* TrimSelectionContainer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +532,8 @@
 				D462E7772A852D3C00C5A8EC /* UIGestureRecognizer+.swift */,
 				D462E77F2A85F3D900C5A8EC /* UIView+.swift */,
 				7625A8002A8A26AA0060EEF5 /* String+.swift */,
+				76CA13B12A8E0135006C3106 /* UIViewController+.swift */,
+				76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -657,8 +708,10 @@
 			files = (
 				D4A68D522A8384AC00E2C1FD /* DegreeView.swift in Sources */,
 				D4A68D3A2A80F04100E2C1FD /* Selection.swift in Sources */,
+				C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */,
 				D4A68D062A8094EA00E2C1FD /* ModelPhotoResponseDTO.swift in Sources */,
 				D44B45732A7B969200E8E207 /* RequestError.swift in Sources */,
+				7683E39E2A91E4B900BF8BEB /* EngineSelectionContainer.swift in Sources */,
 				D462E8122A88A3D700C5A8EC /* SubCategoryModalViewController.swift in Sources */,
 				D4A68D002A8093B200E2C1FD /* ModifyOptionResponseDTO+Mapping.swift in Sources */,
 				D4ACBA842A78CE62002B6A5B /* DummyViewController.swift in Sources */,
@@ -668,6 +721,7 @@
 				D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */,
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
+				76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */,
 				D4A68CFA2A808E0B00E2C1FD /* ArchivingColorResponseDTO+Mapping.swift in Sources */,
 				D4A68D3E2A80F0C400E2C1FD /* TagResponseDTO.swift in Sources */,
 				D462E7642A84BB5500C5A8EC /* CombineControlEvent.swift in Sources */,
@@ -677,15 +731,19 @@
 				D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */,
 				D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */,
 				C31350102A8B4E4700D5D401 /* ColorSelectionView.swift in Sources */,
+				76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */,
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
 				D4A68D0C2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift in Sources */,
 				D462E7662A84C9BF00C5A8EC /* UIButton+.swift in Sources */,
 				D462E7782A852D3C00C5A8EC /* UIGestureRecognizer+.swift in Sources */,
 				D4A68D322A80EF8500E2C1FD /* ModifyOption.swift in Sources */,
+				7683E3A82A92168900BF8BEB /* TrimSelectionContainer.swift in Sources */,
+				7683E3A22A91F16200BF8BEB /* TrimReviewedView.swift in Sources */,
 				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
 				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
+				76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */,
 				7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */,
 				D44B45952A7CB9CA00E8E207 /* APIEndPoints.swift in Sources */,
 				D4A68D402A80F0EE00E2C1FD /* Color.swift in Sources */,
@@ -703,6 +761,8 @@
 				7631E9472A82200C00015363 /* UILabel+.swift in Sources */,
 				D4A68D102A80968500E2C1FD /* ColorResponseDTO+Mapping.swift in Sources */,
 				7625A8012A8A26AA0060EEF5 /* String+.swift in Sources */,
+				7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */,
+				7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */,
 				D4A68D0A2A80957100E2C1FD /* SelectionDetailResponseDTO+Mapping.swift in Sources */,
 				7631E9592A87839D00015363 /* TagCell.swift in Sources */,
 				D4ACBA872A78CE8F002B6A5B /* UIColor+.swift in Sources */,
@@ -710,25 +770,33 @@
 				D4A68D462A80F15500E2C1FD /* ModelPhoto.swift in Sources */,
 				D4A68D042A80946D00E2C1FD /* TrimResponseDTO+Mapping.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
+				C3C96D492A8BBDCB002C09D2 /* SummaryHeaderView.swift in Sources */,
 				D4A68D132A8096CC00E2C1FD /* ColorBothResponseDTO+Mapping.swift in Sources */,
+				7683E38B2A8EF20100BF8BEB /* ProgressView.swift in Sources */,
+				7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */,
 				D462E85C2A8B79D000C5A8EC /* BaseOptionSubCategoryModel.swift in Sources */,
+				7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */,
 				D4A68D2E2A80EF0C00E2C1FD /* ArchivingOption.swift in Sources */,
 				D4A68D4A2A80F1AA00E2C1FD /* Option.swift in Sources */,
 				D4A68D3C2A80F06E00E2C1FD /* Tag.swift in Sources */,
 				7631E9532A87720200015363 /* OptionCardCell.swift in Sources */,
 				D4A68D382A80F01400E2C1FD /* SelectionDetail.swift in Sources */,
+				7683E3A42A92162500BF8BEB /* TrimSelectionViewController.swift in Sources */,
 				D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */,
 				7631E9552A8777E900015363 /* OptionSelectView.swift in Sources */,
 				D4A68D422A80F10E00E2C1FD /* ColorBoth.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */,
 				7631E9432A81D3CF00015363 /* CTAButton.swift in Sources */,
+				76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */,
 				D462E81C2A8A700E00C5A8EC /* BaseOptonSubCategoryCell.swift in Sources */,
 				763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
 				D462E85A2A8B79C300C5A8EC /* BaseOptonMainCategoryModel.swift in Sources */,
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
+				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
+				76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
@@ -914,11 +982,12 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.softeer.TopCariving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -942,11 +1011,12 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.softeer.TopCariving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

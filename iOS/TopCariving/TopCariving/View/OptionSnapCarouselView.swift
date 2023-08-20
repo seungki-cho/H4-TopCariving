@@ -5,6 +5,7 @@
 //  Created by 조승기 on 2023/08/13.
 //
 
+import Combine
 import UIKit
 
 struct OptionDescriptionViewModel: Hashable {
@@ -20,31 +21,30 @@ class OptionSnapCarouselView: UIView {
     }
     
     // MARK: - UI properties
-    private lazy var collectionView = {
+    private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(
             OptionDescriptionCell.self,
             forCellWithReuseIdentifier: OptionDescriptionCell.identifier
         )
+        collectionView.isPagingEnabled = true
         collectionView.alwaysBounceVertical = false
+        collectionView.delegate = self
         return collectionView
     }()
-    private let collectionViewLayout: UICollectionViewCompositionalLayout = {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                            heightDimension: .fractionalHeight(1)))
-        item.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)),
-            subitems: [item]
-        )
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .paging
-        return UICollectionViewCompositionalLayout(section: section)
+    private let collectionViewLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: UIScreen.main.bounds.width - 32, height: 131)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+        layout.minimumLineSpacing = 32
+        return layout
     }()
-    
+
     // MARK: - Properties
     private var dataSource: UICollectionViewDiffableDataSource<Section, OptionDescriptionViewModel>!
+    var didDisplayCellIndexPathSubject = PassthroughSubject<IndexPath, Never>()
     
     // MARK: - Lifecycles
     override init(frame: CGRect) {
@@ -90,5 +90,12 @@ class OptionSnapCarouselView: UIView {
         snapShot.appendSections([Section.optionDescription])
         snapShot.appendItems(models)
         dataSource.apply(snapShot)
+    }
+}
+
+extension OptionSnapCarouselView: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let indexPath = collectionView.indexPathsForVisibleItems.first else { return }
+        didDisplayCellIndexPathSubject.send(indexPath)
     }
 }
