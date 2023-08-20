@@ -27,6 +27,7 @@
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		7683E39E2A91E4B900BF8BEB /* EngineSelectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */; };
 		7683E3A02A91F12800BF8BEB /* EngineSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E39F2A91F12800BF8BEB /* EngineSelectionViewController.swift */; };
 		7683E3A22A91F16200BF8BEB /* TrimReviewedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */; };
 		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
@@ -152,6 +153,7 @@
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSelectionContainer.swift; sourceTree = "<group>"; };
 		7683E39F2A91F12800BF8BEB /* EngineSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSelectionViewController.swift; sourceTree = "<group>"; };
 		7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimReviewedView.swift; sourceTree = "<group>"; };
 		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				7683E39D2A91E4B900BF8BEB /* EngineSelectionContainer.swift */,
 				7683E3A12A91F16200BF8BEB /* TrimReviewedView.swift */,
 			);
 			path = View;
@@ -700,6 +703,7 @@
 				C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */,
 				D4A68D062A8094EA00E2C1FD /* ModelPhotoResponseDTO.swift in Sources */,
 				D44B45732A7B969200E8E207 /* RequestError.swift in Sources */,
+				7683E39E2A91E4B900BF8BEB /* EngineSelectionContainer.swift in Sources */,
 				D462E8122A88A3D700C5A8EC /* SubCategoryModalViewController.swift in Sources */,
 				D4A68D002A8093B200E2C1FD /* ModifyOptionResponseDTO+Mapping.swift in Sources */,
 				D4ACBA842A78CE62002B6A5B /* DummyViewController.swift in Sources */,
