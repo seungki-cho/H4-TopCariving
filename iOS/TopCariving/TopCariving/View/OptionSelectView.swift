@@ -100,7 +100,7 @@ class OptionSelectView: UIView {
         ])
     }
     private func setEvent() {
-        includedOptionButton.tapPublisher().sink(receiveValue: { [weak self] in
+        includedOptionButton.touchUpPublisher.sink(receiveValue: { [weak self] in
             self?.tapIncludedSubject.send(())
         })
         .store(in: &bag)
