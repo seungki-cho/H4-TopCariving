@@ -75,7 +75,7 @@ class SelectOptionViewController: BaseMyCarViewController {
             carImageView.topAnchor.constraint(equalTo: reviewView.collectionView.bottomAnchor, constant: 10),
             carImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             carImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            carImageView.heightAnchor.constraint(equalToConstant: 180 * UIScreen.main.bounds.height / 852),
+            carImageView.heightAnchor.constraint(equalToConstant: 180 * (view.window?.windowScene?.screen.bounds.width ?? 352) / 852),
             
             optionDescriptionCollection.topAnchor.constraint(equalTo: carImageView.bottomAnchor, constant: 10),
             optionDescriptionCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
