@@ -98,7 +98,7 @@ class SelectOptionViewController: BaseMyCarViewController {
     private func testOptionDescriptionCollection() {
         carImageView.setAsyncImage(url: detailImages[0])
         optionDescriptionCollection.refresh(by: (0..<6).map {
-            OptionDescriptionViewModel(index: $0, maxIndex: 6,
+            OptionDescriptionModel(index: $0, maxIndex: 6,
                                        title: "헤드업 디스플레이",
                                        optionDescription: "동승석의 시트 포지션을 조정하여 동승자의 체형에 맞는 편안한 자세를 유지할 수 있도록 돕는 기능입니다. 8방향(시트백 기울기, 시트 앞/뒤 이동,  앞/뒤 높이 조절)으로 조절이 기능하고 운전자 및 뒷좌석(2열) 승객이 동승석 시트 위치를 조절할 수 있는 워크인 디바이스를 적용하여 실내 공간 활용 편의성을 높였습니다.")
         })
@@ -159,7 +159,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         "시동이 걸린 상태에서 해당 좌석 히터 스위치를 누르면 강약조절 표시등이 켜져 사용 중임을 나타내고 해당 좌석이 따뜻해집니다.",
         " 주요 주행 정보를 전면 윈드실드에 표시하며, 밝기가 최적화되어 주간에도 시인성이 뛰어납니다."
     ]
-    lazy var data = (0..<6).map { OptionCardViewModel.init(image: self.images[$0], name: self.names[$0], price: self.prices[$0], isAdded: false) }
+    lazy var data = (0..<6).map { OptionCardModel.init(image: self.images[$0], name: self.names[$0], price: self.prices[$0], isAdded: false) }
     private func testSetEvent() {
         optionSelectView.tapIncludedSubject.sink(receiveValue: { [weak self] in
             guard let self else { return }
@@ -176,7 +176,7 @@ class SelectOptionViewController: BaseMyCarViewController {
                 let dess: [String] = sequence.map { self.details[$0] }
                 
                 optionDescriptionCollection.refresh(by: (0..<6).map {
-                    OptionDescriptionViewModel(index: $0, maxIndex: 6,
+                    OptionDescriptionModel(index: $0, maxIndex: 6,
                                                title: headers[$0],
                                                optionDescription: dess[$0])
                 })
@@ -198,7 +198,7 @@ extension SelectOptionViewController: OptionSelectViewDataSource {
     func numberOfOption(_ optionSelectView: OptionSelectView) -> Int {
         5
     }
-    func optionSelectViewModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardViewModel {
+    func optionSelectModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardModel {
         data[indexPath.row]
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 protocol OptionSelectViewDataSource: NSObject {
     func numberOfOption(_ optionSelectView: OptionSelectView) -> Int
-    func optionSelectViewModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardViewModel
+    func optionSelectModel(_ optionSelectView: OptionSelectView, at indexPath: IndexPath) -> OptionCardModel
 }
 
 class OptionSelectView: UIView {
@@ -134,7 +134,7 @@ extension OptionSelectView: UICollectionViewDataSource {
         ) as? OptionCardCell,
               let datasource = datasource else { return UICollectionViewCell() }
         
-        cell.setUp(with: datasource.optionSelectViewModel(self, at: indexPath))
+        cell.setUp(with: datasource.optionSelectModel(self, at: indexPath))
         cell.tapAddButtonPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }

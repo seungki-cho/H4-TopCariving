@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-struct OptionDescriptionViewModel: Hashable {
+struct OptionDescriptionModel: Hashable {
     let index: Int
     let maxIndex: Int
     let title: String
@@ -43,7 +43,7 @@ class OptionSnapCarouselView: UIView {
     }()
 
     // MARK: - Properties
-    private var dataSource: UICollectionViewDiffableDataSource<Section, OptionDescriptionViewModel>!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, OptionDescriptionModel>!
     var didDisplayCellIndexPathSubject = PassthroughSubject<IndexPath, Never>()
     
     // MARK: - Lifecycles
@@ -85,8 +85,8 @@ class OptionSnapCarouselView: UIView {
                 return cell
         })
     }
-    func refresh(by models: [OptionDescriptionViewModel]) {
-        var snapShot = NSDiffableDataSourceSnapshot<Section, OptionDescriptionViewModel>()
+    func refresh(by models: [OptionDescriptionModel]) {
+        var snapShot = NSDiffableDataSourceSnapshot<Section, OptionDescriptionModel>()
         snapShot.appendSections([Section.optionDescription])
         snapShot.appendItems(models)
         dataSource.apply(snapShot)

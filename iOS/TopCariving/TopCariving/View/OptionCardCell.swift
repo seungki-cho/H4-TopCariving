@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-struct OptionCardViewModel {
+struct OptionCardModel {
     let image: String
     let name: String
     let price: Int
@@ -103,7 +103,7 @@ class OptionCardCell: UICollectionViewCell {
             addButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
-    func setUp(with model: OptionCardViewModel) {
+    func setUp(with model: OptionCardModel) {
         isAdded = model.isAdded
         nameLabel.text = model.name
         priceLabel.text = "+ " + .decimalStyle(from: model.price) + " 원"
