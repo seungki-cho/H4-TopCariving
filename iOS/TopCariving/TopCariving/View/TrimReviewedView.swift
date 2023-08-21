@@ -31,7 +31,6 @@ class TrimReviewedView: UIView {
         setUI()
         setLayout()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()

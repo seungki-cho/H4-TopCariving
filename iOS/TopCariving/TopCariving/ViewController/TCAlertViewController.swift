@@ -60,6 +60,7 @@ class TCAlertViewController: UIViewController {
         setLayout()
         setEvent()
     }
+    
     // MARK: - Helpers
     private func setUI() {
         [dimBackgroundView, alertView, descriptionLabel, cancelButton, acceptButton].forEach {
