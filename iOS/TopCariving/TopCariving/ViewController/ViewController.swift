@@ -72,7 +72,7 @@ class ViewController: BaseMyCarViewController {
         }
         footerView.tapNextButton.sink(receiveValue: { [weak self] in
             guard let self else { return }
-            self.navigationController?.pushViewController(DummyViewController(), animated: true)
+            self.navigationController?.pushViewController(InteriorColorSelctionViewController(), animated: true)
         })
         .store(in: &bag)
     }
