@@ -9,11 +9,7 @@ import UIKit
 
 class TrimSelectionViewController: BaseMyCarViewController {
     // MARK: - UI properties
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
+    private let scrollView: UIScrollView = UIScrollView()
     private let engineImageView = UIImageView()
     private let trimReviewedView = TrimReviewedView()
     private let foldableStackView = FoldableStackView()
