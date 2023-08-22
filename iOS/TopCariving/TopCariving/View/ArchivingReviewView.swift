@@ -18,6 +18,7 @@ class ArchivingReviewView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ArchivingReviewCell.self, forCellWithReuseIdentifier: ArchivingReviewCell.identifier)
         collectionView.backgroundColor = .clear
+        collectionView.delegate = self
         return collectionView
     }()
     private let collectionViewLayout: UICollectionViewLayout = {
@@ -34,6 +35,7 @@ class ArchivingReviewView: UIView {
     }()
     // MARK: - Properties
     private var dataSource: UICollectionViewDiffableDataSource<Section, ArchivingReviewCellModel>!
+    var tapCellIndexPathSubject = PassthroughSubject<IndexPath, Never>()
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,5 +77,11 @@ class ArchivingReviewView: UIView {
         snapShot.appendSections([.review])
         snapShot.appendItems(models)
         dataSource.apply(snapShot)
+    }
+}
+
+extension ArchivingReviewView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tapCellIndexPathSubject.send(indexPath)
     }
 }
