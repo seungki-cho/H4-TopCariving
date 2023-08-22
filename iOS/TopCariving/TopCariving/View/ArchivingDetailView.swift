@@ -82,7 +82,7 @@ class ArchivingDetailView: UIView {
             return cell
         })
     }
-    func refresh(by models: [ArchivingDetailCellModel], review: String) {
+    func refresh(by models: [ArchivingDetailCellModel], review: String, summaryModel: MyCarivingCarSummaryModel) {
         var snapShot = dataSource.snapshot()
         snapShot.appendSections([.detail])
         snapShot.appendItems(models)
@@ -93,7 +93,7 @@ class ArchivingDetailView: UIView {
                 withReuseIdentifier: ArchivingDetailHeader.identifier,
                 for: indexPath
             ) as? ArchivingDetailHeader else { return nil }
-            header.setUp(with: review)
+            header.setUp(with: review, model: summaryModel)
             return header
         }
     }
