@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct EngineViewModel {
+struct EngineModel {
     let title: String
     let price: String
     let description: String
@@ -191,7 +191,7 @@ class EngineSelectionContainer: UIView, Foldable {
             $0.textColor = .hyundaiPrimaryBlue
         }
     }
-    func setUp(with model: EngineViewModel) {
+    func setUp(with model: EngineModel) {
         titleLabel.text = model.title
         priceLabel.text = model.price
         descriptionTextView.text = model.description

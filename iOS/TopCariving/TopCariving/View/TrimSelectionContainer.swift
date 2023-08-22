@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct TrimSelectionViewModel {
+struct TrimSelectionModel {
     let title: String
     let price: String
     let description: String
@@ -50,7 +50,7 @@ class TrimSelectionContainer: FoldableView {
         descriptionTextView.isHidden = false
         heightConstraint?.constant = 135
     }
-    func setUp(with model: TrimSelectionViewModel) {
+    func setUp(with model: TrimSelectionModel) {
         setTitle(to: model.title)
         setPrice(to: model.price)
         descriptionTextView.text = model.description
