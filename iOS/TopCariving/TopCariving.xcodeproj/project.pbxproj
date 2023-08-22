@@ -29,6 +29,7 @@
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
 		7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */; };
+		7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */; };
 		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
 		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
@@ -172,6 +173,7 @@
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
 		7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSearchButton.swift; sourceTree = "<group>"; };
+		7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSettingButton.swift; sourceTree = "<group>"; };
 		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
 		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
 				7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */,
+				7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */,
 				7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */,
 				7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */,
 				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
@@ -808,6 +811,7 @@
 				D462E8752A8DE56400C5A8EC /* FeatureSummaryContainerView.swift in Sources */,
 				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
+				7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */,
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
 				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
 				D462E89D2A92428A00C5A8EC /* MyCarFeatureView.swift in Sources */,
