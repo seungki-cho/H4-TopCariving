@@ -12,6 +12,7 @@ typealias Position = (CGFloat, CGFloat)
 
 struct MyCarivingCarSummaryModel {
     var featureSummary: FeatureSummaryModel
+    var carImage: String
     var points: [CarImagePoint]
     var positions: [Position]
 }
@@ -121,5 +122,6 @@ class MyCarivingCarSummaryView: UIView {
     func setMyCarivingView(to data: MyCarivingCarSummaryModel) {
         setFeatureContainerView(to: data.featureSummary)
         setCarImagePointViews(points: data.points, positions: data.positions)
+        carImage.setAsyncImage(url: data.carImage)
     }
 }
