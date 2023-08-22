@@ -9,6 +9,9 @@ import Combine
 import UIKit
 
 class BaseMyCarViewController: UIViewController {
+    enum Notifications {
+        static let viewDidLoad = Notification.Name("viewDidLoad")
+    }
     // MARK: - UI properties
     let progressView = ProgressView(frame: .zero)
     let footerView = MyCarFooterView()
@@ -22,6 +25,10 @@ class BaseMyCarViewController: UIViewController {
         setUI()
         setLayout()
         setSummaryTap()
+        NotificationCenter.default.post(name: Notifications.viewDidLoad, object: self)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Helpers
