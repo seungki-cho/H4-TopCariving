@@ -23,6 +23,7 @@
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
 		767E23DB2A94FF1A00006017 /* ModelOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DA2A94FF1A00006017 /* ModelOptionViewModel.swift */; };
+		767E23DD2A95097C00006017 /* TrimEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DC2A95097C00006017 /* TrimEndPoint.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
 		7683E38B2A8EF20100BF8BEB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38A2A8EF20100BF8BEB /* ProgressView.swift */; };
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
@@ -162,6 +163,7 @@
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		767E23DA2A94FF1A00006017 /* ModelOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOptionViewModel.swift; sourceTree = "<group>"; };
+		767E23DC2A95097C00006017 /* TrimEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimEndPoint.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
 		7683E38A2A8EF20100BF8BEB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				D44B456E2A7B968200E8E207 /* HTTPClient.swift */,
 				D44B45702A7B968A00E8E207 /* HTTPMethod.swift */,
 				D44B45722A7B969200E8E207 /* RequestError.swift */,
+				767E23DC2A95097C00006017 /* TrimEndPoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767E23DD2A95097C00006017 /* TrimEndPoint.swift in Sources */,
 				D49B0FA32A93FD5000B3CEE2 /* CarImagePointView.swift in Sources */,
 				769F68372A8E1CEB000EF81C /* LoginViewController.swift in Sources */,
 				D4A68D522A8384AC00E2C1FD /* DegreeView.swift in Sources */,
