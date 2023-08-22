@@ -34,7 +34,6 @@ class ViewController: BaseMyCarViewController {
             scrollView.addSubview($0)
         }
     }
-    
     override func setLayout() {
         super.setLayout()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,12 +53,11 @@ class ViewController: BaseMyCarViewController {
             containerStackView.topAnchor.constraint(equalTo: rotatableView.bottomAnchor),
             containerStackView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             containerStackView.widthAnchor.constraint(equalToConstant: view.frame.width - 32),
-            containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -8)
+            containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor,
+                                                       constant: -8)
         ])
     }
-    
     private func injectMock() {
-        // swiftlint: disable line_length
         let testIcons = [("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc1.png", "20인치\n알로이 휠"),
                        ("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc2.png", "서라운드 뷰\n모니터"),
                        ("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc3.png", "클러스터\n(12.3인 컬러 LCD)")]
@@ -76,5 +74,4 @@ class ViewController: BaseMyCarViewController {
         })
         .store(in: &bag)
     }
-    
 }
