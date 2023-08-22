@@ -30,6 +30,7 @@
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
 		7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */; };
 		7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */; };
+		7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */; };
 		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
 		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
@@ -174,6 +175,7 @@
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
 		7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSearchButton.swift; sourceTree = "<group>"; };
 		7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSettingButton.swift; sourceTree = "<group>"; };
+		7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTagCell.swift; sourceTree = "<group>"; };
 		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
 		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
 				7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */,
 				7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */,
+				7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */,
 				7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */,
 				7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */,
 				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
@@ -789,6 +792,7 @@
 				D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */,
 				D462E8892A91C78900C5A8EC /* ConsultingView.swift in Sources */,
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
+				7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
 				7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */,
 				76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */,
@@ -842,6 +846,7 @@
 				7631E9592A87839D00015363 /* TagCell.swift in Sources */,
 				D4ACBA872A78CE8F002B6A5B /* UIColor+.swift in Sources */,
 				D4A68CFE2A80930800E2C1FD /* ArchivingResponseDTO+Mapping.swift in Sources */,
+				7683E3BC2A92FDF100BF8BEB /* SettingOptionTagCell.swift in Sources */,
 				D4A68D462A80F15500E2C1FD /* ModelPhoto.swift in Sources */,
 				D4A68D042A80946D00E2C1FD /* TrimResponseDTO+Mapping.swift in Sources */,
 				D4ACBA822A78CE56002B6A5B /* DummyModel.swift in Sources */,
