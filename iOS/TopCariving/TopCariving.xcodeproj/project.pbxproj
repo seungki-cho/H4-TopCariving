@@ -28,6 +28,7 @@
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
 		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
 		768919582A93AFEB00EFD91C /* ArchivingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */; };
@@ -169,6 +170,7 @@
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
 		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
 		768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailCell.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */,
 				7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */,
 				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
 				768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */,
@@ -781,6 +784,7 @@
 				D462E8892A91C78900C5A8EC /* ConsultingView.swift in Sources */,
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
+				7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */,
 				76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */,
 				D4A68CFA2A808E0B00E2C1FD /* ArchivingColorResponseDTO+Mapping.swift in Sources */,
 				D4A68D3E2A80F0C400E2C1FD /* TagResponseDTO.swift in Sources */,
