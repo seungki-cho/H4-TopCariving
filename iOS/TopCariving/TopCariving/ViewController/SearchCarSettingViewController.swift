@@ -12,7 +12,7 @@ class SearchCarSettingViewController: BaseSearchViewController {
     // MARK: - UI properties
     private lazy var mockImageView = {
         let image = UIImage(named: "ArchivingCarSetting")?
-            .resized(to: view.window?.windowScene?.screen.bounds.width ?? 352)
+            .resized(to: CGRect.screenBounds.width)
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white

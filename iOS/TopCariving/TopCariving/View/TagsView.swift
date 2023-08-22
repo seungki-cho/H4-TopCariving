@@ -93,7 +93,7 @@ class TagsView: UIView {
         changeHeight(by: tags)
     }
     private func changeHeight(by tags: [String]) {
-        let width = (UIScreen.main.bounds.width ?? 375) - 32
+        let width = CGRect.screenBounds.width - 32
         var xPosition: CGFloat = 0.0
         var maxRow: CGFloat = 1.0
         

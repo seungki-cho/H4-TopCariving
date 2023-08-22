@@ -114,8 +114,8 @@ class ArchivingDetailCell: UICollectionViewCell {
         ])
     }
     func setUp(with model: ArchivingDetailCellModel) {
-        optionImageView.setAsyncImage(url: model.image, size: .init(width: UIScreen.main.bounds.width - 32,
-                                                                    height: (UIScreen.main.bounds.width - 32)*0.35))
+        optionImageView.setAsyncImage(url: model.image, size: .init(width: CGRect.screenBounds.width - 32,
+                                                                    height: (CGRect.screenBounds.width - 32)*0.35))
         progressIndexLabel.text = String(format: "%02d", model.index+1)
         optionNameLabel.text = model.optionName
         detailLabel.text = model.detailOptions.joined(separator: " | ")

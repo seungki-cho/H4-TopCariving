@@ -9,7 +9,7 @@ import UIKit
 
 class ArchivingDetailHeader: UICollectionReusableView {
     // MARK: - UI properties
-    private let testImageView = UIImageView(image: UIImage(named: "TestSummary")?.resized(to: UIScreen.main.bounds.width - 32))
+    private let testImageView = UIImageView(image: UIImage(named: "TestSummary")?.resized(to: CGRect.screenBounds.width - 32))
     private let overallLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

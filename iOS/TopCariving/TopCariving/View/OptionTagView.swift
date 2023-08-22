@@ -89,7 +89,7 @@ class OptionTagView: UIView {
         changeHeight(by: options)
     }
     private func changeHeight(by options: [String]) {
-        let width = (window?.windowScene?.screen.bounds.width ?? 375) - 32
+        let width = CGRect.screenBounds.width - 32
         var xPosition: CGFloat = 0.0
         var maxRow: CGFloat = 1.0
         
