@@ -62,7 +62,8 @@ class TagReviewView: UIView {
             
             tagsView.topAnchor.constraint(equalTo: reviewLabel.bottomAnchor, constant: 12),
             tagsView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tagsView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            tagsView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomAnchor.constraint(equalTo: tagsView.bottomAnchor, constant: +10)
         ])
     }
     func refresh(by tags: [String], with name: String) {

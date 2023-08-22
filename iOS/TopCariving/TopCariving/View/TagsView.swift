@@ -28,7 +28,7 @@ class TagsView: UIView {
                                                             heightDimension: .absolute(30)))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.0),
-                                                                         heightDimension: .estimated(30)),
+                                                                         heightDimension: .absolute(30)),
                                                        subitems: [item])
         group.interItemSpacing = .fixed(Constant.interItemSpacing)
         let section = NSCollectionLayoutSection(group: group)
@@ -61,13 +61,13 @@ class TagsView: UIView {
         addSubview(collectionView)
     }
     private func setLayout() {
-        collectionViewHeightAnchor = collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 30)
+        collectionViewHeightAnchor = collectionView.heightAnchor.constraint(equalToConstant: 30)
         collectionViewHeightAnchor?.isActive = true
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.heightAnchor.constraint(equalTo: heightAnchor)
         ])
     }
     
@@ -109,9 +109,6 @@ class TagsView: UIView {
                 xPosition += Constant.interItemSpacing + tagWidth
             }
         }
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            self.collectionViewHeightAnchor?.constant = CGFloat(maxRow * 30 + (maxRow - 1) * Constant.interGroupSpacing)
-        }
+        collectionViewHeightAnchor?.constant = CGFloat(maxRow * 30 + (maxRow - 1) * Constant.interGroupSpacing)
     }
 }
