@@ -22,6 +22,7 @@
 		763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */; };
 		763F60422A7B9B08000D11D9 /* FoldableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60412A7B9B08000D11D9 /* FoldableStackView.swift */; };
 		763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F60472A7C7F35000D11D9 /* ToastView.swift */; };
+		7672EDC92A93550100A1969E /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672EDC82A93550100A1969E /* TagsView.swift */; };
 		769F68372A8E1CEB000EF81C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769F68362A8E1CEB000EF81C /* LoginViewController.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
 		7683E38B2A8EF20100BF8BEB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38A2A8EF20100BF8BEB /* ProgressView.swift */; };
@@ -170,6 +171,7 @@
 		763F603F2A7B75D1000D11D9 /* CarSummaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSummaryContainer.swift; sourceTree = "<group>"; };
 		763F60412A7B9B08000D11D9 /* FoldableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableStackView.swift; sourceTree = "<group>"; };
 		763F60472A7C7F35000D11D9 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		7672EDC82A93550100A1969E /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
 		7683E38A2A8EF20100BF8BEB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
@@ -561,6 +563,7 @@
 				7631E9522A87720200015363 /* OptionCardCell.swift */,
 				7631E9542A8777E900015363 /* OptionSelectView.swift */,
 				7631E9562A8780EB00015363 /* TagReviewView.swift */,
+				7672EDC82A93550100A1969E /* TagsView.swift */,
 				7631E9582A87839D00015363 /* TagCell.swift */,
 				7631E95A2A89181B00015363 /* OptionSnapCarouselView.swift */,
 				7631E95C2A891A7B00015363 /* OptionDescriptionCell.swift */,
@@ -821,6 +824,7 @@
 				D462E8752A8DE56400C5A8EC /* FeatureSummaryContainerView.swift in Sources */,
 				7631E9412A81D21500015363 /* MyCarFooterView.swift in Sources */,
 				D44B45752A7BC3DF00E8E207 /* DummyViewModel.swift in Sources */,
+				7672EDC92A93550100A1969E /* TagsView.swift in Sources */,
 				7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */,
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
 				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
