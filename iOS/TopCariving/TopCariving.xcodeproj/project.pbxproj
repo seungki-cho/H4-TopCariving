@@ -42,6 +42,7 @@
 		7689195A2A93B70600EFD91C /* ArchivingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919592A93B70600EFD91C /* ArchivingDetailViewController.swift */; };
 		7689195C2A93C47E00EFD91C /* BaseArchivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689195B2A93C47E00EFD91C /* BaseArchivingViewController.swift */; };
 		7689195E2A93CD2000EFD91C /* ArchivingDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689195D2A93CD2000EFD91C /* ArchivingDetailHeader.swift */; };
+		768919602A93DBB700EFD91C /* BaseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689195F2A93DBB700EFD91C /* BaseSearchViewController.swift */; };
 		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
 		76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */; };
 		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
@@ -193,6 +194,7 @@
 		768919592A93B70600EFD91C /* ArchivingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailViewController.swift; sourceTree = "<group>"; };
 		7689195B2A93C47E00EFD91C /* BaseArchivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseArchivingViewController.swift; sourceTree = "<group>"; };
 		7689195D2A93CD2000EFD91C /* ArchivingDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailHeader.swift; sourceTree = "<group>"; };
+		7689195F2A93DBB700EFD91C /* BaseSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchViewController.swift; sourceTree = "<group>"; };
 		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
 		76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryColorCell.swift; sourceTree = "<group>"; };
 		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				7683E3AB2A924ABA00BF8BEB /* ArchivingViewController.swift */,
 				768919592A93B70600EFD91C /* ArchivingDetailViewController.swift */,
 				7689195B2A93C47E00EFD91C /* BaseArchivingViewController.swift */,
+				7689195F2A93DBB700EFD91C /* BaseSearchViewController.swift */,
 				769F68362A8E1CEB000EF81C /* LoginViewController.swift */,
 			);
 			path = ViewController;
@@ -822,6 +825,7 @@
 				D4A68D362A80EFEE00E2C1FD /* Model.swift in Sources */,
 				D44B456B2A7B94D700E8E207 /* EndPoint.swift in Sources */,
 				D4ACBA442A78A3AD002B6A5B /* AppDelegate.swift in Sources */,
+				768919602A93DBB700EFD91C /* BaseSearchViewController.swift in Sources */,
 				C31350102A8B4E4700D5D401 /* ColorSelectionView.swift in Sources */,
 				76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */,
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
