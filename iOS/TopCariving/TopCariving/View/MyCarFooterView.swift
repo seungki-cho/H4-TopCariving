@@ -61,12 +61,17 @@ class MyCarFooterView: UIView {
         setLayout()
         setEvent()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUI()
         setLayout()
         setEvent()
+    }
+    init(price: String) {
+        super.init(frame: .zero)
+        setUI()
+        setLayout()
+        setPrice(to: price)
     }
     
     // MARK: - Helpers
@@ -105,7 +110,6 @@ class MyCarFooterView: UIView {
             nextButton.heightAnchor.constraint(equalTo: nextButton.widthAnchor, multiplier: 0.163)
         ])
     }
-    
     func setEvent() {
         summaryLabel.tabPublisher
             .sink(receiveValue: { [weak self] _ in
@@ -120,5 +124,8 @@ class MyCarFooterView: UIView {
                 self.tapNextButton.send(())
             })
             .store(in: &bag)
+    }
+    func setPrice(to price: String) {
+        priceLabel.text = price
     }
 }
