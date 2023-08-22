@@ -32,6 +32,7 @@
 		7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */; };
 		7683E3B62A9265E100BF8BEB /* OptionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B52A9265E100BF8BEB /* OptionTagView.swift */; };
 		7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */; };
+		7683E3BC2A92FDF100BF8BEB /* SettingOptionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BB2A92FDF100BF8BEB /* SettingOptionTagCell.swift */; };
 		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
 		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
@@ -178,6 +179,7 @@
 		7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSettingButton.swift; sourceTree = "<group>"; };
 		7683E3B52A9265E100BF8BEB /* OptionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTagView.swift; sourceTree = "<group>"; };
 		7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTagCell.swift; sourceTree = "<group>"; };
+		7683E3BB2A92FDF100BF8BEB /* SettingOptionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTagCell.swift; sourceTree = "<group>"; };
 		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
 		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */,
 				7683E3B52A9265E100BF8BEB /* OptionTagView.swift */,
 				7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */,
+				7683E3BB2A92FDF100BF8BEB /* SettingOptionTagCell.swift */,
 				7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */,
 				7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */,
 				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
