@@ -9,7 +9,7 @@ import UIKit
 
 class ArchivingDetailHeader: UICollectionReusableView {
     // MARK: - UI properties
-    private let testImageView = UIImageView(image: UIImage(named: "TestSummary")?.resized(to: CGRect.screenBounds.width - 32))
+    private let carSummaryView = MyCarivingCarSummaryView()
     private let overallLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,19 +50,19 @@ class ArchivingDetailHeader: UICollectionReusableView {
     // MARK: - Helpers
     private func setUI() {
         backgroundColor = .white
-        [testImageView, overallLabel, reviewLabelBackgroundView, reviewLabel].forEach {
+        [carSummaryView, overallLabel, reviewLabelBackgroundView, reviewLabel].forEach {
             addSubview($0)
         }
     }
     private func setLayout() {
-        testImageView.translatesAutoresizingMaskIntoConstraints = false
+        carSummaryView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            testImageView.topAnchor.constraint(equalTo: topAnchor),
-            testImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            testImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            testImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1.15),
+            carSummaryView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            carSummaryView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            carSummaryView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            carSummaryView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1.15),
             
-            overallLabel.topAnchor.constraint(equalTo: testImageView.bottomAnchor, constant: 23),
+            overallLabel.topAnchor.constraint(equalTo: carSummaryView.bottomAnchor, constant: 23),
             overallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             overallLabel.widthAnchor.constraint(equalToConstant: 60),
             overallLabel.heightAnchor.constraint(equalToConstant: 22),
@@ -79,7 +79,8 @@ class ArchivingDetailHeader: UICollectionReusableView {
             bottomAnchor.constraint(equalTo: reviewLabelBackgroundView.bottomAnchor, constant: 20)
         ])
     }
-    func setUp(with review: String) {
+    func setUp(with review: String, model: MyCarivingCarSummaryModel) {
         reviewLabel.text = review
+        carSummaryView.setMyCarivingView(to: model)
     }
 }
