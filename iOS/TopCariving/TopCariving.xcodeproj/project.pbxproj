@@ -28,6 +28,7 @@
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		768919582A93AFEB00EFD91C /* ArchivingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */; };
 		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
 		76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */; };
 		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
@@ -165,6 +166,7 @@
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailCell.swift; sourceTree = "<group>"; };
 		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
 		76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryColorCell.swift; sourceTree = "<group>"; };
 		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */,
 				D462E8DF2A93A07A00C5A8EC /* MyCarivingCarSummaryView.swift */,
 				D49B0FA22A93FD5000B3CEE2 /* CarImagePointView.swift */,
 			);
@@ -806,6 +809,7 @@
 				7631E9572A8780EB00015363 /* TagReviewView.swift in Sources */,
 				D4A68D342A80EFC900E2C1FD /* Trim.swift in Sources */,
 				D4A68D4C2A81D2C300E2C1FD /* RotatableOptionImageView.swift in Sources */,
+				768919582A93AFEB00EFD91C /* ArchivingDetailCell.swift in Sources */,
 				D462E8162A88D6E600C5A8EC /* ModalPresentationController.swift in Sources */,
 				D4A68D482A80F17C00E2C1FD /* EstimationChange.swift in Sources */,
 				7631E9472A82200C00015363 /* UILabel+.swift in Sources */,
