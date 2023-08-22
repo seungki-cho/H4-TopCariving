@@ -91,7 +91,6 @@ class FeatureSummaryContainerView: UIView {
     private func setUI() {
         outColorDescriptionView.translatesAutoresizingMaskIntoConstraints = false
         inColorDescriptionView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .hyundaiLightSand
         layer.cornerRadius = 8
         [trim, option, editButton, price, separator, outColorDescriptionView, inColorDescriptionView].forEach {
             addSubview($0)
@@ -135,6 +134,9 @@ class FeatureSummaryContainerView: UIView {
             inColorDescriptionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
+    func setBackgroundColor(to color: UIColor) {
+        backgroundColor = color
+    }
     private func test_data() {
         outColorDescriptionView = ColorDescriptionView(
             data: ColorDescriptionModel(space: "외장", colorImage: "", colorName: "문라이트 블루펄")
@@ -173,5 +175,8 @@ class FeatureSummaryContainerView: UIView {
                 colorName: data.colors[1].1
             )
         )
+    }
+    func hideEditButton() {
+        editButton.isHidden = true
     }
 }
