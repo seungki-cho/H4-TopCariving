@@ -60,9 +60,9 @@ class ArchivingDetailHeader: UICollectionReusableView {
             carSummaryView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             carSummaryView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             carSummaryView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            carSummaryView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1.15),
+            carSummaryView.heightAnchor.constraint(equalToConstant: 400),
             
-            overallLabel.topAnchor.constraint(equalTo: carSummaryView.bottomAnchor, constant: 23),
+            overallLabel.topAnchor.constraint(equalTo: carSummaryView.bottomAnchor, constant: 5),
             overallLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             overallLabel.widthAnchor.constraint(equalToConstant: 60),
             overallLabel.heightAnchor.constraint(equalToConstant: 22),
