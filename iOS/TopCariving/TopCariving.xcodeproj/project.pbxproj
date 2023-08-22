@@ -28,6 +28,7 @@
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */; };
 		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
 		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
@@ -170,6 +171,7 @@
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSearchButton.swift; sourceTree = "<group>"; };
 		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
 		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				7683E3AD2A924CAB00BF8BEB /* ArchivingSearchButton.swift */,
 				7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */,
 				7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */,
 				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
@@ -872,6 +875,7 @@
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
+				7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */,
 				D4A68D082A80952700E2C1FD /* ModelResponseDTO+Mapping.swift in Sources */,
 				7631E95B2A89181B00015363 /* OptionSnapCarouselView.swift in Sources */,
 				D462E7682A84CAA100C5A8EC /* UIControl+.swift in Sources */,
