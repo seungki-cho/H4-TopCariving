@@ -67,7 +67,15 @@ class ArchivingDetailViewController: BaseArchivingViewController {
                   tags: ["차량을 깨끗하게 유지할 수 있어요:빗자루:"])
             
         ],
-                           review: "승차감이 좋아요 차가 크고 운전하는 시야도 높아서 좋았어요 저는 13개월 아들이 있는데 뒤에 차시트 달아도 널널할 것 같습니다. 다른 주차 관련 옵션도 괜찮아요.")
+                           review: "승차감이 좋아요 차가 크고 운전하는 시야도 높아서 좋았어요 저는 13개월 아들이 있는데 뒤에 차시트 달아도 널널할 것 같습니다. 다른 주차 관련 옵션도 괜찮아요.",
+                           summaryModel: .init(featureSummary: .init(trim: "팰리세이드 Le Blanc",
+                                                                     option: "디젤 2.2 / 4WD / 7인승",
+                                                                     price: "47,340,000 원",
+                                                                     colors: [("", "듀얼 듀얼 패키지"), ("", "퀄팅 퀄팅 퀄팅")]),
+                                               carImage: "https://topcariving.s3.ap-northeast-2.amazonaws.com/360/abyss/image_001.png",
+                                               points: [.init(number: 1, isBookmarked: false)],
+                                               positions: [(0.46, 0.34)])
+        )
         
     }
 }
