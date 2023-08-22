@@ -66,6 +66,7 @@ class SearchFilterViewController: BaseSearchViewController {
         setUI()
         setLayout()
         setEvent()
+        testOptions()
     }
     private func setUI() {
         view.backgroundColor = .white
@@ -123,5 +124,17 @@ class SearchFilterViewController: BaseSearchViewController {
             navigationController?.pushViewController(SearchOptionSettingViewController(), animated: true)
         })
         .store(in: &bag)
+    }
+    var testOptionData = ["컴포트 || 패키지", "듀얼 와이드 선루프", "2열 통풍시트"]
+    private func testOptions() {
+        optionTagView.refresh(by: testOptionData)
+        optionTagView.tapRemoveTagIndexPathSubject
+            .sink(receiveValue: { [weak self] indexPath in
+                guard let self else { return }
+                self.testOptionData.remove(at: indexPath.row)
+                optionTagView.refresh(by: testOptionData)
+                optionCountLabel.text = "\(testOptionData.count) / 15"
+            })
+            .store(in: &bag)
     }
 }
