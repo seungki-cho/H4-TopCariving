@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     private let logoImageView: UIImageView = {
         let screenWidth = UIScreen.main.bounds.width
         let imageView = UIImageView(image: UIImage(named: "hyundaiLogo")?.resized(to: screenWidth * 0.5))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController {
     }()
     private let idTextField: UITextField = {
         let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.leftView = UIView(frame: .init(x: 0, y: 0, width: 10, height: 40))
         textField.leftViewMode = .always
@@ -61,12 +63,12 @@ class LoginViewController: UIViewController {
     }()
     private let loginButton: CTAButton = {
         let button = CTAButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(to: "로그인")
         return button
     }()
     // MARK: - Properties
     private var bag = Set<AnyCancellable>()
-    private var scrollViewHeightConstraint: NSLayoutConstraint?
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -78,65 +80,53 @@ class LoginViewController: UIViewController {
     // MARK: - Helpers
     private func setUI() {
         view.backgroundColor = .white
-        view.addSubview(scrollView)
         [logoImageView, idLabel, idTextField, passwordLabel, passwordTextField, loginButton].forEach {
-            scrollView.addSubview($0)
+            view.addSubview($0)
         }
     }
     private func setLayout() {
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        scrollViewHeightConstraint = scrollView.heightAnchor.constraint(equalTo: view.heightAnchor)
-        scrollViewHeightConstraint?.isActive = true
+
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: view.widthAnchor),
-            
-            logoImageView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor,
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor,
                                                constant: 100 * view.frame.height / 852),
-            logoImageView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
-            logoImageView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor,
+            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                     constant: -16),
             
-            
-            idLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
-            idLabel.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 20),
+            idLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
+            idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             idLabel.widthAnchor.constraint(equalToConstant: 30),
             idLabel.heightAnchor.constraint(equalToConstant: 30),
             
             idTextField.topAnchor.constraint(equalTo: idLabel.bottomAnchor),
-            idTextField.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 20),
-            idTextField.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -20),
+            idTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            idTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             idTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            passwordLabel.topAnchor.constraint(equalTo: idTextField.bottomAnchor, constant: 20),
-            passwordLabel.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 20),
+            passwordLabel.topAnchor.constraint(equalTo: idTextField.bottomAnchor, constant: 10),
+            passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             passwordLabel.widthAnchor.constraint(equalToConstant: 30),
             passwordLabel.heightAnchor.constraint(equalToConstant: 30),
             
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 10),
             passwordTextField.leadingAnchor.constraint(
-                equalTo: scrollView.contentLayoutGuide.leadingAnchor,
+                equalTo: view.leadingAnchor,
                 constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -20),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                        constant: -20),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            loginButton.bottomAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-            loginButton.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 20),
-            loginButton.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -20),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             loginButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
     private func setEvent() {
-        loginButton.tapPublisher()
-            .map { [weak self] _ -> (String?, String?) in
-                guard let self else { return ("", "") }
-                return (self.idTextField.text, self.passwordTextField.text)
-            }
-            .sink(receiveValue: {
-                print($0)
+        loginButton.touchUpPublisher
+            .sink(receiveValue: { [weak self] in
+                guard let self else { return }
+                print((self.idTextField.text, self.passwordTextField.text))
                 self.view.endEditing(true)
             })
             .store(in: &bag)
@@ -147,30 +137,5 @@ class LoginViewController: UIViewController {
         })
         .store(in: &bag)
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(_:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide(_:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil
-        )
-    }
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-                as? NSValue else { return }
-        let keyboardHeight = keyboardFrame.cgRectValue.height
-        scrollViewHeightConstraint?.constant += keyboardHeight
-    }
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-                as? NSValue else { return }
-        let keyboardHeight = keyboardFrame.cgRectValue.height
-        scrollViewHeightConstraint?.constant -= keyboardHeight
     }
 }
