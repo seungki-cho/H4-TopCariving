@@ -34,6 +34,7 @@
 		7683E3B42A925ED300BF8BEB /* ArchivingSettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */; };
 		7683E3B62A9265E100BF8BEB /* OptionTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B52A9265E100BF8BEB /* OptionTagView.swift */; };
 		7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */; };
+		7683E3BA2A92F9F800BF8BEB /* SearchCarSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3B92A92F9F800BF8BEB /* SearchCarSettingViewController.swift */; };
 		7683E3BC2A92FDF100BF8BEB /* SettingOptionTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BB2A92FDF100BF8BEB /* SettingOptionTagCell.swift */; };
 		7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */; };
 		7683E3C22A934A8C00BF8BEB /* ArchivingReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */; };
@@ -186,6 +187,7 @@
 		7683E3B32A925ED300BF8BEB /* ArchivingSettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSettingButton.swift; sourceTree = "<group>"; };
 		7683E3B52A9265E100BF8BEB /* OptionTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTagView.swift; sourceTree = "<group>"; };
 		7683E3B72A9265E900BF8BEB /* OptionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTagCell.swift; sourceTree = "<group>"; };
+		7683E3B92A92F9F800BF8BEB /* SearchCarSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCarSettingViewController.swift; sourceTree = "<group>"; };
 		7683E3BB2A92FDF100BF8BEB /* SettingOptionTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTagCell.swift; sourceTree = "<group>"; };
 		7683E3BF2A93485800BF8BEB /* ArchivingReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewView.swift; sourceTree = "<group>"; };
 		7683E3C12A934A8C00BF8BEB /* ArchivingReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingReviewCell.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */,
 				76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */,
 				7683E3AB2A924ABA00BF8BEB /* ArchivingViewController.swift */,
+				7683E3B92A92F9F800BF8BEB /* SearchCarSettingViewController.swift */,
 				768919592A93B70600EFD91C /* ArchivingDetailViewController.swift */,
 				7689195B2A93C47E00EFD91C /* BaseArchivingViewController.swift */,
 				7689195F2A93DBB700EFD91C /* BaseSearchViewController.swift */,
@@ -830,6 +833,7 @@
 				76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */,
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
 				D4A68D0C2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift in Sources */,
+				7683E3BA2A92F9F800BF8BEB /* SearchCarSettingViewController.swift in Sources */,
 				D462E7662A84C9BF00C5A8EC /* UIButton+.swift in Sources */,
 				D462E7782A852D3C00C5A8EC /* UIGestureRecognizer+.swift in Sources */,
 				D4A68D322A80EF8500E2C1FD /* ModifyOption.swift in Sources */,
