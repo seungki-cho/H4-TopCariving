@@ -48,6 +48,7 @@ class SearchOptionSettingViewController: BaseSearchViewController {
         setUI()
         setLayout()
         setCollectionViewDataSource()
+        test()
     }
     
     // MARK: - Helpers
@@ -91,6 +92,12 @@ class SearchOptionSettingViewController: BaseSearchViewController {
         snapShot.appendSections([Section.option])
         snapShot.appendItems(options)
         dataSource.apply(snapShot)
+    }
+    
+    var data = ["컴포트 || 패키지", "주차 보조 시스템 ||", "2열 통풍시트", "듀얼 와이드 선루프", "현대스마트센스 |", "빌트인 캠(보조배터리 포함)"]
+    func test() {
+        refresh(by: data.map { SettingOptionTagCellModel.init(name: $0, isSelected: false) })
+        optionTagView.refresh(by: data)
     }
 }
 
