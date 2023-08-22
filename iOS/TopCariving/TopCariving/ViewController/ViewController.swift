@@ -15,11 +15,20 @@ class ViewController: BaseMyCarViewController {
     private let containerStackView = FoldableStackView()
     
     // MARK: - Properties
+    private let viewModel: ModelOptionViewModel
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
         injectMock()
+    }
+    init(viewModel: ModelOptionViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Helpers
@@ -56,6 +65,13 @@ class ViewController: BaseMyCarViewController {
             containerStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor,
                                                        constant: -8)
         ])
+    }
+    private func bind() {
+        let output = viewModel.transform(input: .init(
+            viewDidLoadPublisher: NotificationCenter.default.publisher(for: Notifications.viewDidLoad)
+                .eraseToAnyPublisher()
+        ))
+        
     }
     private func injectMock() {
         let testIcons = [("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc1.png", "20인치\n알로이 휠"),
