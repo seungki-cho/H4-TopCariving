@@ -28,6 +28,7 @@
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
 		7683E38F2A8EF5A200BF8BEB /* SelectOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */; };
 		7683E3952A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */; };
+		768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */; };
 		768919582A93AFEB00EFD91C /* ArchivingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */; };
 		7689195E2A93CD2000EFD91C /* ArchivingDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689195D2A93CD2000EFD91C /* ArchivingDetailHeader.swift */; };
 		76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76932D6F2A8C62670020860D /* ColorImageLabel.swift */; };
@@ -167,6 +168,7 @@
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
 		7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionViewController.swift; sourceTree = "<group>"; };
 		7683E3942A8EFDDB00BF8BEB /* InteriorColorSelctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorColorSelctionViewController.swift; sourceTree = "<group>"; };
+		768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailView.swift; sourceTree = "<group>"; };
 		768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailCell.swift; sourceTree = "<group>"; };
 		7689195D2A93CD2000EFD91C /* ArchivingDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingDetailHeader.swift; sourceTree = "<group>"; };
 		76932D6F2A8C62670020860D /* ColorImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageLabel.swift; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 				C3C96D4A2A8BC110002C09D2 /* SummaryCell.swift */,
 				76932D6F2A8C62670020860D /* ColorImageLabel.swift */,
 				76CA13AB2A8D2E30006C3106 /* SummaryColorCell.swift */,
+				768919552A93A7BD00EFD91C /* ArchivingDetailView.swift */,
 				768919572A93AFEB00EFD91C /* ArchivingDetailCell.swift */,
 				7689195D2A93CD2000EFD91C /* ArchivingDetailHeader.swift */,
 				D462E8DF2A93A07A00C5A8EC /* MyCarivingCarSummaryView.swift */,
@@ -806,6 +809,7 @@
 				D462E7802A85F3D900C5A8EC /* UIView+.swift in Sources */,
 				D4CFBAAD2A7A25B100CCB27E /* HyundaiFont.swift in Sources */,
 				D4A68D442A80F13500E2C1FD /* BasicOption.swift in Sources */,
+				768919562A93A7BD00EFD91C /* ArchivingDetailView.swift in Sources */,
 				C3C96D452A8B5529002C09D2 /* ColorCell.swift in Sources */,
 				D4A68D022A8093F800E2C1FD /* EstimationChangeRequestDTO.swift in Sources */,
 				D4A68D302A80EF2A00E2C1FD /* Archiving.swift in Sources */,
