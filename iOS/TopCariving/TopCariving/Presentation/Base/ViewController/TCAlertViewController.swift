@@ -102,7 +102,7 @@ class TCAlertViewController: UIViewController {
         })
         .store(in: &bag)
         
-        acceptButton.tapPublisher()
+        acceptButton.touchUpPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
                 self.acceptHandler?()
