@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
         }
     }
     private func setLayout() {
-
+        
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.topAnchor,
                                                constant: 100 * view.frame.height / 852),
@@ -126,7 +126,18 @@ class LoginViewController: UIViewController {
         loginButton.touchUpPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
-                print((self.idTextField.text, self.passwordTextField.text))
+                Task {
+                    do {
+                        let isLoginFinish = try await LoginService().emailLogin(
+                            loginInfo: .init(
+                                email: self.idTextField.text ?? "",
+                                password: self.passwordTextField.text ?? ""
+                            )
+                        )
+                    } catch {
+                        NSLog(error.localizedDescription)
+                    }
+                }
                 self.view.endEditing(true)
             })
             .store(in: &bag)
