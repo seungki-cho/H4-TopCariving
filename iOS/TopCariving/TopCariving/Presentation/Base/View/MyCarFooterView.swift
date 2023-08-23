@@ -118,7 +118,7 @@ class MyCarFooterView: UIView {
             })
             .store(in: &bag)
         
-        nextButton.tapPublisher()
+        nextButton.touchUpPublisher
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
                 self.tapNextButton.send(())

@@ -106,7 +106,7 @@ class SubCategoryModalViewController: UIViewController {
         detail.text = text
     }
     func setCacnelAction() {
-        cancelButton.tapPublisher().sink {
+        cancelButton.touchUpPublisher.sink {
             self.dismiss(animated: false)
         }.store(in: &bag)
     }
