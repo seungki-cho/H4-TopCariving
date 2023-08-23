@@ -37,8 +37,11 @@ class HTTPClient: HTTPClientProtocol {
             request.httpBody = encodedBody
         }
         
-        guard let (data, response) = try? await URLSession.shared.data(for: request, delegate: nil) else {
-            return .failure(.unknown)
+        var (data, response): (Data, URLResponse)
+        do {
+            (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+        } catch {
+            return .failure(.unknown(error))
         }
         guard let response = response as? HTTPURLResponse else {
             return .failure(.noResponse)

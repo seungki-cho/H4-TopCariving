@@ -14,7 +14,7 @@ enum RequestError: Error {
     case noResponse
     case unauthorized
     case unexpectedStatusCode
-    case unknown
+    case unknown(Error)
 }
 
 extension RequestError: LocalizedError {
@@ -28,6 +28,8 @@ extension RequestError: LocalizedError {
             return "Session expired"
         default:
             return "Unknown error"
+        case .unknown(let error):
+            return "Request Error \(error)"
         }
     }
 }
