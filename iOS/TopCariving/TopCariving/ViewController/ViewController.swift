@@ -116,5 +116,10 @@ class ViewController: BaseMyCarViewController {
             view.setInfo(to: model.title, price: model.price, icons: model.icons)
             containerStackView.addArrangedSubview(view)
         }
+        footerView.tapNextButton.sink(receiveValue: { [weak self] in
+            guard let self else { return }
+            self.navigationController?.pushViewController(InteriorColorSelctionViewController(), animated: true)
+        })
+        .store(in: &bag)
     }
 }
