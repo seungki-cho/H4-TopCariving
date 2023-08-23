@@ -49,12 +49,12 @@ class ModelOptionViewModel: ViewModelType {
                 
                 switch result {
                 case .success(let success):
-                    let model = success.map {
-                        let icons = $0.photos.map { ($0.photoPNGURL, $0.content) }
+                    let model = success.enumerated().map { offset, modelDTO in
+                        let icons = modelDTO.photos.map { ($0.photoPNGURL, $0.content) }
                         return CarSummaryContainerModel.init(
                             icons: icons,
-                            title: $0.optionName,
-                            price: String.decimalStyle(from: Int($0.price))
+                            title: "\(offset+1). " + modelDTO.optionName,
+                            price: String.decimalStyle(from: Int(modelDTO.price))
                         )
                     }
                     output.modelSubject.send(model)
