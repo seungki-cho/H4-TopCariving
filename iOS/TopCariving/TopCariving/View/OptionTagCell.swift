@@ -21,7 +21,6 @@ class OptionTagCell: UICollectionViewCell {
         let imageView = UIImageView(image: image?.resized(to: 12))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .center
-        imageView.tintColor = .hyundaiLightSand
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
