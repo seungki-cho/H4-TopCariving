@@ -71,6 +71,37 @@ class ViewController: BaseMyCarViewController {
             tapNextButtonPublisher: footerView.tapNextButton.eraseToAnyPublisher(),
             tapCarIndexPublisher: containerStackView.tapSubject.eraseToAnyPublisher()
         ))
+        output.errorSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] error in
+            guard let self else { return }
+            self.showAlert(with: NSAttributedString(string: error), acceptTitle: "확인", acceptHandler: {})
+        }).store(in: &bag)
+        
+        output.unauthorizedSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+            guard let self else { return }
+            self.showAlert(with: NSAttributedString(string: "인증에 실패하였습니다."),
+                           acceptTitle: "로그인",
+                           acceptHandler: {
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }).store(in: &bag)
+        
+        output.pushSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] _ in
+            guard let self else { return }
+            // Navigation Push
+        }).store(in: &bag)
+        
+        output.modelSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] models in
+            guard let self else { return }
+            setContainer(with: models)
+        }).store(in: &bag)
         
     }
     private func setContainer(with models: [CarSummaryContainerModel]) {
