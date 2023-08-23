@@ -103,6 +103,11 @@ class ViewController: BaseMyCarViewController {
             setContainer(with: models)
         }).store(in: &bag)
         
+        output.priceSubject.sink(receiveValue: { [weak self] price in
+            guard let self else { return }
+            footerView.setPrice(to: price)
+        }).store(in: &bag)
+        
     }
     private func setContainer(with models: [CarSummaryContainerModel]) {
         models.forEach { model in

@@ -17,10 +17,11 @@ class ModelOptionViewModel: ViewModelType {
     }
     // MARK: - Output
     struct Output {
-        var modelSubject = PassthroughSubject<[CarSummaryContainerModel], Never>()
-        var unauthorizedSubject = PassthroughSubject<Void, Never>()
-        var errorSubject = PassthroughSubject<String, Never>()
-        var pushSubject = PassthroughSubject<SuccessResponseLong, Never>()
+        let modelSubject = PassthroughSubject<[CarSummaryContainerModel], Never>()
+        let unauthorizedSubject = PassthroughSubject<Void, Never>()
+        let errorSubject = PassthroughSubject<String, Never>()
+        let pushSubject = PassthroughSubject<SuccessResponseLong, Never>()
+        let priceSubject = PassthroughSubject<String, Never>()
     }
     // MARK: - Dependency
     var bag = Set<AnyCancellable>()
@@ -106,6 +107,8 @@ class ModelOptionViewModel: ViewModelType {
         input.tapCarIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
+            guard (0..<models.count) ~= index else { return }
+            output.priceSubject.send("\(String.decimalStyle(from: Int(models[index].price)))")
         }).store(in: &bag)
         return output
     }
