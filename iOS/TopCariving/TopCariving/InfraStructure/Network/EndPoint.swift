@@ -22,6 +22,6 @@ extension EndPoint {
     }
 
     var host: String {
-        return ""
+        return "dev.topcariving.com"
     }
 }
