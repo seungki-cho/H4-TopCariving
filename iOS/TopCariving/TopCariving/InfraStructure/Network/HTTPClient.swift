@@ -33,7 +33,8 @@ class HTTPClient: HTTPClientProtocol {
         request.allHTTPHeaderFields = endPoint.header
         
         if let body = endPoint.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+            guard let encodedBody = try? JSONEncoder().encode(body) else { return .failure(.encode) }
+            request.httpBody = encodedBody
         }
         
         guard let (data, response) = try? await URLSession.shared.data(for: request, delegate: nil) else {
