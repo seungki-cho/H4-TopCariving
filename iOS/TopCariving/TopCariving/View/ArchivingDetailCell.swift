@@ -9,7 +9,7 @@ import UIKit
 
 struct ArchivingDetailCellModel: Hashable {
     let image: String
-    let index: Int
+    let index: UInt8
     let optionName: String
     let detailOptions: [String]
     let tags: [String]
