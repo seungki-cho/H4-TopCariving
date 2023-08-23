@@ -68,8 +68,7 @@ class ViewController: BaseMyCarViewController {
     }
     private func bind() {
         let output = viewModel.transform(input: .init(
-            viewDidLoadPublisher: NotificationCenter.default.publisher(for: Notifications.viewDidLoad)
-                .eraseToAnyPublisher()
+            viewDidLoadPublisher: Just(()).eraseToAnyPublisher(),
         ))
         
     }
