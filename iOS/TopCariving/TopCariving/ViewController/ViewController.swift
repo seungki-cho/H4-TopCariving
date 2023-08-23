@@ -84,7 +84,8 @@ class ViewController: BaseMyCarViewController {
             guard let self else { return }
             self.showAlert(with: NSAttributedString(string: "인증에 실패하였습니다."),
                            acceptTitle: "로그인",
-                           acceptHandler: {
+                           acceptHandler: { [weak self] in
+                guard let self else { return }
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }).store(in: &bag)
