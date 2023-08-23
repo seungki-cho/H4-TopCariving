@@ -68,6 +68,8 @@ class ViewController: BaseMyCarViewController {
     private func bind() {
         let output = viewModel.transform(input: .init(
             viewDidLoadPublisher: Just(()).eraseToAnyPublisher(),
+            tapNextButtonPublisher: footerView.tapNextButton.eraseToAnyPublisher(),
+            tapCarIndexPublisher: containerStackView.tapSubject.eraseToAnyPublisher()
         ))
         
     }

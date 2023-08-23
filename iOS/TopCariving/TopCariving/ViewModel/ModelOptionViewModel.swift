@@ -11,7 +11,9 @@ import Foundation
 class ModelOptionViewModel: ViewModelType {
     // MARK: - Input
     struct Input {
-        let viewDidLoadPublisher: AnyPublisher<Notification, Never>
+        let viewDidLoadPublisher: AnyPublisher<Void, Never>
+        let tapNextButtonPublisher: AnyPublisher<Void, Never>
+        let tapCarIndexPublisher: AnyPublisher<Int, Never>
     }
     // MARK: - Output
     struct Output {
