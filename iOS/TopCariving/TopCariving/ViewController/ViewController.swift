@@ -21,7 +21,6 @@ class ViewController: BaseMyCarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        injectMock()
     }
     init(viewModel: ModelOptionViewModel) {
         self.viewModel = viewModel
@@ -72,21 +71,11 @@ class ViewController: BaseMyCarViewController {
         ))
         
     }
-    private func injectMock() {
-        let testIcons = [("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc1.png", "20인치\n알로이 휠"),
-                       ("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc2.png", "서라운드 뷰\n모니터"),
-                       ("https://topcariving.s3.ap-northeast-2.amazonaws.com/png/leBlanc3.png", "클러스터\n(12.3인 컬러 LCD)")]
-        let titles = ["1. Le Blanc", "2. Exclusive", "3. Prestige", "4. Calligraphy"]
-        let prices = ["47,720,000", "40,440,000", "47,720,000", "52,540,000"]
-        (0..<4).forEach {
+    private func setContainer(with models: [CarSummaryContainerModel]) {
+        models.forEach { model in
             let view = CarSummaryContainer()
-            view.setInfo(to: titles[$0], price: prices[$0], icons: testIcons)
+            view.setInfo(to: model.title, price: model.price, icons: model.icons)
             containerStackView.addArrangedSubview(view)
         }
-        footerView.tapNextButton.sink(receiveValue: { [weak self] in
-            guard let self else { return }
-            self.navigationController?.pushViewController(DummyViewController(), animated: true)
-        })
-        .store(in: &bag)
     }
 }
