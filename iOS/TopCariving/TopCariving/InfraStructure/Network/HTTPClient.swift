@@ -43,6 +43,7 @@ class HTTPClient: HTTPClientProtocol {
         } catch {
             return .failure(.unknown(error))
         }
+        
         guard let response = response as? HTTPURLResponse else {
             return .failure(.noResponse)
         }
@@ -55,7 +56,7 @@ class HTTPClient: HTTPClientProtocol {
         case 401:
             return .failure(.unauthorized)
         default:
-            return .failure(.unexpectedStatusCode)
+            return .failure(.unexpectedStatusCode(response.statusCode))
         }
     }
 }
