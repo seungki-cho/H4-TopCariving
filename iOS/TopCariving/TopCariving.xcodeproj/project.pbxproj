@@ -29,6 +29,8 @@
 		767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */; };
 		767E240B2A96519400006017 /* EngineResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */; };
 		767E240D2A96520E00006017 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240C2A96520E00006017 /* Engine.swift */; };
+		767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */; };
+		767E24162A966FA400006017 /* ExteriorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24152A966FA400006017 /* ExteriorColor.swift */; };
 		767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */; };
 		767E241E2A96795900006017 /* OptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241D2A96795900006017 /* OptionResponse.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
@@ -196,6 +198,8 @@
 		767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SuccessResponseLongDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240C2A96520E00006017 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExteriorColorResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		767E24152A966FA400006017 /* ExteriorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColor.swift; sourceTree = "<group>"; };
 		767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E241D2A96795900006017 /* OptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionResponse.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
@@ -743,6 +747,7 @@
 				D4A68D3B2A80F06E00E2C1FD /* Tag.swift */,
 				D4A68D332A80EFC900E2C1FD /* Trim.swift */,
 				767E240C2A96520E00006017 /* Engine.swift */,
+				767E24152A966FA400006017 /* ExteriorColor.swift */,
 				767E241D2A96795900006017 /* OptionResponse.swift */,
 			);
 			path = Entities;
@@ -802,6 +807,7 @@
 				D4A68D072A80952700E2C1FD /* ModelResponseDTO+Mapping.swift */,
 				D4A68D092A80957100E2C1FD /* SelectionDetailResponseDTO+Mapping.swift */,
 				D4A68D0B2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift */,
+				767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */,
 				D4A68D0F2A80968500E2C1FD /* ColorResponseDTO+Mapping.swift */,
 				D4A68D122A8096CC00E2C1FD /* ColorBothResponseDTO+Mapping.swift */,
 				D4A68D152A80973C00E2C1FD /* BasicOptionResponseDTO+Mapping.swift */,
@@ -1106,6 +1112,7 @@
 				76932D702A8C62670020860D /* ColorImageLabel.swift in Sources */,
 				D4A68CF82A808D6300E2C1FD /* OptionRequestDTO.swift in Sources */,
 				D4A68D0C2A8095B100E2C1FD /* SelectionResponseDTO+Mapping.swift in Sources */,
+				767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */,
 				7683E3BA2A92F9F800BF8BEB /* SearchCarSettingViewController.swift in Sources */,
 				D462E7662A84C9BF00C5A8EC /* UIButton+.swift in Sources */,
 				D462E7782A852D3C00C5A8EC /* UIGestureRecognizer+.swift in Sources */,
@@ -1179,6 +1186,7 @@
 				D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */,
 				7631E9552A8777E900015363 /* OptionSelectView.swift in Sources */,
 				D4A68D422A80F10E00E2C1FD /* ColorBoth.swift in Sources */,
+				767E24162A966FA400006017 /* ExteriorColor.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				763F60482A7C7F35000D11D9 /* ToastView.swift in Sources */,
 				767E23DB2A94FF1A00006017 /* ModelOptionViewModel.swift in Sources */,
