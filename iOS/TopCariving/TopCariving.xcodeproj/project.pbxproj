@@ -27,6 +27,7 @@
 		767E23DD2A95097C00006017 /* TrimEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DC2A95097C00006017 /* TrimEndPoint.swift */; };
 		767E23DF2A9514E400006017 /* SelectOptionRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DE2A9514E400006017 /* SelectOptionRequestDTO.swift */; };
 		767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */; };
+		767E24092A964FC900006017 /* EngineSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24082A964FC900006017 /* EngineSelectionViewModel.swift */; };
 		767E240B2A96519400006017 /* EngineResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */; };
 		767E240D2A96520E00006017 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240C2A96520E00006017 /* Engine.swift */; };
 		767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24112A966DF300006017 /* ColorEndPoint.swift */; };
@@ -199,6 +200,7 @@
 		767E23DC2A95097C00006017 /* TrimEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimEndPoint.swift; sourceTree = "<group>"; };
 		767E23DE2A9514E400006017 /* SelectOptionRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionRequestDTO.swift; sourceTree = "<group>"; };
 		767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SuccessResponseLongDTO+Mapping.swift"; sourceTree = "<group>"; };
+		767E24082A964FC900006017 /* EngineSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSelectionViewModel.swift; sourceTree = "<group>"; };
 		767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240C2A96520E00006017 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		767E24112A966DF300006017 /* ColorEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEndPoint.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				767E23DA2A94FF1A00006017 /* ModelOptionViewModel.swift */,
+				767E24082A964FC900006017 /* EngineSelectionViewModel.swift */,
 				767E24192A96762700006017 /* BodyTypeSelectionViewModel.swift */,
 			);
 			path = ViewModel;
@@ -1108,6 +1111,7 @@
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
 				7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
+				767E24092A964FC900006017 /* EngineSelectionViewModel.swift in Sources */,
 				7683E3C02A93485800BF8BEB /* ArchivingReviewView.swift in Sources */,
 				76CA13AC2A8D2E30006C3106 /* SummaryColorCell.swift in Sources */,
 				D4A68CFA2A808E0B00E2C1FD /* ArchivingColorResponseDTO+Mapping.swift in Sources */,
