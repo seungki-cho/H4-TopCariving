@@ -5,6 +5,7 @@
 //  Created by 조승기 on 2023/08/18.
 //
 
+import Combine
 import UIKit
 
 class ColorSectionViewController: BaseMyCarViewController {
@@ -14,13 +15,22 @@ class ColorSectionViewController: BaseMyCarViewController {
     private let colorSelectionView = ColorSelectionView()
     private let tagReviewView = TagReviewView()
     // MARK: - Properties
+    let viewModel: ExteriorColorSelectionViewModel
     
     // MARK: - Lifecycles
+    init(viewModel: ExteriorColorSelectionViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        testReviewView("문라이트 블루펄0")
-        testColor()
-        testPush()
+        bind()
+//        testReviewView("문라이트 블루펄0")
+//        testColor()
+//        testPush()
     }
     
     // MARK: - Helpers
@@ -57,39 +67,57 @@ class ColorSectionViewController: BaseMyCarViewController {
             tagReviewView.tagsViewBottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -8)
             ])
     }
-    private func testReviewView(_ name: String) {
-        tagReviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"].shuffled(), with: name)
-    }
-
-    private func testColor() {
-        let images = [
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/black.png",
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/silver.png",
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/blue.png",
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/brown.png",
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/gray.png",
-            "https://topcariving.s3.ap-northeast-2.amazonaws.com/external_color/white.png"
-        ]
-        let names = ["어비스블랙펄",
-                     "쉬머링 실버 메탈릭",
-                     "문라이프 블루 펄",
-                     "가이아 브라운 펄",
-                     "그라파이트 그레이 메탈릭",
-                     "크리미 화이트 펄"]
+    func bind() {
         colorSelectionView.setCategoryName(to: "외장")
-        colorSelectionView.refresh(by: images)
-        colorSelectionView.setColorName(to: "어비스블랙펄")
-        let prfix = ["", "silver_", "blue_", "brown_", "gray_", "white_"]
-        colorSelectionView.tapColorSubject.sink(receiveValue: {
-            self.colorSelectionView.setColorName(to: names[$0.row])
-            self.testReviewView(names[$0.row])
-            self.rotatableView.prefix = prfix[$0.row]
-        }).store(in: &bag)
-    }
-    private func testPush() {
-        footerView.tapNextButton.sink(receiveValue: { [weak self] in
-            guard let self else { return }
-            self.navigationController?.pushViewController(InteriorColorSelctionViewController(), animated: true)
-        }).store(in: &bag)
+        let output = viewModel.transform(input: .init(
+            viewDidLoadPublisher: Just(()).eraseToAnyPublisher(),
+            tapNextButtonPublisher: footerView.tapNextButton.eraseToAnyPublisher(),
+            tapColorIndexPublisher: colorSelectionView.tapColorSubject.map { $0.row }.eraseToAnyPublisher())
+        )
+        
+        output.errorSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] error in
+                guard let self else { return }
+                self.showAlert(with: NSAttributedString(string: error), acceptTitle: "확인", acceptHandler: {})
+            }).store(in: &bag)
+        
+        output.unauthorizedSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in
+                guard let self else { return }
+                self.showAlert(with: NSAttributedString(string: "인증에 실패하였습니다."),
+                               acceptTitle: "로그인",
+                               acceptHandler: { [weak self] in
+                    guard let self else { return }
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
+            }).store(in: &bag)
+        
+        output.pushSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] archivingID in
+                guard let self else { return }
+                // push
+            }).store(in: &bag)
+        
+        output.colorImageSubject
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] colors in
+                guard let self else { return }
+                colorSelectionView.refresh(by: colors)
+            }).store(in: &bag)
+        
+        output.carImagesSubject
+            .sink(receiveValue: { [weak self] images in
+                guard let self else { return }
+                print(images)
+            }).store(in: &bag)
+        
+        Publishers.CombineLatest(output.colorNameSubject, output.tagsSubject).receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] (name, tags) in
+                guard let self else { return }
+                tagReviewView.refresh(by: tags, with: name)
+            }).store(in: &bag)
     }
 }
