@@ -32,6 +32,7 @@
 		767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24112A966DF300006017 /* ColorEndPoint.swift */; };
 		767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */; };
 		767E24162A966FA400006017 /* ExteriorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24152A966FA400006017 /* ExteriorColor.swift */; };
+		767E24182A9675FC00006017 /* BodyTypeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24172A9675FC00006017 /* BodyTypeSelectionViewController.swift */; };
 		767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */; };
 		767E241E2A96795900006017 /* OptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241D2A96795900006017 /* OptionResponse.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
@@ -202,6 +203,7 @@
 		767E24112A966DF300006017 /* ColorEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEndPoint.swift; sourceTree = "<group>"; };
 		767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExteriorColorResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E24152A966FA400006017 /* ExteriorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColor.swift; sourceTree = "<group>"; };
+		767E24172A9675FC00006017 /* BodyTypeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTypeSelectionViewController.swift; sourceTree = "<group>"; };
 		767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E241D2A96795900006017 /* OptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionResponse.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 			children = (
 				D4ACBA472A78A3AD002B6A5B /* ViewController.swift */,
 				7683E3A32A92162500BF8BEB /* TrimSelectionViewController.swift */,
+				767E24172A9675FC00006017 /* BodyTypeSelectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1208,6 +1211,7 @@
 				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
 				76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
+				767E24182A9675FC00006017 /* BodyTypeSelectionViewController.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 				7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */,
