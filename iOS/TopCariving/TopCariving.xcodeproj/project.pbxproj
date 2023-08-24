@@ -31,6 +31,7 @@
 		767E24092A964FC900006017 /* EngineSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24082A964FC900006017 /* EngineSelectionViewModel.swift */; };
 		767E240B2A96519400006017 /* EngineResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */; };
 		767E240D2A96520E00006017 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240C2A96520E00006017 /* Engine.swift */; };
+		767E24102A96691F00006017 /* ExteriorColorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240F2A96691F00006017 /* ExteriorColorSelectionViewModel.swift */; };
 		767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24112A966DF300006017 /* ColorEndPoint.swift */; };
 		767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */; };
 		767E24162A966FA400006017 /* ExteriorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24152A966FA400006017 /* ExteriorColor.swift */; };
@@ -207,6 +208,7 @@
 		767E24082A964FC900006017 /* EngineSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSelectionViewModel.swift; sourceTree = "<group>"; };
 		767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240C2A96520E00006017 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		767E240F2A96691F00006017 /* ExteriorColorSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColorSelectionViewModel.swift; sourceTree = "<group>"; };
 		767E24112A966DF300006017 /* ColorEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEndPoint.swift; sourceTree = "<group>"; };
 		767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExteriorColorResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E24152A966FA400006017 /* ExteriorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColor.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			children = (
 				767E23F32A960DF600006017 /* View */,
 				767E23F42A960E0000006017 /* VIewController */,
+				767E240E2A9668FD00006017 /* ViewModel */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -721,6 +724,14 @@
 				D49B0FA42A94811D00B3CEE2 /* LoginService.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		767E240E2A9668FD00006017 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				767E240F2A96691F00006017 /* ExteriorColorSelectionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D44B45512A7B759400E8E207 /* Data */ = {
@@ -1201,6 +1212,7 @@
 				7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */,
 				D4A68D2E2A80EF0C00E2C1FD /* ArchivingOption.swift in Sources */,
 				D4A68D4A2A80F1AA00E2C1FD /* Option.swift in Sources */,
+				767E24102A96691F00006017 /* ExteriorColorSelectionViewModel.swift in Sources */,
 				D4A68D3C2A80F06E00E2C1FD /* Tag.swift in Sources */,
 				D462E8732A8D7F1400C5A8EC /* TicketView.swift in Sources */,
 				D462E8812A9098C600C5A8EC /* MyCarChoicedOptionView.swift in Sources */,
