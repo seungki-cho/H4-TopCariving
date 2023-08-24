@@ -96,7 +96,6 @@ class ArchivingViewController: BaseArchivingViewController {
         .store(in: &bag)
         reviewView.tapCellIndexPathSubject.sink(receiveValue: { [weak self] indexPath in
             guard let self else { return }
-            print(indexPath)
             self.navigationController?.pushViewController(ArchivingDetailViewController(), animated: true)
         }).store(in: &bag)
     }
