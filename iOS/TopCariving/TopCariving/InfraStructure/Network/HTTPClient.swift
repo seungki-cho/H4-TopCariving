@@ -43,16 +43,19 @@ class HTTPClient: HTTPClientProtocol {
         } catch {
             return .failure(.unknown(error))
         }
-        
         guard let response = response as? HTTPURLResponse else {
             return .failure(.noResponse)
         }
         switch response.statusCode {
         case 200...299:
-            guard let decodeResponse = try? JSONDecoder().decode(responseModel, from: data) else {
+            do {
+                let decodeResponse = try JSONDecoder().decode(responseModel, from: data)
+                return .success(decodeResponse)
+            } catch {
+                print(error)
+                NSLog(error.localizedDescription)
                 return .failure(.decode)
             }
-            return .success(decodeResponse)
         case 401:
             return .failure(.unauthorized)
         default:
