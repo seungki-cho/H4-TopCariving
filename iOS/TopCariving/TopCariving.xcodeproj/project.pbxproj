@@ -33,6 +33,7 @@
 		767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */; };
 		767E24162A966FA400006017 /* ExteriorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24152A966FA400006017 /* ExteriorColor.swift */; };
 		767E24182A9675FC00006017 /* BodyTypeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24172A9675FC00006017 /* BodyTypeSelectionViewController.swift */; };
+		767E241A2A96762700006017 /* BodyTypeSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24192A96762700006017 /* BodyTypeSelectionViewModel.swift */; };
 		767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */; };
 		767E241E2A96795900006017 /* OptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241D2A96795900006017 /* OptionResponse.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
@@ -204,6 +205,7 @@
 		767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExteriorColorResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E24152A966FA400006017 /* ExteriorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColor.swift; sourceTree = "<group>"; };
 		767E24172A9675FC00006017 /* BodyTypeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTypeSelectionViewController.swift; sourceTree = "<group>"; };
+		767E24192A96762700006017 /* BodyTypeSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTypeSelectionViewModel.swift; sourceTree = "<group>"; };
 		767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E241D2A96795900006017 /* OptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionResponse.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				767E23DA2A94FF1A00006017 /* ModelOptionViewModel.swift */,
+				767E24192A96762700006017 /* BodyTypeSelectionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				C3C96D4B2A8BC110002C09D2 /* SummaryCell.swift in Sources */,
 				D4A68D062A8094EA00E2C1FD /* ModelPhotoResponseDTO.swift in Sources */,
 				D462E8712A8D15FE00C5A8EC /* MyCarCompletionViewController.swift in Sources */,
+				767E241A2A96762700006017 /* BodyTypeSelectionViewModel.swift in Sources */,
 				D44B45732A7B969200E8E207 /* RequestError.swift in Sources */,
 				7683E39E2A91E4B900BF8BEB /* EngineSelectionContainer.swift in Sources */,
 				D462E8122A88A3D700C5A8EC /* SubCategoryModalViewController.swift in Sources */,
