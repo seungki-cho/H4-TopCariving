@@ -27,6 +27,8 @@
 		767E23DD2A95097C00006017 /* TrimEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DC2A95097C00006017 /* TrimEndPoint.swift */; };
 		767E23DF2A9514E400006017 /* SelectOptionRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23DE2A9514E400006017 /* SelectOptionRequestDTO.swift */; };
 		767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */; };
+		767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */; };
+		767E241E2A96795900006017 /* OptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241D2A96795900006017 /* OptionResponse.swift */; };
 		7683E3892A8EF0FA00BF8BEB /* ColorSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */; };
 		7683E38B2A8EF20100BF8BEB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38A2A8EF20100BF8BEB /* ProgressView.swift */; };
 		7683E38D2A8EF4B400BF8BEB /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */; };
@@ -190,6 +192,8 @@
 		767E23DC2A95097C00006017 /* TrimEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimEndPoint.swift; sourceTree = "<group>"; };
 		767E23DE2A9514E400006017 /* SelectOptionRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionRequestDTO.swift; sourceTree = "<group>"; };
 		767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SuccessResponseLongDTO+Mapping.swift"; sourceTree = "<group>"; };
+		767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		767E241D2A96795900006017 /* OptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionResponse.swift; sourceTree = "<group>"; };
 		7683E3882A8EF0FA00BF8BEB /* ColorSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSectionViewController.swift; sourceTree = "<group>"; };
 		7683E38A2A8EF20100BF8BEB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		7683E38C2A8EF4B400BF8BEB /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
@@ -734,6 +738,7 @@
 				D4A68D372A80F01400E2C1FD /* SelectionDetail.swift */,
 				D4A68D3B2A80F06E00E2C1FD /* Tag.swift */,
 				D4A68D332A80EFC900E2C1FD /* Trim.swift */,
+				767E241D2A96795900006017 /* OptionResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 				D4A68D152A80973C00E2C1FD /* BasicOptionResponseDTO+Mapping.swift */,
 				D4A68D3D2A80F0C400E2C1FD /* TagResponseDTO.swift */,
 				767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */,
+				767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1075,6 +1081,7 @@
 				D462E8872A91C75300C5A8EC /* AnotherProcedureView.swift in Sources */,
 				D4ACBA482A78A3AD002B6A5B /* ViewController.swift in Sources */,
 				D462E8892A91C78900C5A8EC /* ConsultingView.swift in Sources */,
+				767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */,
 				D44B456F2A7B968200E8E207 /* HTTPClient.swift in Sources */,
 				7683E3B82A9265E900BF8BEB /* OptionTagCell.swift in Sources */,
 				D4CFBAAF2A7A3E6500CCB27E /* UIFont+.swift in Sources */,
@@ -1107,6 +1114,7 @@
 				D462E77E2A85CCA900C5A8EC /* CombineGestureEvent.swift in Sources */,
 				7631E95D2A891A7B00015363 /* OptionDescriptionCell.swift in Sources */,
 				D462E89D2A92428A00C5A8EC /* MyCarFeatureView.swift in Sources */,
+				767E241E2A96795900006017 /* OptionResponse.swift in Sources */,
 				76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */,
 				D462E8DD2A93463A00C5A8EC /* CGRect+.swift in Sources */,
 				7631E94B2A8382E100015363 /* BaseMyCarViewController.swift in Sources */,
