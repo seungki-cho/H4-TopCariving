@@ -29,6 +29,7 @@
 		767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */; };
 		767E240B2A96519400006017 /* EngineResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */; };
 		767E240D2A96520E00006017 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E240C2A96520E00006017 /* Engine.swift */; };
+		767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24112A966DF300006017 /* ColorEndPoint.swift */; };
 		767E24142A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */; };
 		767E24162A966FA400006017 /* ExteriorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E24152A966FA400006017 /* ExteriorColor.swift */; };
 		767E241C2A96790A00006017 /* OptionResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */; };
@@ -198,6 +199,7 @@
 		767E23E02A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SuccessResponseLongDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E240C2A96520E00006017 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		767E24112A966DF300006017 /* ColorEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEndPoint.swift; sourceTree = "<group>"; };
 		767E24132A966F4000006017 /* ExteriorColorResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExteriorColorResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		767E24152A966FA400006017 /* ExteriorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExteriorColor.swift; sourceTree = "<group>"; };
 		767E241B2A96790A00006017 /* OptionResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 				D44B45702A7B968A00E8E207 /* HTTPMethod.swift */,
 				D44B45722A7B969200E8E207 /* RequestError.swift */,
 				767E23DC2A95097C00006017 /* TrimEndPoint.swift */,
+				767E24112A966DF300006017 /* ColorEndPoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1201,6 +1204,7 @@
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
 				767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */,
+				767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */,
 				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
 				76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */,
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
