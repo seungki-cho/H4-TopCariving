@@ -43,6 +43,12 @@ class EngineSelectionViewModel: ViewModelType {
     // MARK: - Helper
     func transform(input: Input) -> Output {
         let output = Output()
+        transformViewDidLoad(input, output)
+        transformTapNextButton(input, output)
+        transformTapEngineIndex(input, output)
+        return output
+    }
+    private func transformViewDidLoad(_ input: Input, _ output: Output) {
         input.viewDidLoadPublisher.sink(receiveValue: { [weak self] _ in
             guard let self else { return }
             Task { [weak self] in
@@ -74,7 +80,8 @@ class EngineSelectionViewModel: ViewModelType {
                 }
             }
         }).store(in: &bag)
-        
+    }
+    private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
             .map { [weak self] () -> Int? in
                 guard let self else { return nil }
@@ -91,7 +98,7 @@ class EngineSelectionViewModel: ViewModelType {
                     guard let self else { return }
                     let result = await self.httpClient.sendRequest(
                         endPoint: TrimEndPoint.postEngines(.init(carOptionId: self.engines[index].carOptionId,
-                                                                archivingId: archivingID)),
+                                                                 archivingId: archivingID)),
                         responseModel: SuccessResponseLong.self
                     )
                     switch result {
@@ -106,8 +113,9 @@ class EngineSelectionViewModel: ViewModelType {
                         }
                     }
                 }
-        }).store(in: &bag)
-        
+            }).store(in: &bag)
+    }
+    private func transformTapEngineIndex(_ input: Input, _ output: Output) {
         input.tapEngineIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
@@ -116,6 +124,5 @@ class EngineSelectionViewModel: ViewModelType {
             output.trimImageSubject.send(engines[index].photoUrl)
             output.trimNameSubject.send(engines[index].optionName)
         }).store(in: &bag)
-        return output
     }
 }

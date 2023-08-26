@@ -39,6 +39,12 @@ class ModelOptionViewModel: ViewModelType {
     // MARK: - Helper
     func transform(input: Input) -> Output {
         let output = Output()
+        transformViewDidLoad(input, output)
+        transformTapNextButton(input, output)
+        transformTapCarIndex(input, output)
+        return output
+    }
+    private func transformViewDidLoad(_ input: Input, _ output: Output) {
         input.viewDidLoadPublisher.sink(receiveValue: { [weak self] _ in
             guard let self else { return }
             Task { [weak self] in
@@ -70,7 +76,8 @@ class ModelOptionViewModel: ViewModelType {
                 }
             }
         }).store(in: &bag)
-        
+    }
+    private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
             .map { [weak self] () -> Int? in
                 guard let self else { return nil }
@@ -103,13 +110,13 @@ class ModelOptionViewModel: ViewModelType {
                     }
                 }
         }).store(in: &bag)
-        
+    }
+    private func transformTapCarIndex(_ input: Input, _ output: Output) {
         input.tapCarIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
             guard (0..<models.count) ~= index else { return }
             output.priceSubject.send("\(String.decimalStyle(from: Int(models[index].price)))")
         }).store(in: &bag)
-        return output
     }
 }

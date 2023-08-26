@@ -43,6 +43,12 @@ class DrivingMethodSelectionViewModel: ViewModelType {
     // MARK: - Helper
     func transform(input: Input) -> Output {
         let output = Output()
+        transformViewDidLoad(input, output)
+        transformTapNextButton(input, output)
+        transformTapDrivingMethodIndex(input, output)
+        return output
+    }
+    private func transformViewDidLoad(_ input: Input, _ output: Output) {
         input.viewDidLoadPublisher.sink(receiveValue: { [weak self] _ in
             guard let self else { return }
             Task { [weak self] in
@@ -72,7 +78,8 @@ class DrivingMethodSelectionViewModel: ViewModelType {
                 }
             }
         }).store(in: &bag)
-        
+    }
+    private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
             .map { [weak self] () -> Int? in
                 guard let self else { return nil }
@@ -105,7 +112,8 @@ class DrivingMethodSelectionViewModel: ViewModelType {
                     }
                 }
         }).store(in: &bag)
-        
+    }
+    private func transformTapDrivingMethodIndex(_ input: Input, _ output: Output) {
         input.tapDrivingMethodIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
@@ -114,6 +122,5 @@ class DrivingMethodSelectionViewModel: ViewModelType {
             output.trimImageSubject.send(options[index].photoUrl)
             output.trimNameSubject.send(options[index].optionName)
         }).store(in: &bag)
-        return output
     }
 }

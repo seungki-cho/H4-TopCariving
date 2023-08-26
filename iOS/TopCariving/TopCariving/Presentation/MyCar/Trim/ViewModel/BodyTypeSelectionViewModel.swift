@@ -43,6 +43,12 @@ class BodyTypeSelectionViewModel: ViewModelType {
     // MARK: - Helper
     func transform(input: Input) -> Output {
         let output = Output()
+        transformViewDidLoad(input, output)
+        transformTapNextButton(input, output)
+        transformTapBodyTypeIndex(input, output)
+        return output
+    }
+    private func transformViewDidLoad(_ input: Input, _ output: Output) {
         input.viewDidLoadPublisher.sink(receiveValue: { [weak self] _ in
             guard let self else { return }
             Task { [weak self] in
@@ -55,7 +61,7 @@ class BodyTypeSelectionViewModel: ViewModelType {
                 switch result {
                 case .success(let success):
                     let model = success.enumerated().map { offset, modelDTO in
-                        return TrimSelectionModel.init(title: "\(offset + 1). " + modelDTO.optionName,
+                        TrimSelectionModel.init(title: "\(offset + 1). " + modelDTO.optionName,
                                                        price: "+" + String.decimalStyle(from: modelDTO.price),
                                                        description: modelDTO.optionDetail)
                     }
@@ -72,7 +78,8 @@ class BodyTypeSelectionViewModel: ViewModelType {
                 }
             }
         }).store(in: &bag)
-        
+    }
+    private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
             .map { [weak self] () -> Int? in
                 guard let self else { return nil }
@@ -105,7 +112,8 @@ class BodyTypeSelectionViewModel: ViewModelType {
                     }
                 }
         }).store(in: &bag)
-        
+    }
+    private func transformTapBodyTypeIndex(_ input: Input, _ output: Output) {
         input.tapBodyTypeIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
@@ -114,6 +122,5 @@ class BodyTypeSelectionViewModel: ViewModelType {
             output.trimImageSubject.send(options[index].photoUrl)
             output.trimNameSubject.send(options[index].optionName)
         }).store(in: &bag)
-        return output
     }
 }

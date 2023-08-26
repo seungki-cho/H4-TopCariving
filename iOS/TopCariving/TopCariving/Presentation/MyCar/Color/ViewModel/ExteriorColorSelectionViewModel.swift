@@ -43,6 +43,12 @@ class ExteriorColorSelectionViewModel: ViewModelType {
     // MARK: - Helper
     func transform(input: Input) -> Output {
         let output = Output()
+        transformViewDidLoad(input, output)
+        transformTapNextButton(input, output)
+        transformTapColorIndex(input, output)
+        return output
+    }
+    private func transformViewDidLoad(_ input: Input, _ output: Output) {
         input.viewDidLoadPublisher.sink(receiveValue: { [weak self] _ in
             guard let self else { return }
             Task { [weak self] in
@@ -70,7 +76,8 @@ class ExteriorColorSelectionViewModel: ViewModelType {
                 }
             }
         }).store(in: &bag)
-        
+    }
+    private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
             .compactMap { [weak self] () -> Int? in
                 guard let self else { return nil }
@@ -102,7 +109,8 @@ class ExteriorColorSelectionViewModel: ViewModelType {
                     }
                 }
         }).store(in: &bag)
-        
+    }
+    private func transformTapColorIndex(_ input: Input, _ output: Output) {
         input.tapColorIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
@@ -111,6 +119,5 @@ class ExteriorColorSelectionViewModel: ViewModelType {
             output.colorNameSubject.send(colors[index].optionName)
             output.tagsSubject.send(colors[index].tagResponses.map { $0.content })
         }).store(in: &bag)
-        return output
     }
 }
