@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MockImageService {
-    static let shared = MockImageService()
+class ImageService {
+    static let shared = ImageService()
     private let cache = ImageCacheService.shared
     
     private init() { }

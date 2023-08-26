@@ -22,6 +22,6 @@ extension UIImage {
         }
     }
     static func imageService(url: String) async -> UIImage? {
-        await MockImageService.shared.loadImage(with: url)
+        await ImageService.shared.loadImage(with: url)
     }
 }
