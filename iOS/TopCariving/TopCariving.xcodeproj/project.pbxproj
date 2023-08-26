@@ -75,6 +75,7 @@
 		76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */; };
 		76DFFEFF2A9A3AAD0095D81F /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */; };
 		76DFFF012A9A422E0095D81F /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF002A9A422E0095D81F /* ImageCacheService.swift */; };
+		76DFFF032A9A49CE0095D81F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF022A9A49CE0095D81F /* UIImageView+.swift */; };
 		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
@@ -254,6 +255,7 @@
 		76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		76DFFF002A9A422E0095D81F /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		76DFFF022A9A49CE0095D81F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
@@ -934,6 +936,7 @@
 				D4CFBAAE2A7A3E6500CCB27E /* UIFont+.swift */,
 				D462E7772A852D3C00C5A8EC /* UIGestureRecognizer+.swift */,
 				C31350092A7E826C00D5D401 /* UIImage+.swift */,
+				76DFFF022A9A49CE0095D81F /* UIImageView+.swift */,
 				7631E9462A82200C00015363 /* UILabel+.swift */,
 				D462E77F2A85F3D900C5A8EC /* UIView+.swift */,
 				76CA13B12A8E0135006C3106 /* UIViewController+.swift */,
@@ -1250,6 +1253,7 @@
 				D4ACBA802A78CE4D002B6A5B /* ViewModelProtocol.swift in Sources */,
 				767E24182A9675FC00006017 /* BodyTypeSelectionViewController.swift in Sources */,
 				7631E9612A89A0C400015363 /* OptionDescriptionView.swift in Sources */,
+				76DFFF032A9A49CE0095D81F /* UIImageView+.swift in Sources */,
 				D4ACBA462A78A3AD002B6A5B /* SceneDelegate.swift in Sources */,
 				76DFFF012A9A422E0095D81F /* ImageCacheService.swift in Sources */,
 				7683E3AE2A924CAB00BF8BEB /* ArchivingSearchButton.swift in Sources */,
