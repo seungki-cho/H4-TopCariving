@@ -22,7 +22,6 @@ extension URLSession {
             task.resume()
         }
     }
-    
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
         try await withCheckedThrowingContinuation { continuation in
             let task = self.dataTask(with: request) { data, response, error in
@@ -32,6 +31,20 @@ extension URLSession {
                 }
                 
                 continuation.resume(returning: (data, response))
+            }
+            
+            task.resume()
+        }
+    }
+    func downloadTask(with url: URL) async throws -> (URL, URLResponse) {
+        try await withCheckedThrowingContinuation { continuation in
+            let task = self.downloadTask(with: url) { fileURL, response, error in
+                if let fileURL = fileURL, let response = response {
+                    continuation.resume(returning: (fileURL, response))
+                } else {
+                    let error = error ?? URLError(.unknown)
+                    continuation.resume(throwing: error)
+                }
             }
             
             task.resume()
