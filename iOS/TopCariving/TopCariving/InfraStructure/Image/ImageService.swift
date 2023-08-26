@@ -26,4 +26,20 @@ class ImageService {
         
         return image
     }
+
+    func prefetchImage(stringURL: String) {
+        guard cache.loadImage(key: stringURL) == nil else { return }
+        
+        guard let url = URL(string: stringURL) else { return }
+        
+        let task = URLSession.shared.downloadTask(with: url) { localURL, _, error in
+            guard error == nil,
+                  let localURL = localURL,
+                  let data = try? Data(contentsOf: localURL),
+                  let image = UIImage(data: data) else { return }
+            
+            self.cache.saveImage(key: stringURL, image: image)
+        }
+        task.resume()
+    }
 }
