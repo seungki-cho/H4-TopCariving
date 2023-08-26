@@ -57,7 +57,7 @@ class CarSummaryContainer: FoldableView {
     }
     
     private func makeIconImageView(by url: String) -> UIImageView {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: UIImage(systemName: "photo")?.resized(to: 40))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.setAsyncImage(url: url, size: .init(width: 40, height: 40))
         
@@ -68,7 +68,7 @@ class CarSummaryContainer: FoldableView {
     private func makeIconLabel(by text: String) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .designSystem(.init(name: .regular, size: ._14))
+        label.font = .designSystem(.init(name: .regular, size: ._12))
         label.textColor = .hyundaiPrimaryBlue
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
