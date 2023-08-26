@@ -28,9 +28,6 @@ class ColorSectionViewController: BaseMyCarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-//        testReviewView("문라이트 블루펄0")
-//        testColor()
-//        testPush()
     }
     
     // MARK: - Helpers
@@ -64,7 +61,8 @@ class ColorSectionViewController: BaseMyCarViewController {
             tagReviewView.topAnchor.constraint(equalTo: colorSelectionView.bottomAnchor, constant: 20),
             tagReviewView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             tagReviewView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            tagReviewView.tagsViewBottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -8)
+            tagReviewView.tagsViewBottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor,
+                                                          constant: -8)
             ])
     }
     func bind() {
@@ -94,24 +92,11 @@ class ColorSectionViewController: BaseMyCarViewController {
                 })
             }).store(in: &bag)
         
-        output.pushSubject
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] archivingID in
-                guard let self else { return }
-                // push
-            }).store(in: &bag)
-        
         output.colorImageSubject
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] colors in
                 guard let self else { return }
                 colorSelectionView.refresh(by: colors)
-            }).store(in: &bag)
-        
-        output.carImagesSubject
-            .sink(receiveValue: { [weak self] images in
-                guard let self else { return }
-                print(images)
             }).store(in: &bag)
         
         Publishers.CombineLatest(output.colorNameSubject, output.tagsSubject).receive(on: DispatchQueue.main)
