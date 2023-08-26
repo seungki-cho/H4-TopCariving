@@ -70,8 +70,9 @@ class ColorSectionViewController: BaseMyCarViewController {
         let output = viewModel.transform(input: .init(
             viewDidLoadPublisher: Just(()).eraseToAnyPublisher(),
             tapNextButtonPublisher: footerView.tapNextButton.eraseToAnyPublisher(),
-            tapColorIndexPublisher: colorSelectionView.tapColorSubject.map { $0.row }.eraseToAnyPublisher())
-        )
+            tapColorIndexPublisher: colorSelectionView.tapColorSubject.map { $0.row }.eraseToAnyPublisher(),
+            rotateIndexPublisher: rotatableView.currentImageIndexSubject.eraseToAnyPublisher()
+        ))
         
         output.errorSubject
             .receive(on: DispatchQueue.main)
@@ -103,6 +104,11 @@ class ColorSectionViewController: BaseMyCarViewController {
             .sink(receiveValue: { [weak self] (name, tags) in
                 guard let self else { return }
                 tagReviewView.refresh(by: tags, with: name)
+            }).store(in: &bag)
+        output.carImageSubject
+            .sink(receiveValue: { [weak self] image in
+                guard let self else { return }
+                rotatableView.setImage(to: image)
             }).store(in: &bag)
     }
 }
