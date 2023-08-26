@@ -14,6 +14,7 @@ class ExteriorColorSelectionViewModel: ViewModelType {
         let viewDidLoadPublisher: AnyPublisher<Void, Never>
         let tapNextButtonPublisher: AnyPublisher<Void, Never>
         let tapColorIndexPublisher: AnyPublisher<Int, Never>
+        let rotateIndexPublisher: AnyPublisher<Int, Never>
     }
     // MARK: - Output
     struct Output {
@@ -21,7 +22,7 @@ class ExteriorColorSelectionViewModel: ViewModelType {
         let unauthorizedSubject = PassthroughSubject<Void, Never>()
         let errorSubject = PassthroughSubject<String, Never>()
         let pushSubject = PassthroughSubject<SuccessResponseLong, Never>()
-        let carImagesSubject = PassthroughSubject<[String], Never>()
+        let carImageSubject = PassthroughSubject<String, Never>()
         let colorNameSubject = PassthroughSubject<String, Never>()
         let tagsSubject = PassthroughSubject<[String], Never>()
     }
@@ -46,6 +47,7 @@ class ExteriorColorSelectionViewModel: ViewModelType {
         transformViewDidLoad(input, output)
         transformTapNextButton(input, output)
         transformTapColorIndex(input, output)
+        transformRotateIndex(input, output)
         return output
     }
     private func transformViewDidLoad(_ input: Input, _ output: Output) {
@@ -115,9 +117,13 @@ class ExteriorColorSelectionViewModel: ViewModelType {
             guard let self else { return }
             self.selectedIndex = index
             guard (0..<colors.count) ~= index else { return }
-            output.carImagesSubject.send([])
             output.colorNameSubject.send(colors[index].optionName)
             output.tagsSubject.send(colors[index].tagResponses.map { $0.content })
+        }).store(in: &bag)
+    }
+    private func transformRotateIndex(_ input: Input, _ output: Output) {
+        input.rotateIndexPublisher.sink(receiveValue: { index in
+            output.carImageSubject.send(blueImages[index])
         }).store(in: &bag)
     }
 }
