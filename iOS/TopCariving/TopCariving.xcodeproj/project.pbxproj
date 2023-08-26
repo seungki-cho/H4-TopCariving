@@ -73,6 +73,7 @@
 		76CA13AE2A8DE64E006C3106 /* TCAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */; };
 		76CA13B22A8E0135006C3106 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B12A8E0135006C3106 /* UIViewController+.swift */; };
 		76CA13B42A8E062B006C3106 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */; };
+		76DFFEFF2A9A3AAD0095D81F /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */; };
 		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
@@ -250,6 +251,7 @@
 		76CA13AD2A8DE64E006C3106 /* TCAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAlertViewController.swift; sourceTree = "<group>"; };
 		76CA13B12A8E0135006C3106 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		76CA13B32A8E062B006C3106 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
+		76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 				7631E9462A82200C00015363 /* UILabel+.swift */,
 				D462E77F2A85F3D900C5A8EC /* UIView+.swift */,
 				76CA13B12A8E0135006C3106 /* UIViewController+.swift */,
+				76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 				D462E85A2A8B79C300C5A8EC /* BaseOptonMainCategoryModel.swift in Sources */,
 				C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */,
 				763F60402A7B75D1000D11D9 /* CarSummaryContainer.swift in Sources */,
+				76DFFEFF2A9A3AAD0095D81F /* URLSession+.swift in Sources */,
 				767E23E12A951D3200006017 /* SuccessResponseLongDTO+Mapping.swift in Sources */,
 				767E24122A966DF300006017 /* ColorEndPoint.swift in Sources */,
 				C3C96D472A8B9CD1002C09D2 /* SummaryViewController.swift in Sources */,
