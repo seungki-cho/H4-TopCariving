@@ -19,11 +19,11 @@ class ImageService {
         }
         
         guard let url = URL(string: stringURL),
-              let response = try? await URLSession.shared.data(from: url),
-              let image = UIImage(data: response.0) else { return nil }
+              let response = try? await URLSession.shared.downloadTask(with: url),
+              let data = try? Data(contentsOf: response.0),
+              let image = UIImage(data: data) else { return nil }
         
-        cache.saveImage(key: stringURL, image: image)
-        
+        self.cache.saveImage(key: stringURL, image: image)
         return image
     }
 
