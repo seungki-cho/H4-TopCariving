@@ -39,7 +39,7 @@ class HTTPClient: HTTPClientProtocol {
         
         var (data, response): (Data, URLResponse)
         do {
-            (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+            (data, response) = try await URLSession.shared.data(for: request)
         } catch {
             return .failure(.unknown(error))
         }
