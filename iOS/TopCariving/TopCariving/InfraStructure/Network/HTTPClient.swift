@@ -52,7 +52,6 @@ class HTTPClient: HTTPClientProtocol {
                 let decodeResponse = try JSONDecoder().decode(responseModel, from: data)
                 return .success(decodeResponse)
             } catch {
-                print(error)
                 NSLog(error.localizedDescription)
                 return .failure(.decode)
             }
