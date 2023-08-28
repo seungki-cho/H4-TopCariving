@@ -24,7 +24,7 @@ class MyCarCompletionViewController: BaseMyCarViewController {
         return label
     }()
     private var myCarFeatureView = MyCarFeatureView()
-    private var myCarChoicedOptionView = MyCarChoicedOptionView()
+    private var myCarChoicedOptionView = MyCarChoicedOptionView(myCarChoicedOptionModel: .init(myCarChoicedOptionItems: []))
     private var anotherProcedureView = AnotherProcedureView()
     private let consultingView = ConsultingView()
     

@@ -79,8 +79,9 @@ class MyCarChoicedOptionView: UIView {
         ])
     }
     func setStackView(to data: [MyCarChoicedOptionItemModel]) {
-        for idx in 0..<data.count {
-            stackView.addArrangedSubview(MyCarChoicedOptionItemView(data: data[idx]))
+        let testData = testMakeMyCarChoicedoptionItemModel()
+        for idx in 0..<testData.count {
+            stackView.addArrangedSubview(MyCarChoicedOptionItemView(data: testData[idx]))
         }
         setTitle()
     }
@@ -90,14 +91,14 @@ class MyCarChoicedOptionView: UIView {
     private func testMakeMyCarChoicedoptionItemModel() -> [MyCarChoicedOptionItemModel] {
         var ret: [MyCarChoicedOptionItemModel] = []
         
-        ret.append(.init(imageName: "https://topcariving.com/photo.jpg", optionName: "컴포트II", optionPrice: "1,090,000", optionDetail: "주요 주행 정보를 전면 윈드실드에 표시합니다."))
+        ret.append(.init(imageName: "comport2", optionName: "컴포트II", optionPrice: "1,090,000", optionDetail: "주요 주행 정보를 전면 윈드실드에 표시합니다."))
         ret.append(.init(
-            imageName: "https://topcariving.s3.ap-northeast-2.amazonaws.com/H_Genuine_Accessories/dualmufflerpackage.jpeg",
+            imageName: "dualmufflerpackage",
                          optionName: "듀얼 머플러 패키지",
             optionPrice: "840,000",
             optionDetail: "[내비게이션 기반 스마트 크루즈 컨트롤(진출입로)]차량 후면부에 스포티함을 한층 강화시켜주는 듀얼 머플러와 디자인 리어 스키드 상품입니다."))
         ret.append(.init(
-            imageName: "https://topcariving.s3.ap-northeast-2.amazonaws.com/N_performance/20_darkwheel.jpeg",
+            imageName: "20_darkwheel",
                          optionName: "20인치 다크 스퍼터링 힐", optionPrice: "840,000", optionDetail: "스포티한 디자인 감성을 원하는 고객을 위한 N 퍼포먼스 파츠 휠입니다."))
         return ret
     }

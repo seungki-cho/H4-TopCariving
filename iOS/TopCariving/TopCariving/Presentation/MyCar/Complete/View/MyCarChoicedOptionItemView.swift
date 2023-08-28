@@ -18,6 +18,9 @@ class MyCarChoicedOptionItemView: UIView {
     // MARK: - UI properties
     private var imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "ChoicedOptionItem"))
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -106,14 +109,13 @@ class MyCarChoicedOptionItemView: UIView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             
             optionName.heightAnchor.constraint(equalToConstant: 28),
-            optionName.widthAnchor.constraint(equalToConstant: 65),
             optionName.topAnchor.constraint(equalTo: topAnchor, constant: 13),
             optionName.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 11.26),
             
             optionSeparator.heightAnchor.constraint(equalToConstant: 13),
             optionSeparator.widthAnchor.constraint(equalToConstant: 1),
             optionSeparator.topAnchor.constraint(equalTo: topAnchor, constant: 19),
-            optionSeparator.leadingAnchor.constraint(equalTo: optionName.leadingAnchor, constant: 62),
+            optionSeparator.leadingAnchor.constraint(equalTo: optionName.trailingAnchor, constant: 5),
             
             optionPrice.heightAnchor.constraint(equalToConstant: 28),
             optionPrice.widthAnchor.constraint(equalToConstant: 100),
