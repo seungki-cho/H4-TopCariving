@@ -28,7 +28,7 @@ class ColorDescriptionView: UIView {
         imageView.layer.cornerRadius = 8
         imageView.layer.borderColor = UIColor.hyundaiActiveBlue.cgColor
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .black
         return imageView
     }()
     private var colorName: UILabel = {
@@ -87,7 +87,7 @@ class ColorDescriptionView: UIView {
         space.text = text
     }
     func setColor(to colorImage: String) {
-        spaceColor.backgroundColor = .red
+        spaceColor.backgroundColor = .black
         // 이미지 서비스로 변경
     }
     func setColorName(to name: String) {

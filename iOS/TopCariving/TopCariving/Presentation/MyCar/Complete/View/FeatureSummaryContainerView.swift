@@ -153,10 +153,10 @@ class FeatureSummaryContainerView: UIView {
         }
         inColorDescriptionView.setData(to: .init(space: "외장",
                                                  colorImage: data.colors[0].0,
-                                                 colorName: data.colors[0].1))
+                                                 colorName: "문라이트 블루펄"))
         outColorDescriptionView.setData(to: .init(space: "내장",
                                                   colorImage: data.colors[1].0,
-                                                  colorName: data.colors[1].1))
+                                                  colorName: "퀄팅 천연(블랙)"))
     }
     func hideEditButton() {
         editButton.isHidden = true
