@@ -17,7 +17,20 @@ struct TokenInfo: Codable {
 }
 
 class LoginService {
-    enum LoginResult {
+    static let shared = LoginService()
+    var myAccessToken = ""
+    var myRefreshToken = ""
+    private init() {}
+    enum LoginResult: Equatable {
+        static func == (lhs: LoginService.LoginResult, rhs: LoginService.LoginResult) -> Bool {
+            switch (lhs, rhs) {
+            case (success, success):
+                return true
+            default:
+                return false
+            }
+        }
+        
         case success
         case failure(LoginError)
     }
@@ -61,6 +74,7 @@ class LoginService {
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if error != nil {
                     continuation.resume(returning: .failure(.transportError))
+                    return
                 }
                 guard let data = data else {
                     continuation.resume(returning: .failure(.missingData))
@@ -82,7 +96,7 @@ class LoginService {
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         if let accessToken = jsonResponse["accessToken"] as? String,
                            let refreshToken = jsonResponse["refreshToken"] as? String {
-                            Task {
+                            Task.detached(priority: .userInitiated) { [weak self] in
                                 let ableSavingAccessToken = await KeyChain.saveStringToKeychain(
                                     value: accessToken,
                                     key: "accessToken"
@@ -93,6 +107,8 @@ class LoginService {
                                 )
                                 if ableSavingAccessToken && ableSavingRefreshToken {
                                     NSLog("success")
+                                    self?.myAccessToken = accessToken
+                                    self?.myRefreshToken = refreshToken
                                     continuation.resume(returning: .success)
                                 } else {
                                     NSLog("failure")
@@ -141,6 +157,8 @@ class LoginService {
                         let ableDeletingAccessToken = await KeyChain.deleteStringFromKeychain(key: "accessToken")
                         let ableDeletingRefreshToken = await KeyChain.deleteStringFromKeychain(key: "refreshToken")
                         if ableDeletingAccessToken && ableDeletingRefreshToken {
+                            self.myAccessToken = ""
+                            self.myRefreshToken = ""
                             continuation.resume(returning: .failure(.serverError(code: 401)))
                         } else {
                             continuation.resume(returning: .failure(.keyChainError))
@@ -167,6 +185,8 @@ class LoginService {
                                     key: "refreshToken"
                                 )
                                 if ableSavingAccessToken && ableSavingRefreshToken {
+                                    self.myAccessToken = accessToken
+                                    self.myRefreshToken = refreshToken
                                     continuation.resume(returning: .success)
                                 } else {
                                     continuation.resume(returning: .failure(.keyChainError))

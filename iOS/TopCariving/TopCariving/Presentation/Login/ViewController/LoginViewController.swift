@@ -128,16 +128,24 @@ class LoginViewController: UIViewController {
                 guard let self else { return }
                 Task {
                     do {
-                        let isLoginFinish = try await LoginService().emailLogin(
+                        let isLoginFinish = try await LoginService.shared.emailLogin(
                             loginInfo: .init(
                                 email: self.idTextField.text ?? "",
                                 password: self.passwordTextField.text ?? ""
                             )
                         )
+                        if isLoginFinish == LoginService.LoginResult.success {
+                            DispatchQueue.main.async {
+                                self.navigationController?.pushViewController(
+                                    ViewController(viewModel: .init(httpClient: HTTPClient())), animated: true
+                                )
+                            }
+                        }
                     } catch {
                         NSLog(error.localizedDescription)
                     }
                 }
+                
                 self.view.endEditing(true)
             })
             .store(in: &bag)

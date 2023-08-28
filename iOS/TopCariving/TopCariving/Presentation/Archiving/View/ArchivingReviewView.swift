@@ -13,7 +13,7 @@ class ArchivingReviewView: UIView {
         case review
     }
     // MARK: - UI properties
-    private lazy var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ArchivingReviewCell.self, forCellWithReuseIdentifier: ArchivingReviewCell.identifier)
@@ -27,15 +27,18 @@ class ArchivingReviewView: UIView {
         
         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1.0),
                                                                        heightDimension: .estimated(188)),
-                                                       subitems: [item])
+                                                     subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 12
         
         return UICollectionViewCompositionalLayout(section: section)
     }()
+    
     // MARK: - Properties
     private var dataSource: UICollectionViewDiffableDataSource<Section, ArchivingReviewCellModel>!
+    private var bag = Set<AnyCancellable>()
     var tapCellIndexPathSubject = PassthroughSubject<IndexPath, Never>()
+    
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,10 +76,12 @@ class ArchivingReviewView: UIView {
         })
     }
     func refresh(by models: [ArchivingReviewCellModel]) {
-        var snapShot = dataSource.snapshot()
-        snapShot.appendSections([.review])
-        snapShot.appendItems(models)
-        dataSource.apply(snapShot)
+        var snapShot = self.dataSource.snapshot()
+        if snapShot.sectionIdentifiers.isEmpty {
+            snapShot.appendSections([.review])
+        }
+        snapShot.appendItems(models, toSection: .review)
+        self.dataSource.apply(snapShot)
     }
 }
 

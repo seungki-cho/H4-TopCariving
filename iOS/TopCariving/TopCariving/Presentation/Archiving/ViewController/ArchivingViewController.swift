@@ -37,6 +37,7 @@ class ArchivingViewController: BaseArchivingViewController {
     private let reviewView = ArchivingReviewView()
     // MARK: - Properties
     private var bag = Set<AnyCancellable>()
+    private let viewModel: ArchivingReviewViewModel = ArchivingReviewViewModel(httpClient: HTTPClient())
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -44,11 +45,13 @@ class ArchivingViewController: BaseArchivingViewController {
         setUI()
         setLayout()
         setEvent()
-        test()
+        fetchReviewData()
+        setupDataSubscription()
     }
     
     // MARK: - Helpers
     private func setUI() {
+        reviewView.collectionView.prefetchDataSource = self
         view.backgroundColor = .white
         [searchButton, currentAddedLabel, optionTagView, reviewBackgroundView, newestLabel, reviewView].forEach {
             view.addSubview($0)
@@ -96,38 +99,27 @@ class ArchivingViewController: BaseArchivingViewController {
         .store(in: &bag)
         reviewView.tapCellIndexPathSubject.sink(receiveValue: { [weak self] indexPath in
             guard let self else { return }
-            print(indexPath)
             self.navigationController?.pushViewController(ArchivingDetailViewController(), animated: true)
         }).store(in: &bag)
     }
-    private func test() {
-        reviewView.refresh(by: [
-            .init(carName: "팰리세이드 Le Blanc",
-                  searchType: "구매",
-                  date: Date(),
-                  trim: "디젤 2.2 / 4WD / 7인승",
-                  outColorName: "문라이트 블루펄",
-                  inColorName: "퀼팅 천연(블랙)",
-                  selectOptions: [],
-                  tags: ["편리해요😉", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶"]),
-            .init(carName: "팰리세이드 Le Blanc",
-                  searchType: "시승",
-                  date: Date(),
-                  trim: "디젤 2.2 / 4WD / 7인승",
-                  outColorName: "문라이트 블루펄",
-                  inColorName: "퀼팅 천연(블랙)",
-                  selectOptions: [],
-                  tags: ["이것만 있으면 나도 주차고수🚘", "편리해요😉", "대형견도 문제 없어요🐶"]),
-            .init(carName: "팰리세이드 Le Blanc",
-                  searchType: "시승",
-                  date: Date(),
-                  trim: "디젤 2.2 / 4WD / 7인승",
-                  outColorName: "문라이트 블루펄",
-                  inColorName: "퀼팅 천연(블랙)",
-                  selectOptions: [],
-                  tags: ["주차고수🚘", "이것만 있으면"])
-        ])
-        
-        optionTagView.refresh(by: ["컴포트 || 패키지", "컴포트 || 패키지1", "컴포트 || 패키지3"])
+    private func fetchReviewData() {
+        viewModel.fetchReviewCellData(page: 1)
+    }
+    private func setupDataSubscription() {
+        viewModel.reviewCellData.sink { [weak self] cellModels in
+            self?.updateUI(with: cellModels)
+        }.store(in: &viewModel.bag)
+    }
+    func updateUI(with cellModels: [ArchivingReviewCellModel]) {
+        reviewView.refresh(by: cellModels)
+    }
+}
+extension ArchivingViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let lastIndexPath = indexPaths.last?.item ?? 0
+        let count = viewModel.reviewCellData.value.count
+        if lastIndexPath >= count - 1 {
+            viewModel.requestMoreData(page: viewModel.loadPage + 1)
+        }
     }
 }
