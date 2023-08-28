@@ -94,7 +94,7 @@ class SelectOptionViewController: BaseMyCarViewController {
     }
     // swiftlint: disable line_length
     private func testReviewView() {
-        reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳"], with: "컴포트 II")
+        reviewView.refresh(by: tags[0], with: "컴포트 II")
     }
     private func testOptionDescriptionCollection() {
         carImageView.setAsyncImage(url: detailImages[0])
@@ -106,12 +106,21 @@ class SelectOptionViewController: BaseMyCarViewController {
     }
     
     private func testOptionSelectView() {
-        optionSelectView.tapAddButtonSubject.sink(receiveValue: { _ in
-            self.reviewView.refresh(by: ["어린이👶", "이것만 있으면 나도 주차고수🚘", "대형견도 문제 없어요🐶", "큰 짐도 OK🧳", ["A", "B", "C", "D"].randomElement()!].shuffled(), with: "컴포트 II")
+        optionSelectView.tapAddButtonSubject.sink(receiveValue: { [weak self] index in
+            guard let self else { return }
+            self.reviewView.refresh(by: tags[index.row], with: self.names[index.row])
         }).store(in: &bag)
     }
     
     // data는 OptionSelectViewDataSource를 위한 데이터 소스 입니다.
+    let tags = [
+        [ "어린이👶", "가족들도 좋은 옵션👨‍👩‍👧‍👦", "가격이 합리적이에요👍", "깨끗하게 유지할 수 있어요🧹", "대형견도 문제 없어요🐶"],
+        ["편리해요☺️", "이것만 있으면 나도 주차고수🚘", "가격이 합리적이에요👍", "안전사고 예방🚨", "처음보는 옵션😲"],
+        ["가격이 합리적이에요👍", "가족들을 위한 옵션👨‍👩‍👧‍👦", "여름에 쓰기 좋아요☀️", "편리해요☺️"],
+        ["트렌디한 디자인😎", "가격이 합리적이에요?", "가족들도 좋은 옵션👨‍👩‍👧‍👦", "시원한 공기🪟", "여름에 쓰기 좋아요☀️"],
+        ["고화질👀", "빠른영상공유📷", "합리적이에요👍", "방전걱정없어요🔋"],
+        ["주행이 편안해요🚙", "가격이 합리적이에요👍", "편리해요☺️", "안전사고 예방🚨", "믿을 수 있는 성능🤝"]
+    ]
     let images = [
         "https://topcariving.s3.ap-northeast-2.amazonaws.com/selected/roa.jpeg",
         "https://topcariving.s3.ap-northeast-2.amazonaws.com/selected/pca.jpeg",
@@ -129,7 +138,7 @@ class SelectOptionViewController: BaseMyCarViewController {
         "현대스마트센스 I"
     ]
     let prices = [
-        109000000,
+        1090000,
         690000,
         400000,
         890000,
@@ -183,7 +192,7 @@ class SelectOptionViewController: BaseMyCarViewController {
                 })
                 self.carImageView.setAsyncImage(url: detailImages[indexPath.row],
                                                 size: carImageView.bounds.size)
-                
+                reviewView.refresh(by: tags[indexPath.row], with: names[indexPath.row])
             })
             .store(in: &bag)
         optionDescriptionCollection.didDisplayCellIndexPathSubject
@@ -196,7 +205,7 @@ class SelectOptionViewController: BaseMyCarViewController {
     private func testPush() {
         footerView.tapNextButton.sink(receiveValue: {[weak self] _ in
             guard let self else { return }
-            self.navigationController?.pushViewController(ArchivingViewController(), animated: true)
+            self.navigationController?.pushViewController(SelectGenuineOptionViewController(), animated: true)
         })
         .store(in: &bag)
     }

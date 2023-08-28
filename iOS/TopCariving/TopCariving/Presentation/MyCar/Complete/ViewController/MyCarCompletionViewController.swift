@@ -4,7 +4,7 @@
 //
 //  Created by Eunno An on 2023/08/16.
 //
-
+import Combine
 import UIKit
 
 struct MyCarCompletionModel {
@@ -24,7 +24,7 @@ class MyCarCompletionViewController: BaseMyCarViewController {
         return label
     }()
     private var myCarFeatureView = MyCarFeatureView()
-    private var myCarChoicedOptionView = MyCarChoicedOptionView()
+    private var myCarChoicedOptionView = MyCarChoicedOptionView(myCarChoicedOptionModel: .init(myCarChoicedOptionItems: []))
     private var anotherProcedureView = AnotherProcedureView()
     private let consultingView = ConsultingView()
     
@@ -47,11 +47,15 @@ class MyCarCompletionViewController: BaseMyCarViewController {
         setUI()
         setLayout()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setLayout()
+        footerView.tapNextButton.sink(receiveValue:  { [weak self] in
+            guard let self else { return }
+            navigationController?.pushViewController(ArchivingViewController(), animated: true)
+        }).store(in: &bag)
     }
     
     // MARK: - Helpers

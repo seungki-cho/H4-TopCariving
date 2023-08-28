@@ -1,39 +1,43 @@
 //
-//  ModelOptionViewModel.swift
+//  EngineSelectionViewModel.swift
 //  TopCariving
 //
-//  Created by 조승기 on 2023/08/22.
+//  Created by 조승기 on 2023/08/23.
 //
 
 import Combine
 import Foundation
 
-class ModelOptionViewModel: ViewModelType {
+class EngineSelectionViewModel: ViewModelType {
     // MARK: - Input
     struct Input {
         let viewDidLoadPublisher: AnyPublisher<Void, Never>
         let tapNextButtonPublisher: AnyPublisher<Void, Never>
-        let tapCarIndexPublisher: AnyPublisher<Int, Never>
+        let tapEngineIndexPublisher: AnyPublisher<Int, Never>
     }
     // MARK: - Output
     struct Output {
-        let modelSubject = PassthroughSubject<[CarSummaryContainerModel], Never>()
+        let modelSubject = PassthroughSubject<[EngineModel], Never>()
         let unauthorizedSubject = PassthroughSubject<Void, Never>()
         let errorSubject = PassthroughSubject<String, Never>()
         let pushSubject = PassthroughSubject<SuccessResponseLong, Never>()
         let priceSubject = PassthroughSubject<String, Never>()
+        let trimImageSubject = PassthroughSubject<String, Never>()
+        let trimNameSubject = PassthroughSubject<String, Never>()
     }
     // MARK: - Dependency
     var bag = Set<AnyCancellable>()
     let httpClient: HTTPClientProtocol
     
     // MARK: - State
-    var models = [Model]()
+    var archivingID: Int64
+    var engines = [Engine]()
     var selectedIndex: Int?
     
     // MARK: - LifeCycle
-    init(httpClient: HTTPClientProtocol) {
+    init(httpClient: HTTPClientProtocol, archivingID: Int64) {
         self.httpClient = httpClient
+        self.archivingID = archivingID
     }
     
     // MARK: - Helper
@@ -41,7 +45,7 @@ class ModelOptionViewModel: ViewModelType {
         let output = Output()
         transformViewDidLoad(input, output)
         transformTapNextButton(input, output)
-        transformTapCarIndex(input, output)
+        transformTapEngineIndex(input, output)
         return output
     }
     private func transformViewDidLoad(_ input: Input, _ output: Output) {
@@ -50,22 +54,22 @@ class ModelOptionViewModel: ViewModelType {
             Task { [weak self] in
                 guard let self else { return }
                 let result = await self.httpClient.sendRequest(
-                    endPoint: TrimEndPoint.getModels,
-                    responseModel: [ModelResponseDTO].self
+                    endPoint: TrimEndPoint.getEngines,
+                    responseModel: [EngineResponseDTO].self
                 ).map { $0.map { $0.toDomain() } }
                 
                 switch result {
                 case .success(let success):
                     let model = success.enumerated().map { offset, modelDTO in
-                        let icons = modelDTO.photos.map { ($0.photoPNGURL, $0.content) }
-                        return CarSummaryContainerModel.init(
-                            icons: icons,
-                            title: "\(offset+1). " + modelDTO.optionName,
-                            price: String.decimalStyle(from: Int(modelDTO.price))
-                        )
+                        return EngineModel.init(title: "\(offset + 1). " + modelDTO.optionName,
+                                                price: "+" + String.decimalStyle(from: Int(modelDTO.price)),
+                                                description: modelDTO.optionDetail,
+                                                outputDescription: modelDTO.maxOutput,
+                                                torqueDescription: modelDTO.maxTorque)
                     }
+
                     output.modelSubject.send(model)
-                    self.models = success
+                    self.engines = success
                 case .failure(let failure):
                     switch failure {
                     case .unauthorized:
@@ -86,15 +90,15 @@ class ModelOptionViewModel: ViewModelType {
             .sink(receiveValue: { [weak self] index in
                 guard let self,
                       let index = index else { return }
-                guard index == 0 else {
-                    output.errorSubject.send("현재 지원하지 않는 트림입니다.")
+                guard (0..<engines.count) ~= index else {
+                    output.errorSubject.send("에러가 발생했습니다.")
                     return
                 }
                 Task { [weak self] in
                     guard let self else { return }
                     let result = await self.httpClient.sendRequest(
-                        endPoint: TrimEndPoint.postModels(.init(carOptionId: self.models[index].id,
-                                                                archivingId: nil)),
+                        endPoint: TrimEndPoint.postEngines(.init(carOptionId: self.engines[index].carOptionId,
+                                                                 archivingId: archivingID)),
                         responseModel: SuccessResponseLong.self
                     )
                     switch result {
@@ -109,14 +113,16 @@ class ModelOptionViewModel: ViewModelType {
                         }
                     }
                 }
-        }).store(in: &bag)
+            }).store(in: &bag)
     }
-    private func transformTapCarIndex(_ input: Input, _ output: Output) {
-        input.tapCarIndexPublisher.sink(receiveValue: { [weak self] index in
+    private func transformTapEngineIndex(_ input: Input, _ output: Output) {
+        input.tapEngineIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
-            guard (0..<models.count) ~= index else { return }
-            output.priceSubject.send("\(String.decimalStyle(from: Int(models[index].price)))")
+            guard (0..<engines.count) ~= index else { return }
+            output.priceSubject.send("\(String.decimalStyle(from: Int(engines[index].price)))")
+            output.trimImageSubject.send(engines[index].photoUrl)
+            output.trimNameSubject.send(engines[index].optionName)
         }).store(in: &bag)
     }
 }
