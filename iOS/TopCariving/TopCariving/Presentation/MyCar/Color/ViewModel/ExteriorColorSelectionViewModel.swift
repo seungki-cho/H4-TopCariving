@@ -1,39 +1,44 @@
 //
-//  ModelOptionViewModel.swift
+//  ExteriorColorSelectionViewModel.swift
 //  TopCariving
 //
-//  Created by 조승기 on 2023/08/22.
+//  Created by 조승기 on 2023/08/24.
 //
 
 import Combine
 import Foundation
 
-class ModelOptionViewModel: ViewModelType {
+class ExteriorColorSelectionViewModel: ViewModelType {
     // MARK: - Input
     struct Input {
         let viewDidLoadPublisher: AnyPublisher<Void, Never>
         let tapNextButtonPublisher: AnyPublisher<Void, Never>
-        let tapCarIndexPublisher: AnyPublisher<Int, Never>
+        let tapColorIndexPublisher: AnyPublisher<Int, Never>
+        let rotateIndexPublisher: AnyPublisher<Int, Never>
     }
     // MARK: - Output
     struct Output {
-        let modelSubject = PassthroughSubject<[CarSummaryContainerModel], Never>()
+        let colorImageSubject = PassthroughSubject<[String], Never>()
         let unauthorizedSubject = PassthroughSubject<Void, Never>()
         let errorSubject = PassthroughSubject<String, Never>()
         let pushSubject = PassthroughSubject<SuccessResponseLong, Never>()
-        let priceSubject = PassthroughSubject<String, Never>()
+        let carImageSubject = PassthroughSubject<String, Never>()
+        let colorNameSubject = PassthroughSubject<String, Never>()
+        let tagsSubject = PassthroughSubject<[String], Never>()
     }
     // MARK: - Dependency
     var bag = Set<AnyCancellable>()
     let httpClient: HTTPClientProtocol
     
     // MARK: - State
-    var models = [Model]()
+    var archivingID: Int64
+    var colors = [ExteriorColor]()
     var selectedIndex: Int?
     
     // MARK: - LifeCycle
-    init(httpClient: HTTPClientProtocol) {
+    init(httpClient: HTTPClientProtocol, archivingID: Int64) {
         self.httpClient = httpClient
+        self.archivingID = archivingID
     }
     
     // MARK: - Helper
@@ -41,7 +46,8 @@ class ModelOptionViewModel: ViewModelType {
         let output = Output()
         transformViewDidLoad(input, output)
         transformTapNextButton(input, output)
-        transformTapCarIndex(input, output)
+        transformTapColorIndex(input, output)
+        transformRotateIndex(input, output)
         return output
     }
     private func transformViewDidLoad(_ input: Input, _ output: Output) {
@@ -50,22 +56,18 @@ class ModelOptionViewModel: ViewModelType {
             Task { [weak self] in
                 guard let self else { return }
                 let result = await self.httpClient.sendRequest(
-                    endPoint: TrimEndPoint.getModels,
-                    responseModel: [ModelResponseDTO].self
+                    endPoint: ColorEndPoint.getExteriors,
+                    responseModel: [ExteriorColorResponseDTO].self
                 ).map { $0.map { $0.toDomain() } }
                 
                 switch result {
                 case .success(let success):
-                    let model = success.enumerated().map { offset, modelDTO in
-                        let icons = modelDTO.photos.map { ($0.photoPNGURL, $0.content) }
-                        return CarSummaryContainerModel.init(
-                            icons: icons,
-                            title: "\(offset+1). " + modelDTO.optionName,
-                            price: String.decimalStyle(from: Int(modelDTO.price))
-                        )
-                    }
-                    output.modelSubject.send(model)
-                    self.models = success
+                    let model = success.map { $0.colorUrl }
+                    output.colorImageSubject.send(model)
+                    self.colors = success
+                    guard let initialChoice = colors.first else { return }
+                    output.colorNameSubject.send(initialChoice.optionName)
+                    output.tagsSubject.send(initialChoice.tagResponses.map { $0.tagContent })
                 case .failure(let failure):
                     switch failure {
                     case .unauthorized:
@@ -79,22 +81,21 @@ class ModelOptionViewModel: ViewModelType {
     }
     private func transformTapNextButton(_ input: Input, _ output: Output) {
         input.tapNextButtonPublisher
-            .map { [weak self] () -> Int? in
+            .compactMap { [weak self] () -> Int? in
                 guard let self else { return nil }
                 return self.selectedIndex
             }
             .sink(receiveValue: { [weak self] index in
-                guard let self,
-                      let index = index else { return }
-                guard index == 0 else {
-                    output.errorSubject.send("현재 지원하지 않는 트림입니다.")
+                guard let self else { return }
+                guard (0..<colors.count) ~= index else {
+                    output.errorSubject.send("에러가 발생했습니다.")
                     return
                 }
                 Task { [weak self] in
                     guard let self else { return }
                     let result = await self.httpClient.sendRequest(
-                        endPoint: TrimEndPoint.postModels(.init(carOptionId: self.models[index].id,
-                                                                archivingId: nil)),
+                        endPoint: TrimEndPoint.postEngines(.init(carOptionId: self.colors[index].carOptionId,
+                                                                archivingId: archivingID)),
                         responseModel: SuccessResponseLong.self
                     )
                     switch result {
@@ -111,12 +112,18 @@ class ModelOptionViewModel: ViewModelType {
                 }
         }).store(in: &bag)
     }
-    private func transformTapCarIndex(_ input: Input, _ output: Output) {
-        input.tapCarIndexPublisher.sink(receiveValue: { [weak self] index in
+    private func transformTapColorIndex(_ input: Input, _ output: Output) {
+        input.tapColorIndexPublisher.sink(receiveValue: { [weak self] index in
             guard let self else { return }
             self.selectedIndex = index
-            guard (0..<models.count) ~= index else { return }
-            output.priceSubject.send("\(String.decimalStyle(from: Int(models[index].price)))")
+            guard (0..<colors.count) ~= index else { return }
+            output.colorNameSubject.send(colors[index].optionName)
+            output.tagsSubject.send(colors[index].tagResponses.map { $0.tagContent })
+        }).store(in: &bag)
+    }
+    private func transformRotateIndex(_ input: Input, _ output: Output) {
+        input.rotateIndexPublisher.sink(receiveValue: { index in
+            output.carImageSubject.send(blueImages[index])
         }).store(in: &bag)
     }
 }

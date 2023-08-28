@@ -5,6 +5,7 @@
 //  Created by Eunno An on 2023/08/08.
 //
 
+import Combine
 import UIKit
 
 class RotatableOptionImageView: UIView {
@@ -14,15 +15,13 @@ class RotatableOptionImageView: UIView {
     private var elipseLayer: CAShapeLayer = CAShapeLayer()
     
     // MARK: - Properties
-    var imageNumber = 1
-    var previousImageNumber = 1
-    var currentRotationAngle: CGFloat = 0
-    var previousRotationAngle: CGFloat = 0
-    var prefix = "" {
-        willSet {
-            imageView.image = UIImage(named: newValue + "image_" + "001")
-        }
-    }
+    private var imageNumber = 0
+    private var previousImageNumber = 0
+    private var currentRotationAngle: CGFloat = 0
+    private var previousRotationAngle: CGFloat = 0
+    
+    var currentImageIndexSubject = CurrentValueSubject<Int, Never>(0)
+    
     // MARK: - Lifecycles
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,7 +40,7 @@ class RotatableOptionImageView: UIView {
     }
     
     // MARK: - Helpers
-    func setUI() {
+    private func setUI() {
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         degreeView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +55,7 @@ class RotatableOptionImageView: UIView {
         addSubview(imageView)
         addSubview(degreeView)
     }
-    func setLayout() {
+    private func setLayout() {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -69,7 +68,7 @@ class RotatableOptionImageView: UIView {
             degreeView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    func setElipseLayer() {
+    private func setElipseLayer() {
         let ovalRect = CGRect(
             x: (layer.bounds.width - (layer.bounds.width * 0.904))/2,
             y: layer.bounds.height * 0.7,
@@ -83,7 +82,7 @@ class RotatableOptionImageView: UIView {
         elipseLayer.fillColor = UIColor.hyundaiLightSand.cgColor
         elipseLayer.lineWidth = 1.0
     }
-    @objc func handlePan(sender: UIPanGestureRecognizer) {
+    @objc private func handlePan(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self)
         let progress = translation.x / self.bounds.width
         
@@ -95,23 +94,20 @@ class RotatableOptionImageView: UIView {
             currentRotationAngle = previousRotationAngle + 2 * .pi * progress
             imageNumber = previousImageNumber - Int(round(currentRotationAngle / (2 * .pi / 60)))
             
-            imageNumber %= 61
-
-            if imageNumber <= 0 {
-                imageNumber += 60
-            }
-
-            let imageNumStr = converter()
+            imageNumber %= 60
             
-            imageView.image = nil
-            imageView.image = UIImage(named: prefix + "image_" + imageNumStr)
+            if imageNumber < 0 {
+                imageNumber += 59
+            }
+            
+            currentImageIndexSubject.send(imageNumber)
         case .ended:
             currentRotationAngle = 0
         default:
             break
         }
     }
-    func converter() -> String {
-        return String(format: "%03d", imageNumber)
+    func setImage(to image: String) {
+        imageView.setAsyncImage(url: image)
     }
 }

@@ -119,6 +119,7 @@ class MyCarFooterView: UIView {
             .store(in: &bag)
         
         nextButton.touchUpPublisher
+            .throttle(for: 1.0, scheduler: DispatchQueue.main, latest: false)
             .sink(receiveValue: { [weak self] in
                 guard let self else { return }
                 self.tapNextButton.send(())

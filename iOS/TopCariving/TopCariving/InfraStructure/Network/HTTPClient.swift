@@ -36,41 +36,28 @@ class HTTPClient: HTTPClientProtocol {
             guard let encodedBody = try? JSONEncoder().encode(body) else { return .failure(.encode) }
             request.httpBody = encodedBody
         }
-        
+        var (data, response): (Data, URLResponse)
         do {
-            let (data, response) = try await dataTask(with: request)
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                return .failure(.noResponse)
-            }
-            
-            switch httpResponse.statusCode {
-            case 200...299:
-                guard let decodeResponse = try? JSONDecoder().decode(responseModel, from: data) else {
-                    return .failure(.decode)
-                }
-                return .success(decodeResponse)
-            case 401:
-                return .failure(.unauthorized)
-            default:
-                return .failure(.unexpectedStatusCode(httpResponse.statusCode))
-            }
+            (data, response) = try await URLSession.shared.data(for: request)
         } catch {
             return .failure(.unknown(error))
         }
-    }
-    
-    func dataTask(with request: URLRequest) async throws -> (Data, URLResponse) {
-        return try await withCheckedThrowingContinuation { continuation in
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    continuation.resume(throwing: error)
-                } else if let data = data, let response = response {
-                    continuation.resume(returning: (data, response))
-                } else {
-                    continuation.resume(throwing: RequestError.unknown(error!))
-                }
-            }.resume()
+        guard let response = response as? HTTPURLResponse else {
+            return .failure(.noResponse)
+        }
+        switch response.statusCode {
+        case 200...299:
+            do {
+                let decodeResponse = try JSONDecoder().decode(responseModel, from: data)
+                return .success(decodeResponse)
+            } catch {
+                NSLog(error.localizedDescription)
+                return .failure(.decode)
+            }
+        case 401:
+            return .failure(.unauthorized)
+        default:
+            return .failure(.unexpectedStatusCode(response.statusCode))
         }
     }
 }

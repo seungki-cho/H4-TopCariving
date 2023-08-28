@@ -13,7 +13,6 @@ extension UIImage {
             draw(in: CGRect(origin: .zero, size: size))
         }
     }
-    
     func resized(to width: CGFloat) -> UIImage {
         let ratio = width / size.width
         let size = CGSize(width: width, height: size.height * ratio)
@@ -21,5 +20,8 @@ extension UIImage {
         return UIGraphicsImageRenderer(size: size).image { _ in
             draw(in: CGRect(origin: .zero, size: size))
         }
+    }
+    static func imageService(url: String) async -> UIImage? {
+        await ImageService.shared.loadImage(with: url)
     }
 }

@@ -92,9 +92,12 @@ class ViewController: BaseMyCarViewController {
         
         output.pushSubject
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] _ in
+            .sink(receiveValue: { [weak self] archivingID in
             guard let self else { return }
-            // Navigation Push
+                let httpClient = HTTPClient()
+                let viewModel = EngineSelectionViewModel(httpClient: httpClient, archivingID: archivingID.data)
+                let viewController = EngineSelectionViewController(viewModel: viewModel)
+                navigationController?.pushViewController(viewController, animated: true)
         }).store(in: &bag)
         
         output.modelSubject
@@ -116,10 +119,5 @@ class ViewController: BaseMyCarViewController {
             view.setInfo(to: model.title, price: model.price, icons: model.icons)
             containerStackView.addArrangedSubview(view)
         }
-        footerView.tapNextButton.sink(receiveValue: { [weak self] in
-            guard let self else { return }
-            self.navigationController?.pushViewController(InteriorColorSelctionViewController(), animated: true)
-        })
-        .store(in: &bag)
     }
 }
