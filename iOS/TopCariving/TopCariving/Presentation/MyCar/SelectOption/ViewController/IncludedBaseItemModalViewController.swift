@@ -31,30 +31,156 @@ class IncludedBaseItemModalViewController: UIViewController {
     }()
     private let testTableViewData = [
         BaseOptionMainCategoryModel(
+            title: "외관",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/darkchromegrill.jpeg",
+                    title: "다크 크롬 라디에이터 그릴"
+                ),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/leddrl.jpeg",
+                    title: "LED 주간주행등"
+                ),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/ledpositioninglamp.jpeg",
+                    title: "LED 포지셔닝 램프"
+                ),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/ledsignallight.jpeg",
+                    title: "LED 방향지시등"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/fullheadlamp.jpeg",
+                    title: "Full LED 헤드램프(프로젝션 타입)"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/outsidemirror.jpeg",
+                    title: "아웃사이드 미러(열선, 전동접이)"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/laminatedwindow.jpeg",
+                    title: "이중접합 차음유리(윈드실드, 1/2열)"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/doorpocketlighting.jpeg",
+                    title: "도어 포켓 라이팅(1열)"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/singlemuffler.jpeg",
+                    title: "싱글 트윈팁 머플러"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/ledstoplamp.jpeg",
+                    title: "LED 보조제동등"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/rearguidelamp.jpeg",
+                    title: "후진가이드램프"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/rearspoiler.jpeg",
+                    title: "리어 스포일러"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/dlomolding.jpeg",
+                    title: "크롬 DLO 몰딩"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/roofrack.jpeg",
+                    title: "루프랙"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/metalpaintplate_s.jpeg",
+                    title: "메탈페인트 스키드 플레이트"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/20alloywheel_s.jpeg",
+                    title: "20인치 알로이 휠&타이어"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/external/frontdoorwindow_s.jpeg",
+                    title: "발수 도어(1열)"),
+            ]
+        ),
+        BaseOptionMainCategoryModel(
+            title: "안전",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",
+                    title: "하이빔 보조"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/vibsteeringwheel.jpeg",
+                    title: "진동 경고 스티어링 휠"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/scc.jpeg",
+                    title: "스마트 크루즈 컨트롤(스탑앤고 기능 포함)")
+            ]
+        ),
+        BaseOptionMainCategoryModel(
+            title: "시트",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",
+                    title: "하이빔 보조"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/vibsteeringwheel.jpeg",
+                    title: "진동 경고 스티어링 휠"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/scc.jpeg",
+                    title: "스마트 크루즈 컨트롤(스탑앤고 기능 포함)")
+            ]
+        ),
+        BaseOptionMainCategoryModel(
             title: "파워트레인/성능",
             subCategories: [
                 BaseOptionSubCategoryModel(
-                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/transmission.jpg",
-                    title: "8단 자동변속기"
-                ),
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/power/transmission.jpg",
+                    title: "8단 자동변속기"),
                 BaseOptionSubCategoryModel(
-                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/ISG.jpg",
-                    title: "ISG 시스템"
-                ),
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/power/ISG.jpg",
+                    title: "ISG 시스템"),
                 BaseOptionSubCategoryModel(
-                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/driving_mode.jpg",
-                    title: "통합주행모드"
-                ),
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/power/driving_mode.jpg",
+                    title: "통합주행모드"),
                 BaseOptionSubCategoryModel(
-                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/power_steering.jpg",
-                    title: "랙구동형 전동식 파워스티어링(R-MDPS)"),
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/power/power_steering.jpg",
+                    title: "랙구동형 전동식 파워스티어링(R-MD)"),
                 BaseOptionSubCategoryModel(
-                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/power/shift_button.jpg",
-                    title: "전자식 변속버튼"),
+                    imageURL: "https://d37c20hjk1kqzz.cloudfront.net/power/shift_button.jpg",
+                    title: "전자식 변속버튼")
+            ]
+        ),
+        BaseOptionMainCategoryModel(
+            title: "내장",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",
+                    title: "하이빔 보조"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/vibsteeringwheel.jpeg",
+                    title: "진동 경고 스티어링 휠"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/scc.jpeg",
+                    title: "스마트 크루즈 컨트롤(스탑앤고 기능 포함)")
             ]
         ),
         BaseOptionMainCategoryModel(
             title: "지능형 안전기술",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",
+                    title: "하이빔 보조"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/vibsteeringwheel.jpeg",
+                    title: "진동 경고 스티어링 휠"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/scc.jpeg",
+                    title: "스마트 크루즈 컨트롤(스탑앤고 기능 포함)")
+            ]
+        ),
+        BaseOptionMainCategoryModel(
+            title: "편의",
+            subCategories: [
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",
+                    title: "하이빔 보조"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/vibsteeringwheel.jpeg",
+                    title: "진동 경고 스티어링 휠"),
+                BaseOptionSubCategoryModel(
+                    imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/scc.jpeg",
+                    title: "스마트 크루즈 컨트롤(스탑앤고 기능 포함)")
+            ]
+        ),
+        BaseOptionMainCategoryModel(
+            title: "멀티미디어",
             subCategories: [
                 BaseOptionSubCategoryModel(
                     imageURL: "https://topcariving.s3.ap-northeast-2.amazonaws.com/ai/hba.jpeg",

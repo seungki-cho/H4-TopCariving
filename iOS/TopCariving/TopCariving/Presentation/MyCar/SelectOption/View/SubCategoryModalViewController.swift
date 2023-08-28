@@ -36,6 +36,7 @@ class SubCategoryModalViewController: UIViewController {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -92,8 +93,8 @@ class SubCategoryModalViewController: UIViewController {
             
             detail.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: 20),
             detail.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            detail.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            detail.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            detail.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            detail.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
     func setTitle(to text: String) {
