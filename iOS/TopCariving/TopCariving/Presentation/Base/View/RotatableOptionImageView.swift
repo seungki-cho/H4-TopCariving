@@ -27,6 +27,7 @@ class RotatableOptionImageView: UIView {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setImage(to: "https://d37c20hjk1kqzz.cloudfront.net/360/abyss/image_001.png")
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)

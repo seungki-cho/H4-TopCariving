@@ -100,6 +100,11 @@ class ColorSectionViewController: BaseMyCarViewController {
                 colorSelectionView.refresh(by: colors)
             }).store(in: &bag)
         
+        footerView.tapNextButton.sink(receiveValue: { [weak self] in
+            guard let self else { return }
+            navigationController?.pushViewController(InteriorColorSelctionViewController(), animated: true)
+        }).store(in: &bag)
+        
         Publishers.CombineLatest(output.colorNameSubject, output.tagsSubject).receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] (name, tags) in
                 guard let self else { return }

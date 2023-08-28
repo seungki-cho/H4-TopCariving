@@ -8,6 +8,7 @@
 import Foundation
 
 enum ColorEndPoint {
+    case getNames
     case getExteriors
     case postExteriors
 }
@@ -18,6 +19,8 @@ extension ColorEndPoint: EndPoint {
     
     var path: String {
         switch self {
+        case .getNames:
+            return "/api/options/colors"
         case .getExteriors, .postExteriors:
             return "/api/options/colors/exteriors"
         }
@@ -25,7 +28,7 @@ extension ColorEndPoint: EndPoint {
     
     var method: RequestMethod {
         switch self {
-        case .getExteriors:
+        case .getNames, .getExteriors:
             return .get
         case .postExteriors:
             return .post
@@ -33,9 +36,10 @@ extension ColorEndPoint: EndPoint {
     }
     
     var header: [String: String]? {
-        // swiftlint: disable line_length
-        var baseHeader = ["authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTIxNjk5NzAsImV4cCI6MTcyMzcwNTk3MCwiaXNzIjoiVG9wQ2FyaXZpbmciLCJzdWIiOiIxIn0.p1bkF0pLsHkobfdkyPyGBjaClOHDhXbUFpeagBUWvx4"]
+        var baseHeader = ["authorization": "Bearer \(LoginService.shared.myAccessToken)"]
         switch self {
+        case .getNames:
+            return nil
         case .getExteriors:
             return baseHeader
         case .postExteriors:

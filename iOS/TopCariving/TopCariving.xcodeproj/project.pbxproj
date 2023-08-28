@@ -76,6 +76,8 @@
 		76DFFEFF2A9A3AAD0095D81F /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */; };
 		76DFFF012A9A422E0095D81F /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF002A9A422E0095D81F /* ImageCacheService.swift */; };
 		76DFFF032A9A49CE0095D81F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF022A9A49CE0095D81F /* UIImageView+.swift */; };
+		76DFFF072A9C38AE0095D81F /* SelectGenuineOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF062A9C38AE0095D81F /* SelectGenuineOptionViewController.swift */; };
+		76DFFF092A9C3E160095D81F /* SelectNPerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFFF082A9C3E160095D81F /* SelectNPerformanceViewController.swift */; };
 		C313500A2A7E826C00D5D401 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31350092A7E826C00D5D401 /* UIImage+.swift */; };
 		C313500C2A7E98DE00D5D401 /* FoldableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500B2A7E98DE00D5D401 /* FoldableView.swift */; };
 		C313500E2A7FB82B00D5D401 /* TappableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313500D2A7FB82B00D5D401 /* TappableView.swift */; };
@@ -262,6 +264,8 @@
 		76DFFEFE2A9A3AAD0095D81F /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		76DFFF002A9A422E0095D81F /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		76DFFF022A9A49CE0095D81F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		76DFFF062A9C38AE0095D81F /* SelectGenuineOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenuineOptionViewController.swift; sourceTree = "<group>"; };
+		76DFFF082A9C3E160095D81F /* SelectNPerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNPerformanceViewController.swift; sourceTree = "<group>"; };
 		C31350092A7E826C00D5D401 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		C313500B2A7E98DE00D5D401 /* FoldableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldableView.swift; sourceTree = "<group>"; };
 		C313500D2A7FB82B00D5D401 /* TappableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableView.swift; sourceTree = "<group>"; };
@@ -618,6 +622,8 @@
 			isa = PBXGroup;
 			children = (
 				7683E38E2A8EF5A200BF8BEB /* SelectOptionViewController.swift */,
+				76DFFF062A9C38AE0095D81F /* SelectGenuineOptionViewController.swift */,
+				76DFFF082A9C3E160095D81F /* SelectNPerformanceViewController.swift */,
 				D462E76B2A850D3F00C5A8EC /* IncludedBaseItemModalViewController.swift */,
 			);
 			path = ViewController;
@@ -848,7 +854,6 @@
 				D4A68CF92A808E0B00E2C1FD /* ArchivingColorResponseDTO+Mapping.swift */,
 				D4A68CFB2A80925400E2C1FD /* ArchivingOptionResponseDTO+Mapping.swift */,
 				D4A68CFD2A80930800E2C1FD /* ArchiveResponseDTO+Mapping.swift */,
-				D4A68CFD2A80930800E2C1FD /* ArchivingResponseDTO+Mapping.swift */,
 				767E240A2A96519400006017 /* EngineResponseDTO+Mapping.swift */,
 				D4A68CFF2A8093B200E2C1FD /* ModifyOptionResponseDTO+Mapping.swift */,
 				D4A68D032A80946D00E2C1FD /* TrimResponseDTO+Mapping.swift */,
@@ -1235,6 +1240,7 @@
 				D4A68D042A80946D00E2C1FD /* TrimResponseDTO+Mapping.swift in Sources */,
 				D49B0FA92A94890B00B3CEE2 /* LoginViewModel.swift in Sources */,
 				C3C96D492A8BBDCB002C09D2 /* SummaryHeaderView.swift in Sources */,
+				76DFFF072A9C38AE0095D81F /* SelectGenuineOptionViewController.swift in Sources */,
 				7683E3B62A9265E100BF8BEB /* OptionTagView.swift in Sources */,
 				7683E3BE2A92FEBF00BF8BEB /* SearchOptionSettingViewController.swift in Sources */,
 				D4A68D132A8096CC00E2C1FD /* ColorBothResponseDTO+Mapping.swift in Sources */,
@@ -1252,6 +1258,7 @@
 				7631E9532A87720200015363 /* OptionCardCell.swift in Sources */,
 				D4A68D382A80F01400E2C1FD /* SelectionDetail.swift in Sources */,
 				7683E3A42A92162500BF8BEB /* TrimSelectionViewController.swift in Sources */,
+				76DFFF092A9C3E160095D81F /* SelectNPerformanceViewController.swift in Sources */,
 				D44B45712A7B968A00E8E207 /* HTTPMethod.swift in Sources */,
 				7631E9552A8777E900015363 /* OptionSelectView.swift in Sources */,
 				D4A68D422A80F10E00E2C1FD /* ColorBoth.swift in Sources */,
@@ -1466,12 +1473,12 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.softeer.TopCariving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1495,12 +1502,12 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.softeer.TopCariving;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

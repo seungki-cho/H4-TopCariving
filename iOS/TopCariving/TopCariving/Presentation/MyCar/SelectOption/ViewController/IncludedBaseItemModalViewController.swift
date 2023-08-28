@@ -225,7 +225,6 @@ class IncludedBaseItemModalViewController: UIViewController {
     private func setTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.sectionHeaderTopPadding = 12
         testTableViewData.enumerated().map { (index, _) in
             hiddenSections.insert(index)
         }

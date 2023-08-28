@@ -41,8 +41,7 @@ extension TrimEndPoint: EndPoint {
     }
     
     var header: [String: String]? {
-        // swiftlint: disable line_length
-        var baseHeader = ["authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTIxNjk5NzAsImV4cCI6MTcyMzcwNTk3MCwiaXNzIjoiVG9wQ2FyaXZpbmciLCJzdWIiOiIxIn0.p1bkF0pLsHkobfdkyPyGBjaClOHDhXbUFpeagBUWvx4"]
+        var baseHeader = ["authorization": "Bearer \(LoginService.shared.myAccessToken)"]
         switch self {
         case .getModels, .getEngines, .getBodyTypes, .getDrivingMethods:
             return baseHeader
